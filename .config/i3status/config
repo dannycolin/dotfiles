@@ -1,0 +1,57 @@
+general {
+        output_format = "i3bar"
+        
+	# Colors settings
+	colors = true
+	color_good = "#abb2bf"
+	color_degraded = "#abb2bf"
+	color_bad = "#e06c75"
+
+	# Refresh rate
+        interval = 5
+}
+
+# Display order
+order += "wireless wlp4s0"
+order += "ethernet eth0"
+order += "battery 0"
+order += "volume master"
+order += "tztime montreal"
+
+wireless wlp4s0 {
+        format_up = "W:%quality [%essid]"
+        format_down = ""
+}
+
+ethernet eth0 {
+        # if you use %speed, i3status requires the cap_net_admin capability
+        format_up = "E: up"
+        format_down = ""
+}
+
+battery 0 {
+        format = "B: %percentage [%status]"
+        format_down = ""
+        status_chr = "Charging"
+        status_bat = "Discharging"
+        status_unk = "Unknown"
+        status_full = "Full"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 20
+	last_full_capacity = true
+	integer_battery_capacity = true
+}
+
+volume master {
+        format = "V: %volume"
+        format_muted = "V: 0%%"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+tztime montreal {
+        format = "%a %d %b %H:%M "
+	timezone = "America/New_York"
+}
+
