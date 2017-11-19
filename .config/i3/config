@@ -105,7 +105,7 @@ bindsym $mod+Shift+r restart
 mode "system" {
     # current session (e) exit (l) lock (r) reboot (p) poweroff
     bindsym e exec i3-msg exit
-    bindsym l exec dm-tool lock
+    bindsym l exec i3lock -c "#282c34", mode "default"
     bindsym r exec systemctl reboot
     bindsym p exec systemctl poweroff
 
