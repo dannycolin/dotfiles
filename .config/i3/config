@@ -45,8 +45,8 @@ set $color16    "#5c6370"
 # Windows colors
 # class                     border  backgr. text    indicator child_border
 client.focused              $color3 $color3 $color1 $color3   $color3
-client.focused_inactive     $color1 $color1 $color8 $color1   $color1
-client.unfocused            $color1 $color1 $color8 $color1   $color1
+client.focused_inactive     $color9 $color1 $color8 $color1   $color9
+client.unfocused            $color9 $color1 $color8 $color1   $color
 client.urgent               $color2 $color2 $color8 $color2   $color2
 
 client.background           $color1
