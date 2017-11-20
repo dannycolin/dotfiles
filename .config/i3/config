@@ -7,14 +7,49 @@ set $mod Mod4
 # Workaround: Set font size to 0  to disable window title in tabbed and stacked mode
 font pango:monospace 0
 
+# Define 16-colors palette
+
+# black
+set $color1     "#282c34"
+# red
+set $color2     "#e06c75"
+# green
+set $color3     "#98c379"
+# yellow
+set $color4     "#e5c07b"
+# blue
+set $color5     "#61afef"
+# magenta
+set $color6     "#c678dd"
+# cyan
+set $color7     "#56b6c2"
+# white
+set $color8     "#abb2bf"
+# gutter grey
+set $color9     "#4b5263"
+# dark red
+set $color10    "#be5046"
+# green
+set $color11    "#98c379"
+# dark yellow
+set $color12    "#d19a66"
+# blue
+set $color13    "#61afef"
+# magenta
+set $color14    "#c678dd"
+# cyan
+set $color15    "#56b6c2"
+# comment grey
+set $color16    "#5c6370"
+
 # Windows colors
 # class                     border  backgr. text    indicator child_border
-client.focused              #98c379 #98c379 #282c34 #98c379   #98c379
-client.focused_inactive     #282c34 #282c34 #abb2bf #282c34   #282c34
-client.unfocused            #282c34 #282c34 #abb2bf #282c34   #282c34
-client.urgent               #e06c75 #e06c75 #abb2bf #e06c75   #e06c75
+client.focused              $color3 $color3 $color1 $color3   $color3
+client.focused_inactive     $color1 $color1 $color8 $color1   $color1
+client.unfocused            $color1 $color1 $color8 $color1   $color1
+client.urgent               $color2 $color2 $color8 $color2   $color2
 
-client.background           #282c34
+client.background           $color1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -30,7 +65,7 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 #bindsym Mod4+d exec dmenu_run
-bindsym Mod4+d exec --no-startup-id i3-dmenu-desktop --dmenu="/usr/bin/dmenu -i -l 5 -fn monospace-11 -nb '#282c34' -nf '#abb2bf' -sb '#98c379' -sf '#282c34'"
+bindsym Mod4+d exec --no-startup-id i3-dmenu-desktop --dmenu="/usr/bin/dmenu -i -l 5 -fn monospace-11 -nb '$color1' -nf '$color8' -sb '$color3' -sf '$color1'"
 
 # change focus
 bindsym $mod+h focus left
@@ -163,17 +198,17 @@ bar {
     colors {
 	
 	# Statusline's colors
-        background #282c34
-        statusline #abb2bf
-        separator  #abb2bf
+        background $color1
+        statusline $color8
+        separator  $color8
 	
 	# Workspace's colors
         #colorclass        border  background text
-        focused_workspace  #98c379 #98c379    #282c34
-        active_workspace   #98c379 #98c379    #282c34
-        inactive_workspace #282c34 #282c34    #abb2bf
-        urgent_workspace   #2f343a #e06c75    #abb2bf
-        binding_mode       #2f343a #e06c75    #abb2bf
+        focused_workspace  $color3 $color3    $color1
+        active_workspace   $color3 $color3    $color1
+        inactive_workspace $color1 $color1    $color8
+        urgent_workspace   $color2 $color2    $color1
+        binding_mode       $color5 $color5    $color1
     }
 }
 
