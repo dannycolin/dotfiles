@@ -1,38 +1,35 @@
-""""""""""""""""""""""""""
-" vim configuration file "
-"                        "
-" 0. General Settings    "
-" 1. Plugins Settings    "
-" 2. Key Mapping         "
-"                        "
-""""""""""""""""""""""""""
+"""""""""""""""""""""""""""
+" vim configuration file  "
+"                         "
+" 0. General Settings     "
+" 1. Plugins              "
+" 2. Key Mapping          "
+" 3. Syntax Hightlighting "
+"                         "
+"""""""""""""""""""""""""""
 
 """""""""""""""""""""""
 " 0. General Settings "
 """""""""""""""""""""""
 
 set nocompatible          " turn off compatibility with vi
-
 set t_Co=255              " 256-colors terminal 
-
 set encoding=utf-8        " the encoding displayed
 set fileencoding=utf-8    " the encoding written to file
-
 set number                " show linenumbers
 set relativenumber        " show linenumners relative to current position
-
 set noswapfile            " turn off swapfile
 
-syntax on                 " turn on syntax highlighting
-
-
-set tabstop=4             " The width of a TAB is set to 4.
-
-set shiftwidth=4          " Indents will have a width of 4
-
-set softtabstop=4         " Sets the number of columns for a TAB
-
-set expandtab             " Expand TABs to spaces
+" Prevent expandtab when editing a Makefile
+let _curfile = expand("%:t")
+if _curfile =~ "Makefile" || _curfile =~ "makefile" || _curfile =~ ".*\.mk"
+    set noexpandtab
+else
+    set expandtab         " Expand TABs to spaces
+    set tabstop=4         " The width of a TAB is set to 4
+    set shiftwidth=4      " Indents will have a width of 4
+    set softtabstop=4     " Set the number of columns for a TAB
+endif
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
@@ -50,11 +47,20 @@ if (empty($TMUX))
   endif
 endif
 
-colorscheme onedark       " set vim colorscheme theme
+"""""""""""""""
+" 1. Plugins  "
+"""""""""""""""
 
-"""""""""""""""""""""""
-" 1. Plugins Settings "
-"""""""""""""""""""""""
+""""""""""""""""
+" Load plugins "
+""""""""""""""""
+
+packadd! lightline.vim
+packadd! lightline-buffer.vim
+packadd! gitbranch.vim
+packadd! nerdtree.vim
+packadd! emmet.vim
+packadd! onedark.vim
 
 """""""""""""
 " Emmet.vim "
@@ -157,3 +163,9 @@ nnoremap <silent> <S-Tab> :bp<CR>
 " remap shift+: to space
 nnoremap <space> :
 
+""""""""""""""""""""""""""
+" 3. Syntax highlighting "
+""""""""""""""""""""""""""
+
+syntax on                 " turn on syntax highlighting
+colorscheme onedark       " set vim colorscheme theme
