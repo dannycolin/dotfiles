@@ -120,6 +120,15 @@ bindsym $mod+Shift+9 move container to workspace 9:misc
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
+# Automatically putting clients on specific workspaces
+
+assign [class="^Firefox$"] 3:web
+assign [class="^Hexchat$"] 6:chat
+assign [class="^Pcmanfm$"] 1:files
+assign [class="^Thunderbird$"] 4:mail
+assign [class="^UXTerm$"] 2:term
+assign [class="^UXTerm$" instance="vim"] 5:code
+
 # Disable window title
 new_window pixel 4
 new_float pixel 4
