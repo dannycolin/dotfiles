@@ -1,0 +1,107 @@
+! "Enabled modi" Set from: Default
+rofi.modi:                           window,run,ssh
+
+! "Window width" Set from: Default
+rofi.width:                          100%
+
+! "Number of lines" Set from: Default
+rofi.lines:                          5
+
+! "Number of columns" Set from: Default
+rofi.columns:                        1
+
+! "Y-offset relative to location" Set from: Default
+rofi.yoffset:                        24
+
+! "X-offset relative to location" Set from: Default
+rofi.xoffset:                        0
+
+! "Font to use" Set from: Default
+rofi.font:                           monospace 11
+
+! "Color scheme for normal row" Set from: Default
+rofi.color-normal:                   #282c34,#abb2bf,#282c34,#98c379,#282c34
+
+! "Color scheme for urgent row" Set from: Default
+rofi.color-urgent:                   #fdf6e3,#dc322f,#eee8d5,#dc322f,#fdf6e3
+
+! "Color scheme for active row" Set from: Default
+rofi.color-active:                   #fdf6e3,#268bd2,#eee8d5,#268bd2,#fdf6e3
+
+! "Color scheme window" Set from: Default
+rofi.color-window:                   #282c34,#98c379
+
+! "Border width" Set from: Default
+rofi.bw:                             4
+
+! "Location on screen" Set from: Default
+rofi.location:                       2
+
+! "Padding" Set from: Default
+rofi.padding:                        5
+
+! "Set case-sensitivity" Set from: Default
+rofi.case-sensitive:                 false
+
+! "Cycle through the results list" Set from: Default
+rofi.cycle:                          true
+
+! "Margin between rows" Set from: Default
+rofi.line-margin:                    0
+
+! "Padding within rows" Set from: Default
+rofi.line-padding:                   1
+
+! "Separator style (none, dash, solid)" Set from: Default
+rofi.separator-style:                dash
+
+! "Hide scroll-bar" Set from: Default
+rofi.hide-scrollbar:                 false
+
+! "Scrollbar width" Set from: Default
+rofi.scrollbar-width:                4
+
+! "Scrolling method. (0: Page, 1: Centered)" Set from: Default
+rofi.scroll-method:                  0
+
+! "Window Format. w (desktop name), t (title), n (name), r (role), c (class)" Set from: Default
+rofi.window-format:                  {w}   {c}   {t}
+
+! "Switch to the next mode." Set from: Default
+rofi.kb-mode-next:                   Control+Tab
+
+! "Switch to the previous mode." Set from: Default
+rofi.kb-mode-previous:               Control+Shift_L+ISO_Left_Tab
+
+! "Select previous entry" Set from: Default
+rofi.kb-row-up:                      Shift_L+ISO_Left_Tab
+
+! "Select next entry" Set from: Default
+rofi.kb-row-down:                    ISO_Left_Tab
+
+! "Go to the previous page" Set from: Default
+rofi.kb-page-prev:                   Page_Up
+
+! "Go to the next page" Set from: Default
+rofi.kb-page-next:                   Page_Down
+
+! "Go to the first entry" Set from: Default
+rofi.kb-row-first:                   Home
+
+! "Go to the last entry" Set from: Default
+rofi.kb-row-last:                    End
+
+! "Quit rofi" Set from: Default
+rofi.kb-cancel:                      Escape
+
+! "The display name of this browser" Set from: Default
+rofi.display-ssh:                    ssh 
+
+! "The display name of this browser" Set from: Default
+rofi.display-run:                    command  
+
+! "The display name of this browser" Set from: Default
+rofi.display-drun:                   application
+
+! "The display name of this browser" Set from: Default
+rofi.display-window:                 window  
