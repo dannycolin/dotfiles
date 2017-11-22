@@ -19,6 +19,7 @@ set fileencoding=utf-8    " the encoding written to file
 set number                " show linenumbers
 set relativenumber        " show linenumners relative to current position
 set noswapfile            " turn off swapfile
+set clipboard=unnamed     " use system clipboard
 
 " Prevent expandtab when editing a Makefile
 let _curfile = expand("%:t")
