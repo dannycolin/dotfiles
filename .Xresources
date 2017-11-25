@@ -1,12 +1,12 @@
 ! (U)XTerm Configuration
 UXTerm*faceName: Monospace
-UXterm*faceSize: 11
-UXterm*vt100*geometry: 80x60
-UXterm*saveLines: 16384
-UXterm*loginShell: true
-UXterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
-UXterm*termName: xterm-256color
-UXterm*eightBitInput: false
+UXTerm*faceSize: 11
+UXTerm*vt100*geometry: 80x60
+UXTerm*saveLines: 16384
+UXTerm*loginShell: true
+UXTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+UXTerm*termName: xterm-256color
+UXTerm*eightBitInput: false
 UXTerm*allowTitleOps: true
 
 XTerm*faceName: Monospace
@@ -19,7 +19,6 @@ XTerm*termName: xterm-256color
 XTerm*eightBitInput: false
 XTerm*allowTitleOps: true
 
-!BLK Cursor
 #define _color0        #282c34
 #define _color8        #282c34
 !RED Tag
@@ -73,6 +72,7 @@ UXTerm*colorUL        : _colorUL
 UXTerm*foreground     : _foreground
 UXTerm*background     : _background
 UXTerm*cursorColor    : _cursorColor
+
 XTerm*color0         : _color0
 XTerm*color1         : _color1
 XTerm*color2         : _color2
@@ -95,3 +95,4 @@ XTerm*colorUL        : _colorUL
 XTerm*foreground     : _foreground
 XTerm*background     : _background
 XTerm*cursorColor    : _cursorColor
+
