@@ -130,8 +130,7 @@ assign [class="^Hexchat$"] 6:chat
 assign [class="^Pcmanfm$"] 1:files
 assign [class="^Thunderbird$"] 4:mail
 assign [class="^UXTerm$"] 2:term
-assign [class="^XTerm$"] 2:term
-assign [class="^XTerm$" instance="vim"] 5:code
+assign [class="vim"] 5:code
 
 # Disable window title
 new_window pixel 4

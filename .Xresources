@@ -7,7 +7,9 @@ UXTerm*loginShell: true
 UXTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
 UXTerm*termName: xterm-256color
 UXTerm*eightBitInput: false
-UXTerm*allowTitleOps: true
+UXTerm*VT100.allowWindowOps: true
+UXTerm*VT100.allowTitleOps: true
+UXTerm*VT100.allowFontOps: true
 
 XTerm*faceName: Monospace
 XTerm*faceSize: 11
@@ -19,11 +21,21 @@ XTerm*termName: xterm-256color
 XTerm*eightBitInput: false
 XTerm*allowTitleOps: true
 
+vim*faceName: Monospace
+vim*faceSize: 11
+vim*vt100*geometry: 80x60
+vim*saveLines: 16384
+vim*loginShell: true
+vim*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+vim*termName: xterm-256color
+vim*eightBitInput: false
+vim*allowTitleOps: true
+
 #define _color0        #282c34
 #define _color8        #282c34
 !RED Tag
 #define _color1        #be5046
-#define _color9        #e06c75
+#define _color9        #e06c75:
 !GRN SpecialKey
 #define _color2        #98c379
 #define _color10       #98c379
@@ -95,4 +107,27 @@ XTerm*colorUL        : _colorUL
 XTerm*foreground     : _foreground
 XTerm*background     : _background
 XTerm*cursorColor    : _cursorColor
+
+vim*color0         : _color0
+vim*color1         : _color1
+vim*color2         : _color2
+vim*color3         : _color3
+vim*color4         : _color4
+vim*color5         : _color5
+vim*color6         : _color6
+vim*color7         : _color7
+vim*color8         : _color8
+vim*color9         : _color9
+vim*color10        : _color10
+vim*color11        : _color11
+vim*color12        : _color12
+vim*color13        : _color13
+vim*color14        : _color14
+vim*color15        : _color15
+vim*colorBD        : _colorBD
+vim*colorIT        : _colorIT
+vim*colorUL        : _colorUL
+vim*foreground     : _foreground
+vim*background     : _background
+vim*cursorColor    : _cursorColor
 
