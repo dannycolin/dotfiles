@@ -91,13 +91,10 @@ let NERDTreeShowHidden=1
 " toggle on/off treeview
 noremap <C-n> :NERDTreeToggle<CR>
 
-" close current buffer
-noremap <C-w>c :bd<CR>
-
 " create new buffer
-noremap <C-t> :enew<CR>
+nnoremap <C-w>b :enew<CR>
 
-" move between windows
+" move to the left or right window
 noremap <C-w>h :wincmd h<CR>
 noremap <C-w>l :wincmd l<CR>
 
