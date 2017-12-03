@@ -170,7 +170,7 @@ mode "system" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+s mode "system"
+bindsym $mod+Shift+s mode "system"
 
 # resize mode
 mode "resize" {
