@@ -81,6 +81,7 @@ let g:user_emmet_expandabbr_key = '<C-e>'
 """"""""""""""""
 
 let NERDTreeShowHidden=1
+let NERDTreeWinSize=30
 
 """"""""""""""""""
 " 2. Key mapping "
