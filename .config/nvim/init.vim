@@ -21,6 +21,8 @@ set relativenumber        " show linenumners relative to current position
 set noswapfile            " turn off swapfile
 set clipboard=unnamed     " use system clipboard
 
+filetype plugin on        " set config specific to filetype
+
 " Prevent expandtab when editing a Makefile
 let _curfile = expand("%:t")
 if _curfile =~ "Makefile" || _curfile =~ "makefile" || _curfile =~ ".*\.mk"
