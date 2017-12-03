@@ -1,55 +1,29 @@
-! (U)XTerm Configuration
-UXTerm*faceName: Monospace
-UXTerm*faceSize: 11
-UXTerm*vt100*geometry: 80x60
-UXTerm*saveLines: 16384
-UXTerm*loginShell: true
-UXTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
-UXTerm*termName: xterm-256color
-UXTerm*eightBitInput: false
-UXTerm*VT100.allowWindowOps: true
-UXTerm*VT100.allowTitleOps: true
-UXTerm*VT100.allowFontOps: true
-UXTerm.VT100.selectToClipboard: true
-UXTerm*VT100*translations: #override \n\
+!--------------------!
+! .Xresources config !
+!--------------------!
+
+*.faceName: Monospace
+*.faceSize: 11
+*.vt100*geometry: 80x60
+*.saveLines: 16384
+*.loginShell: true
+*.charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+*.termName: xterm-256color
+*.eightBitInput: false
+*.VT100.allowWindowOps: true
+*.VT100.allowTitleOps: true
+*.VT100.allowFontOps: true
+*.VT100.selectToClipboard: true
+*.VT100*translations: #override \n\
     Ctrl Shift <Key>V:  insert-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>C:        select-end(CLIPBOARD)
-
-XTerm*faceName: Monospace
-XTerm*faceSize: 11
-XTerm*vt100*geometry: 80x60
-XTerm*saveLines: 16384
-XTerm*loginShell: true
-XTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
-XTerm*termName: xterm-256color
-XTerm*eightBitInput: false
-XTerm*allowTitleOps: true
-XTerm.vt100.selectToClipboard: true
-XTerm*VT100*translations: #override \n\
-    Ctrl Shift <Key>V:  insert-selection(CLIPBOARD) \n\
-    Ctrl Shift <Key>C:        select-end(CLIPBOARD)
-
-vim*faceName: Monospace
-vim*faceSize: 11
-vim*vt100*geometry: 80x60
-vim*saveLines: 16384
-vim*loginShell: true
-vim*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
-vim*termName: xterm-256color
-vim*eightBitInput: false
-vim*allowTitleOps: true
-vim.vt100.selectToClipboard: true
-vim*VT100*translations: #override \n\
-    Ctrl Shift <Key>V:  insert-selection(CLIPBOARD) \n\
-    Ctrl Shift <Key>C:        select-end(CLIPBOARD)
-
-<Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+    <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
 
 #define _color0        #282c34
 #define _color8        #282c34
 !RED Tag
 #define _color1        #be5046
-#define _color9        #e06c75:
+#define _color9        #e06c75
 !GRN SpecialKey
 #define _color2        #98c379
 #define _color10       #98c379
@@ -76,72 +50,26 @@ vim*VT100*translations: #override \n\
 #define _foreground    #abb2bf
 #define _background    #282c34
 #define _cursorColor   #abb2bf
-UXTerm*color0         : _color0
-UXTerm*color1         : _color1
-UXTerm*color2         : _color2
-UXTerm*color3         : _color3
-UXTerm*color4         : _color4
-UXTerm*color5         : _color5
-UXTerm*color6         : _color6
-UXTerm*color7         : _color7
-UXTerm*color8         : _color8
-UXTerm*color9         : _color9
-UXTerm*color10        : _color10
-UXTerm*color11        : _color11
-UXTerm*color12        : _color12
-UXTerm*color13        : _color13
-UXTerm*color14        : _color14
-UXTerm*color15        : _color15
-UXTerm*colorBD        : _colorBD
-UXTerm*colorIT        : _colorIT
-UXTerm*colorUL        : _colorUL
-UXTerm*foreground     : _foreground
-UXTerm*background     : _background
-UXTerm*cursorColor    : _cursorColor
 
-XTerm*color0         : _color0
-XTerm*color1         : _color1
-XTerm*color2         : _color2
-XTerm*color3         : _color3
-XTerm*color4         : _color4
-XTerm*color5         : _color5
-XTerm*color6         : _color6
-XTerm*color7         : _color7
-XTerm*color8         : _color8
-XTerm*color9         : _color9
-XTerm*color10        : _color10
-XTerm*color11        : _color11
-XTerm*color12        : _color12
-XTerm*color13        : _color13
-XTerm*color14        : _color14
-XTerm*color15        : _color15
-XTerm*colorBD        : _colorBD
-XTerm*colorIT        : _colorIT
-XTerm*colorUL        : _colorUL
-XTerm*foreground     : _foreground
-XTerm*background     : _background
-XTerm*cursorColor    : _cursorColor
-
-vim*color0         : _color0
-vim*color1         : _color1
-vim*color2         : _color2
-vim*color3         : _color3
-vim*color4         : _color4
-vim*color5         : _color5
-vim*color6         : _color6
-vim*color7         : _color7
-vim*color8         : _color8
-vim*color9         : _color9
-vim*color10        : _color10
-vim*color11        : _color11
-vim*color12        : _color12
-vim*color13        : _color13
-vim*color14        : _color14
-vim*color15        : _color15
-vim*colorBD        : _colorBD
-vim*colorIT        : _colorIT
-vim*colorUL        : _colorUL
-vim*foreground     : _foreground
-vim*background     : _background
-vim*cursorColor    : _cursorColor
-
+*.color0         : _color0
+*.color1         : _color1
+*.color2         : _color2
+*.color3         : _color3
+*.color4         : _color4
+*.color5         : _color5
+*.color6         : _color6
+*.color7         : _color7
+*.color8         : _color8
+*.color9         : _color9
+*.color10        : _color10
+*.color11        : _color11
+*.color12        : _color12
+*.color13        : _color13
+*.color14        : _color14
+*.color15        : _color15
+*.colorBD        : _colorBD
+*.colorIT        : _colorIT
+*.colorUL        : _colorUL
+*.foreground     : _foreground
+*.background     : _background
+*.cursorColor    : _cursorColor
