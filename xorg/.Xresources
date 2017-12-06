@@ -19,37 +19,28 @@
     Ctrl Shift <Key>C:        select-end(CLIPBOARD)
     <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
 
-#define _color0        #282c34
-#define _color8        #282c34
-!RED Tag
-#define _color1        #be5046
-#define _color9        #e06c75
-!GRN SpecialKey
-#define _color2        #98c379
-#define _color10       #98c379
-!YEL Keyword
-#define _color3        #d19a66
-#define _color11       #e5c07b
-!BLU Number
-#define _color4        #61afef
-#define _color12       #61afef
-!MAG Precondit
-#define _color5        #c678dd
-#define _color13       #c678dd
-!CYN Float
-#define _color6        #56b6c2
-#define _color14       #56b6c2
-!WHT Search
-#define _color7        #abb2bf
-#define _color15       #abb2bf
-!FMT Include, StatusLine, ErrorMsg
-#define _colorBD       #61afef
-#define _colorUL       #98c379
-#define _colorIT       #e06c75
-!TXT Normal, Normal, Cursor
-#define _foreground    #abb2bf
-#define _background    #282c34
-#define _cursorColor   #abb2bf
+! Colorscheme
+
+#define _color0         #282c34
+#define _color1         #be5046
+#define _color2         #76a74a
+#define _color3         #c3a44c
+#define _color4         #3f93c0
+#define _color5         #a45cae
+#define _color6         #349a93
+#define _color7         #abb2bf
+#define _color8         #4a4e56
+#define _color9         #e06c75
+#define _color10        #98c379
+#define _color11        #e5c07b
+#define _color12        #61afef
+#define _color13        #c678dd
+#define _color14        #56b6c2
+#define _color15        #89909d
+
+#define _foreground     #abb2bf
+#define _background     #282c34
+#define _cursorColor    #abb2bf
 
 *VT100*color0         : _color0
 *VT100*color1         : _color1
