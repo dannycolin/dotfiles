@@ -2,7 +2,11 @@ general {
         output_format = "i3bar"
         
 	    # Colors settings
-	    colors = false
+	    colors = true
+
+        color_good      = "#abb2bf"
+        color_degraded  = "#abb2bf" 
+        color_bad       = "#be5046"
 
 	    # Refresh rate
         interval = 5
@@ -35,6 +39,7 @@ battery 0 {
         status_full = "Full"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 20
+        threshold_type = percentage
     	last_full_capacity = true
 	    integer_battery_capacity = true
 }
