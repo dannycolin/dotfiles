@@ -85,10 +85,6 @@ nnoremap <C-w>b :enew<CR>
 " Go to previous buffer and close the last one
 nnoremap <C-w>c :bp\|bd #<CR>
 
-" move to the left or right window
-noremap <C-w>h :wincmd h<CR>
-noremap <C-w>l :wincmd l<CR>
-
 " Normal mode
 nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
