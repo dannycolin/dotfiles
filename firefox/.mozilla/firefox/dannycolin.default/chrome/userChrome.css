@@ -1,141 +1,88 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* 
-Original layout by /u/Herkt https://www.reddit.com/r/FirefoxCSS/comments/7eazix/my_attempt_at_a_oneline_interface/ 
-Use with compact density
-*/
+/* Tridactyl minimal CSS
+ *
+ * Contributors: aplaice, Oliver Blanthorn, Colin Caine
+ *
+ * Move this file to %appdata%/Mozilla/Firefox/[your-profile]/chrome/userChrome.css 
+ * Currently, it reduces the amount of padding around the UI, removes the tab bar
+ * and autohides the navigation bar. If you want to drag the window around press
+ * "alt" and then use the menu bar to move it, but you're better off pressing 
+ * the Windows key + an arrow key to move the window where you want it.
+ *
+ * If you're not on Windows, you can find your profile folder on
+ * about:support 
+ *
+ * Borrowed from https://www.reddit.com/r/FirefoxCSS/comments/73359a/my_firefox_57_setup/?utm_content=title&utm_medium=browse&utm_source=reddit&utm_name=FirefoxCSS
+ *
+ * This file is a work in progress.
+ *
+ * Any information on where to find documentation on valid properties we can edit here would be appreciated.
+ *
+ */
 
-:root:-moz-lwtheme-brighttext {                                      /* minor color changes to the default dark theme */
-  --color-overflow: #222;                                            /* >> button color */
-  --chrome-background-color: #222 !important;                        /* tab strip background & inactive tabs */
-  --chrome-secondary-background-color: #333 !important;              /* nav bar & active tab */
-  --chrome-color: #ccc !important;                                   /* url & tab text, close tab & new tab buttons */
-  background-color: #444 !important;                                 /* top border of out of focus window */
+
+/* auto-hide the tab and navigation bar in a similar way to fullscreen mode */
+
+/* User config */
+#navigator-toolbox {
+    /* The height of the area at the top of the screen that causes the nav-bar to be shown
+
+    If zero, you can still focus with <C-l> or F6.
+     */
+    --tridactyl-auto-show-zone: 10px;
 }
 
-:root:-moz-lwtheme-darktext {                                        /* minor changes to the default light theme */
-  --color-overflow: #ddd;                                            /* >> button color */
-  --chrome-background-color: #ccc !important;                        /* tab strip background & inactive tabs */
+/* Hide grey container box */
+:root:not([customizing]) #navigator-toolbox:not(:hover):not(:focus-within) { 
+    max-height: 0;
+    min-height: calc(0px); /* I have no idea why just using 0 or 0px does not work... */
 }
 
-:root {
-  --tabs-border: transparent !important;                             /* active tab left & right borders - not working in 58?*/
-  --toolbox-border-bottom-color: transparent !important;             /* 1px line under background tabs */
-  --chrome-nav-bar-controls-border-color: transparent !important;    /* border around url bar */
+/* Auto hide tab bar */
+:root:not([customizing]) #navigator-toolbox:not(:hover):not(:focus-within) #TabsToolbar { 
+    visibility: collapse;
 }
 
-/* Move Tab-bar beside Nav-bar */
-#TabsToolbar {      
-  margin-bottom: 0px !important;                /* not needed anymore? */
-  margin-top: 0px !important;                   /*  */
-  margin-left: 35vw !important;
-  margin-right: -34px !important;
-}
-
-#nav-bar {      
-  margin-bottom: -1px !important;               /* remove navbar bottom 1px border */
-  margin-top: -32px !important;
-  margin-right: 65vw !important; 
-  border-top: none !important;
-}   
-
-/* Remove padding above tabbar in compact mode */
-#main-window[sizemode="normal"] > #titlebar {
-  -moz-appearance: initial !important;
-}
-
-
-/* Back & Forward buttons */  
-#back-button > .toolbarbutton-icon,
-#forward-button > .toolbarbutton-icon {
-  transform: scale(0.9, 0.9) !important;
-  margin-left: -2px !important;
-  margin-right: -2px !important; 
-}
-
-/* Move hamburger menu to the left */
-#PanelUI-button,
-#customization-panel-container,
-#customization-panelWrapper .panel-arrow { 
-  -moz-box-ordinal-group: 0 !important;
-  margin-right: -6px !important;
-  display: none !important;
-}
-
-#appMenu-popup {
-  margin-right: -258px !important;
-}
-
-#appMenu-popup .panel-arrow {
-  margin-right: 248px !important;
-}
-
-/* More tools... button */
-#nav-bar-overflow-button { 
-  transform: scale(0.9, 0.9) !important;
-  fill: var(--color-overflow) !important;
-}  
-
-
-/* Tabs */
-.tabbrowser-tab {
-  height: 32px !important; 
-}
-
-/* Remove empty space before first tab
-Delete this rule if you need a space to drag the window*/
-#TabsToolbar .titlebar-placeholder[type="pre-tabs"]{
-    display: none !important;
-}
-
-/* Remove border between tabs
-Delete this rule if you want separators between background tabs */
-/*
-.tabbrowser-tab::after, .tabbrowser-tab::before {
-  border-left: none !important;
+/* Auto hide nav bar */
+:root:not([customizing]) #navigator-toolbox:not(:hover):not(:focus-within) #nav-bar {
+    max-height: 0;
+    min-height: 0!important;
+    /* Use margin-bottom to allow trigger zones that are larger than the nav-bar */
+    margin-bottom: calc(-1 * var(--tridactyl-auto-show-zone));
+    opacity: 0;
 } 
-*/
 
-/* Border between background tabs */
-.tabbrowser-tab::after, .tabbrowser-tab::before {
-  color: grey !important; 
-  opacity: .2 !important; 
- }
-
-/* tab line - adjust color & size, default #0a84ff 2px */
-.tab-line {
-  background-color: #0a84ff !important;
-  height: 0px !important;
-  }
-
-
-/* Hide various elements */
-/* Menu */
-#appMenu-fxa-container,                    /* Sign in to Sync */
-#appMenu-fxa-container+toolbarseparator,
-/* #appMenuRestoreLastSession, */
-#appMenu-zoom-controls,
-#appMenu-zoom-controls+toolbarseparator,
-#appMenu-edit-controls,
-#appMenu-edit-controls+toolbarseparator,
-#appMenu-library-button,
-#appMenu-customize-button,
-#appMenu-customize-button+toolbarseparator,
-#appMenu-open-file-button,
-#appMenu-save-file-button,
-#appMenu-find-button,
-#appMenu-more-button,
-
-/* URL Bar */
-#pageActionButton,
-#pocket-button-box,
-ar-button,
-.autocomplete-history-dropmarker,
-#identity-icon-labels,
-
-/* New Tab Button */
-#new-tab-button,
-.tabs-newtab-button
-{
-    display: none !important;
+/* Avoid transparent background for menubar if nav-toolbox not focussed */
+#navigator-toolbox:not(:hover):not(:focus-within) #toolbar-menubar > * {
+    /* Colour matches the grey background of the default firefox theme. Can't see what variable it uses */
+    background-color: rgb(232, 232, 231);
 }
+
+
+/* Make top bar more compact */
+
+/* Make nav-bar thinner */
+#nav-bar{
+    padding-top: 1px !important;
+    padding-bottom: 0 !important;
+}
+
+/* We need more padding when maximised (maybe just on Windows?) */
+#main-window[sizemode="maximized"] #nav-bar{
+    padding-top: 7px !important;
+}
+
+/* Hide URL notifications that aren't particularly useful and cover up the command line
+ * TODO: move it above the command line / bring functionality into status line like Vimperator */
+statuspanel[type="overLink"]{display: none !important;}
+
+/* Partial removal of black bottom 1px line shown in fullscreen mode */
+#navigator-toolbox::after { display: none !important; }
+
+/* Kill tab bar */
+#TabsToolbar { visibility: collapse; }
+
+/* Remove window decorations (Close, Minimize, Fullscreen) */
+#titlebar { display: none !important; }
+#TabsToolbar .titlebar-placeholder { display: none !important; }
