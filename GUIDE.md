@@ -218,3 +218,29 @@ you'll need to modify your `GRUB_CMDLINE_LINUX_DEFAULT` variable to look like
 
     GRUB_CMDLINE_LINUX_DEFAULT="quiet splash
 
+### Start screenlock on sleep with systemd
+
+Create a file called screenlock.service in `/etc/systemd/system/suspend.target.wants`
+that contain the following lines :
+
+```
+[Unit]
+Description=Start screenlock at suspend time
+Before=sleep.target
+
+[Service]
+User=<username>
+Type=forking
+Environment=<display>
+ExecStart=<path to your lock script>
+
+[Install]
+WantedBy=suspend.target
+```
+
+To enable it, type the following command in your terminal :
+
+```
+systemctl enable screenlock.service
+```
+
