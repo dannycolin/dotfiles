@@ -2,8 +2,8 @@
 ! .Xresources config !
 !--------------------!
 
-*.faceName: Monospace
-*.faceSize: 11
+*.faceName: Fira Code
+*.faceSize: 12
 *.vt100*geometry: 80x60
 *.saveLines: 16384
 *.loginShell: true

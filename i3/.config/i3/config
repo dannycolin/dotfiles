@@ -229,7 +229,7 @@ bar {
     status_command i3status
 
     # Font of the bar
-    font pango:monospace 11
+    font pango:FiraCode 11
 
     # Display tray icons
     tray_output none
