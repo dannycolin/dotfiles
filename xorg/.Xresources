@@ -2,7 +2,7 @@
 ! .Xresources config !
 !--------------------!
 
-*.faceName: Fira Code
+*.faceName: monospace
 *.faceSize: 12
 *.vt100*geometry: 80x60
 *.saveLines: 16384
