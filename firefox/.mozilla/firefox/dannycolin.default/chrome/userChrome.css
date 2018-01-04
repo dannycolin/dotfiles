@@ -1,60 +1,115 @@
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
-/* Minina UI
- * 
- * Contributors: Danny Colin
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. 
  *
- * based on code of : 
- *  - DrPugsley https://github.com/Timvde/UserChrome-Tweaks/blob/master/tabs/more-compact-tabs.css
- *  - Tridactyl https://github.com/cmcaine/tridactyl/blob/master/src/static/userChrome-minimal.css
+ * QuteFox
  * 
+ * Author      :    Danny Colin <contact@dannycolin.com>
+ * Description :    This script try to mimic the look of qutebrowser.
  */
 
-/* Only apply the following styles if in compact mode */
+/* BEGIN Compact theme variables */
 [uidensity="compact"]:root {
-    --tab-min-height: 22px !important;
-    --tab-font-size: 12px !important;
+    --tab-line-color: transparent !important;
+    --tab-min-height: 12px !important;
+    --newtab-margin: -3px 0 -3px -3px !important;
 }
 
-:root:not([customizing]) #navigator-toolbox:not(:hover):not(:focus-within) {
-    max-height: 0;
-    min-height: 22px !important;
-}
-
-/* Auto hide nav bar */
-:root:not([customizing]) #navigator-toolbox:not(:hover):not(:focus-within) #nav-bar {
-    max-height: 0;
-    min-height: 0 !important;
-    opacity: 0;
-}
-
-/* Remove bottom border */
-#navigator-toolbox::after {
-    display: none !important;
-}
-
-/* Make nav-bar thinner */
-#nav-bar {
-    padding-top: 1px !important;
-    padding-bottom: 0 !important;
-}
-
-/* Set tabs height to 22px */
+/* END Compact theme variables */
+    
+/* BEGIN Tabbar */
 .tabbrowser-tab {
-    font-family: var(--tab-font-family) !important;
-    font-size: var(--tab-font-size) !important;
+    font-size: 11px !important;
     max-height: var(--tab-min-height) !important;
 }
 
-/* move URL notification under tab bar */
-statuspanel[type="overLink"] {
-    display: none !important;
+/* remove tab separator*/
+.tabbrowser-tab::after, .tabbrowser-tab::before {
+    border: none !important;
 }
 
-/* Hide the following elements */
+/* If not pinned, let tabs use all the available width */
+.tabbrowser-tab:not([pinned]) {
+    max-width: unset !important;
+}
+
+.tab-icon-image {
+    max-width: 10px !important;
+}
+
+/* Change Private Icon */
+.private-browsing-indicator {
+    width: 10px !important;
+    height: 10px !important;
+}
+
+/* Change background-color and text color of active tab
+See : https://www.reddit.com/r/FirefoxCSS/comments/7cwt26/is_there_a_way_to_highlight_a_little_more_the/ */
+.tab-background[selected="true"] {
+    background-color: #98c379 !important;
+    background-image: none !important;
+}
+.tab-content[selected="true"] {
+    color: #282c34 !important;
+}
+
+/* END Tabbar */
+    
+/* BEGIN Navbar */
+#navigator-toolbox {
+    /* Move navbar to bottom */
+    display: contents !important;
+    
+}
+#nav-bar {
+    /* Move navbar to bottom */
+    -moz-box-ordinal-group: 2 !important;
+    
+    font-size: 11px !important;
+    
+    /* Reduce nav/urlbar */
+    margin-bottom: -7px !important;
+}                                         
+
+.toolbarbutton-icon {
+    margin: -3px 0 -3px -3px !important;
+    max-height: 10px !important; 
+    max-width: 10px !important;
+}
+
+#urlbar {
+    border-radius: 0 !important;
+    border: none !important;
+    
+    /* Reduce nav/urlbar + align text to right*/
+    margin: -2px 0 !important;
+    text-align: right;
+}
+
+/* END Navbar*/
+
+/* BEGIN Hide elements
+ *  
+ *  - statuspanel[type="overLink"]  Hide URL notifications
+ *  - #back-button                  Navbar previous page button
+ *  - #forward-button               Navbar next page button
+ *  - #identity-box                 Website info, ssl
+ *  - #page-action-buttons          Bookmark Star, Actions
+ *  - #PanelUI-menu-button          Hamburger menu
+ *  - .tab-close-button             Tabbar tab close button
+ *  - .tabs-newtab-button           Tabbar new tab button
+ *  - .urlbar-icon                  URL Go and History buttons
+ *
+ */
+statuspanel[type="overLink"],
+#back-button,
+#forward-button,
+#identity-box,
+#page-action-buttons,
+#PanelUI-menu-button,
 .tab-close-button,
-.tab-icon-image,
-.tabs-newtab-button
-{
+.tabs-newtab-button,
+.urlbar-icon {
     display: none !important;
 }
+/* END Hide elements*/
