@@ -29,10 +29,11 @@
 }
 
 /* If not pinned, let tabs use all the available width */
-.tabbrowser-tab:not([pinned]) {
-    max-width: unset !important;
+.tabbrowser-tab[fadein="true"]:not([pinned]) {
+    max-width: 10000px !important;
 }
 
+/* Resize favicon */
 .tab-icon-image {
     max-width: 10px !important;
 }
@@ -49,6 +50,7 @@ See : https://www.reddit.com/r/FirefoxCSS/comments/7cwt26/is_there_a_way_to_high
     background-color: #98c379 !important;
     background-image: none !important;
 }
+
 .tab-content[selected="true"] {
     color: #282c34 !important;
 }
@@ -61,6 +63,7 @@ See : https://www.reddit.com/r/FirefoxCSS/comments/7cwt26/is_there_a_way_to_high
     display: contents !important;
     
 }
+
 #nav-bar {
     /* Move navbar to bottom */
     -moz-box-ordinal-group: 2 !important;
