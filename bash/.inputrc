@@ -1,0 +1,3 @@
+# Enable Vi mode
+set editing-mode vi
+set show-mode-in-prompt
