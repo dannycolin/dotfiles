@@ -2,7 +2,7 @@
 ! .Xresources config !
 !--------------------!
 
-*.faceName: monospace
+*.faceName: DejaVu Sans Mono for Powerline
 *.faceSize: 12
 *.vt100*geometry: 80x60
 *.saveLines: 16384
