@@ -49,6 +49,7 @@ packadd! fugitive.vim
 packadd! gitgutter.vim
 packadd! nerdtree.vim
 packadd! onedark.vim
+packadd! goyo.vim
 
 """""""""""""""
 " Airline.vim "
@@ -80,13 +81,18 @@ let NERDTreeWinSize=30
 " toggle on/off treeview
 noremap <C-n> :NERDTreeToggle<CR>
 
+" Normal mode
+
+" Toggle on Goyo
+nnoremap <C-g> :Goyo<CR>
+
 " create new buffer
 nnoremap <C-w>b :enew<CR>
 
 " Go to previous buffer and close the last one
 nnoremap <C-w>c :bp\|bd #<CR>
 
-" Normal mode
+" Switch buffers
 nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
 
