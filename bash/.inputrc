@@ -1,3 +1,9 @@
-# Enable Vi mode
+# Vi mode
 set editing-mode vi
-set show-mode-in-prompt
+set show-mode-in-prompt 
+set vi-cmd-mode-string (cmd)
+set vi-ins-mode-string (ins)
+
+
+# Autocompletion case incensitive
+set completion-ignore-case on
