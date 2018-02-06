@@ -19,49 +19,44 @@
     Ctrl Shift <Key>C:        select-end(CLIPBOARD)
     <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
 
-! Colorscheme
+!-------------!
+! Colorscheme !
+!-------------!
 
-#define _color0         #282c34
-#define _color1         #be5046
-#define _color2         #76a74a
-#define _color3         #c3a44c
-#define _color4         #3f93c0
-#define _color5         #a45cae
-#define _color6         #349a93
-#define _color7         #abb2bf
-#define _color8         #4a4e56
-#define _color9         #e06c75
-#define _color10        #98c379
-#define _color11        #e5c07b
-#define _color12        #61afef
-#define _color13        #c678dd
-#define _color14        #56b6c2
-#define _color15        #89909d
+! special
+*.foreground:   #d7d3cb
+*.background:   #282c34
+*.cursorColor:  #d7d3cb
 
-#define _foreground     #abb2bf
-#define _background     #282c34
-#define _cursorColor    #abb2bf
+! black
+*.color0:       #282c34
+*.color8:       #4a4e56
 
-*VT100*color0         : _color0
-*VT100*color1         : _color1
-*VT100*color2         : _color2
-*VT100*color3         : _color3
-*VT100*color4         : _color4
-*VT100*color5         : _color5
-*VT100*color6         : _color6
-*VT100*color7         : _color7
-*VT100*color8         : _color8
-*VT100*color9         : _color9
-*VT100*color10        : _color10
-*VT100*color11        : _color11
-*VT100*color12        : _color12
-*VT100*color13        : _color13
-*VT100*color14        : _color14
-*VT100*color15        : _color15
-*VT100*colorBD        : _colorBD
-*VT100*colorIT        : _colorIT
-*VT100*colorUL        : _colorUL
-*VT100*foreground     : _foreground
-*VT100*background     : _background
-*VT100*cursorColor    : _cursorColor
+! red
+*.color1:       #be5046
+*.color9:       #e06c75
+
+! green
+*.color2:       #76a74a
+*.color10:      #98c379
+
+! yellow
+*.color3:       #c3a44c
+*.color11:      #e5c07b
+
+! blue
+*.color4:       #3f93c0
+*.color12:      #61afef
+
+! magenta
+*.color5:       #a45cae
+*.color13:      #c678dd
+
+! cyan
+*.color6:       #349a93
+*.color14:      #56b6c2
+
+! white
+*.color7:       #b5b1a9
+*.color15:      #d7d3cb
 
