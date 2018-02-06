@@ -1,8 +1,14 @@
 # Vi mode
 set editing-mode vi
 set show-mode-in-prompt 
-set vi-cmd-mode-string (cmd)
-set vi-ins-mode-string (ins)
+# Mode indicators colorscheme
+#   Background color : \e[48;5;XXXm
+#   Foreground color : \e[38;5;XXXm
+#
+#   You can also add a number in the front (e.g. \e[X;XX;X;XXXm) to set
+#   the 88 color mode. For example "1" is for bold text.
+set vi-cmd-mode-string \e[48;5;10m\e[1;38;5;0m\ NORMAL \e[48;5;0m\e[38;5;10m\e[0m
+set vi-ins-mode-string \e[48;5;12m\e[1;38;5;0m\ INSERT \e[48;5;0m\e[38;5;12m\e[0m
 
 
 # Autocompletion case incensitive

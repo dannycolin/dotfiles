@@ -111,3 +111,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Pureline
+# Customize bash PS1
+source ~/bin/pureline/pureline ~/.config/pureline/config
