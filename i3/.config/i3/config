@@ -10,46 +10,45 @@ font pango:monospace 0
 # Define 16-colors palette
 
 # black
-set $color1     "#282c34"
+set_from_resource $color0 i3wm.color0 #000000
+set_from_resource $color8 i3wm.color8 #000000
+
 # red
-set $color2     "#e06c75"
+set_from_resource $color1 i3wm.color1 #FF0000
+set_from_resource $color9 i3wm.color9 #FF0000
+
 # green
-set $color3     "#98c379"
+set_from_resource $color2 i3wm.color2 #00FF00
+set_from_resource $color10 i3wm.color10 #00FF00
+
 # yellow
-set $color4     "#e5c07b"
+set_from_resource $color3 i3wm.color3 #FFFF00
+set_from_resource $color11 i3wm.color11 #FFFF00
+
 # blue
-set $color5     "#61afef"
+set_from_resource $color4 i3wm.color4 #0000FF
+set_from_resource $color12 i3wm.color12 #0000FF
+
 # magenta
-set $color6     "#c678dd"
+set_from_resource $color5 i3wm.color5 #FF00FF
+set_from_resource $color13 i3wm.color13 #FF00FF
+
 # cyan
-set $color7     "#56b6c2"
+set_from_resource $color6 i3wm.color6 #00FFFF
+set_from_resource $color14 i3wm.color14 #00FFFF
+
 # white
-set $color8     "#abb2bf"
-# gutter grey
-set $color9     "#4b5263"
-# dark red
-set $color10    "#be5046"
-# green
-set $color11    "#98c379"
-# dark yellow
-set $color12    "#d19a66"
-# blue
-set $color13    "#61afef"
-# magenta
-set $color14    "#c678dd"
-# cyan
-set $color15    "#56b6c2"
-# comment grey
-set $color16    "#5c6370"
+set_from_resource $color7 i3wm.color7 #FFFFFF
+set_from_resource $color15 i3wm.color15 #FFFFFF
 
 # Windows colors
 # class                     border  backgr. text    indicator child_border
-client.focused              $color3 $color3 $color1 $color3   $color3
-client.focused_inactive     $color9 $color1 $color8 $color1   $color9
-client.unfocused            $color9 $color1 $color8 $color1   $color9
-client.urgent               $color2 $color2 $color8 $color2   $color2
+client.focused              $color10 $color10 $color10 $color10   $color10
+client.focused_inactive     $color8 $color8 $color8 $color8   $color8
+client.unfocused            $color8 $color8 $color8 $color8   $color8
+client.urgent               $color1 $color1 $color1 $color1   $color1
 
-client.background           $color1
+client.background           $color0
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -242,17 +241,17 @@ bar {
     colors {
 	
 	# Statusline's colors
-        background $color1
-        statusline $color8
-        separator  $color8
+        background $color0
+        statusline $color15
+        separator  $color0
 	
 	# Workspace's colors
-        #colorclass        border  background text
-        focused_workspace  $color3 $color3    $color1
-        active_workspace   $color3 $color3    $color1
-        inactive_workspace $color1 $color1    $color8
-        urgent_workspace   $color2 $color2    $color1
-        binding_mode       $color5 $color5    $color1
+        #colorclass        border   background text
+        focused_workspace  $color10 $color10   $color0
+        active_workspace   $color10 $color10   $color0
+        inactive_workspace $color0  $color0    $color15
+        urgent_workspace   $color9  $color9    $color0
+        binding_mode       $color12 $color12   $color0
     }
 }
 
