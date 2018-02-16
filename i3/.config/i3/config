@@ -3,9 +3,13 @@
 # Set the Super key as my mod key.
 set $mod Mod4
 
+# Define font properties
+set_from_resource $font-family i3wm.faceName monospace
+set_from_resource $font-size i3wm.faceSize 12
+
 # Default font
-# Workaround: Set font size to 0  to disable window title in tabbed and stacked mode
-font pango:monospace 0
+# Workaround: Set font size to 0 to disable window title in tabbed and stacked mode
+font pango:$font-family 0 
 
 # Define 16-colors palette
 
@@ -212,23 +216,6 @@ mode "window" {
 
 bindsym $mod+w mode "window"
 
-#---
-
-set $mode_gaps Gaps
-set $mode_gaps_outer Outer
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym Escape mode "default"
-}
-
-mode "$mode_gaps_outer" {
-        bindsym Escape mode "default"
-}
-
-#---
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -242,7 +229,7 @@ bar {
     status_command i3status
 
     # Font of the bar
-    font pango:monospace 11
+    font pango:$font-family $font-size
 
     # Display tray icons
     tray_output none
