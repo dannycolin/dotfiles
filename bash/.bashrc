@@ -90,6 +90,8 @@ fi
 # some more ls aliases
 alias la='ls -a'
 alias lla='ls -la'
+alias ta='tree -a'
+alias tla='tree -la'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -111,6 +113,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Ignore case on completion
+bind 'set completion-ignore-case on'
+
 # Pureline
 # Customize bash PS1
-source ~/bin/pureline/pureline ~/.config/pureline/config
+source ~/.local/bin/pureline/pureline ~/.config/pureline/config
+
