@@ -88,10 +88,10 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias la='ls -a'
-alias lla='ls -la'
-alias ta='tree -a'
-alias tla='tree -la'
+alias la='ls -a --group-directories-first'
+alias lla='ls -la --group-directories-first'
+alias ta='tree -a --dirsfirst'
+alias tla='tree -la --dirsfirst'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -116,6 +116,9 @@ fi
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Set $HOSTNAME ENVVAR
+export HOSTNAME=$HOSTNAME
 
 # Ignore case on completion
 bind 'set completion-ignore-case on'
