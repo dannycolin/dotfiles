@@ -65,3 +65,5 @@
 *color7:       #b5b1a9
 *color15:      #d7d3cb
 
+! Specifies whether to combine bold attribute with a brighter color or not.
+*boldColors: false
