@@ -66,4 +66,4 @@ bind 'set completion-ignore-case on'
 
 # [WIP] PromptLine
 # A Powerline in Pure Bash
-source ~/Projects/promptline/promptline
+source ~/Projects/bashline/bashline
