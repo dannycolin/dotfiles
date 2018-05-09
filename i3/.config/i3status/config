@@ -4,9 +4,9 @@ general {
 	    # Colors settings
 	    colors = true
 
-        color_good      = "#d7d3cb"
-        color_degraded  = "#d7d3cb" 
-        color_bad       = "#e06c75"
+        color_good      = "#c8ccd4"
+        color_degraded  = "#c8ccd4" 
+        color_bad       = "#c8ccd4"
 
 	    # Refresh rate
         interval = 5
