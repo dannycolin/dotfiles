@@ -1,12 +1,12 @@
 general {
         output_format = "i3bar"
-        
+
 	    # Colors settings
 	    colors = true
 
         color_good      = "#c8ccd4"
         color_degraded  = "#c8ccd4" 
-        color_bad       = "#c8ccd4"
+        color_bad       = "#e06c75"
 
 	    # Refresh rate
         interval = 5
