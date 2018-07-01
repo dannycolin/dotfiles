@@ -122,7 +122,7 @@ set $w3 3:web
 set $w4 4:mail
 set $w5 5:code
 set $w6 6:chat
-set $w7 7:misc
+set $w7 7:graph
 set $w8 8:misc
 set $w9 9:misc
 
@@ -154,17 +154,19 @@ bindsym $mod+Shift+Tab workspace prev
 
 # Automatically putting clients on specific workspaces
 
-assign [class="Firefox"] $w3
-assign [class="^Mumble$"] $w6
-assign [class="^Pcmanfm$"] $w1
-assign [class="^Thunderbird$"] $w4
-assign [class="^UXTerm$"] $w2
+assign [class="^Pcmanfm$"]      $w1
+assign [class="^UXTerm$"]       $w2
+assign [class="Firefox"]        $w3
+assign [class="^Thunderbird$"]  $w4
+assign [class="^Mumble$"]       $w6
+assign [class="Gimp"]           $w7
+assign [class="^Inkscape$"]     $w7
 # To detect terminal app, we need a .desktop where the exec line
 # looks like :
 #
 #   uxterm -class <name> -e <program_name> <options>
 assign [class="^vifm$"] $w1
-assign [class="^vim$"] $w5
+assign [class="^vim$"]  $w5
 
 # Disable window title
 new_window pixel 4
