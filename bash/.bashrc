@@ -64,6 +64,5 @@ export HOSTNAME=$HOSTNAME
 # Ignore case on completion
 bind 'set completion-ignore-case on'
 
-# [WIP] PromptLine
-# A Powerline in Pure Bash
-source ~/Projects/bashline/bashline
+# Customize PS1
+source ~/.bashline

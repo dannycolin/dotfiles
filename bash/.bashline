@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+declare -A s=(
+  [0,a]="$(tput setab 10)" # background green
+  [0,c]="$(tput setab 12)" # background blue
+  [1,0]="$(tput setaf 0)"  # foreground black
+  [b]="$(tput bold)"       # bold
+  [c]="$(tput sgr0)"       # clear all styles
+  [r]="$(tput rev)"        # reverse colors
+)
+
+bind 'set editing-mode vi'
+bind 'set show-mode-in-prompt on'
+
+bind 'set vi-ins-mode-string \1'${s[0,c]}${s[1,0]}${s[b]}'\2 INSERT \1'${s[r]}'\2\1'${s[c]}'\2'
+bind 'set vi-cmd-mode-string \1'${s[0,a]}${s[1,0]}${s[b]}'\2 NORMAL \1'${s[r]}'\2\1'${s[c]}'\2'
+
+bashline::prompt() {
+  PS1=" \w\$ "
+  PROMPT_DIRTRIM=3
+}
+
+PROMPT_COMMAND="bashline::prompt; $PROMPT_COMMAND"
