@@ -200,7 +200,7 @@ mode "system" {
     # current session (e) exit (l) lock (r) reboot (p) poweroff
     bindsym e exec i3-msg exit
     # bindsym l exec i3lock -c "#282c34", mode "default"
-    bindsym l exec i3lock -i "/home/sdk/Pictures/Wallpapers/fox-blur.png", mode "default"
+    bindsym l exec i3lock -i "/home/sdk/Pictures/Wallpapers/current-blur.png", mode "default"
     bindsym r exec systemctl reboot
     bindsym p exec systemctl poweroff
 
@@ -239,4 +239,4 @@ bindsym $mod+w mode "window"
 # Execute programs
 
 # Set background image
-exec --no-startup-id feh --bg-scale /home/sdk/Pictures/Wallpapers/fox.jpg
+exec --no-startup-id feh --bg-scale /home/sdk/Pictures/Wallpapers/current.jpg
