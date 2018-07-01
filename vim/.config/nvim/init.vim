@@ -20,7 +20,7 @@ set mouse=                  " NO MOUSE VIM !!!
 set number                  " show linenumbers
 set noswapfile              " turn off swapfile
 
-" Indentation 
+" Indentation
 set autoindent
 set expandtab
 set shiftwidth=2
@@ -56,6 +56,7 @@ packadd! fugitive.vim
 packadd! gitgutter.vim
 packadd! nerdtree.vim
 packadd! onedark.vim
+packadd! twig.vim
 
 """""""""""""""
 " Airline.vim "
@@ -86,13 +87,14 @@ let NERDTreeDirArrows = 1
 
 " Show netrw
 nnoremap <C-\> :NERDTreeToggle<CR>
-
 " Go to previous buffer and close the last one
 nnoremap <C-w>c :bp\|bd #<CR>
 
-" Switch buffers
-nnoremap <silent> <Tab> :bn<CR>
-nnoremap <silent> <S-Tab> :bp<CR>
+" Switch buffers 
+"   Prevent opening the file in NerdTree by moving the cursor to the next
+"   buffer before switching to the next/prev buffer.
+nnoremap <silent> <expr> <Tab> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":bn\<CR>"
+nnoremap <silent> <expr> <S-Tab> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":bp\<CR>"
 
 " remap shift+: to space
 nnoremap <space> :
