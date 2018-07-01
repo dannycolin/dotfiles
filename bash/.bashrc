@@ -28,10 +28,10 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     alias la='ls -a --group-directories-first'
-    alias lla='ls -la --group-directories-first'
+    alias lla='ls -lha --group-directories-first'
     alias grep='grep --color=auto'
-    alias ta='tree -a --dirsfirst'
-    alias tla='tree -la --dirsfirst'
+    alias ta='tree -a --dirsfirst -I ".git|node_modules"'
+    alias tla='tree -lha --dirsfirst -I ".git|node_modules"'
 fi
 
 # Alias definitions.
