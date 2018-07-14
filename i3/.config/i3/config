@@ -112,9 +112,6 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
-
 # set workspace
 set $w1 1:files
 set $w2 2:term
@@ -230,6 +227,15 @@ mode "window" {
     bindsym s layout toggle split, mode "default"
     bindsym t layout tabbed, mode "default"
     bindsym f fullscreen toggle, mode "default"
+    
+    # Split workspace
+    bindsym h split h, mode "default"
+    bindsym v split v, mode "default"
+
+    # focus the parent/child container
+    bindsym $mod+p focus parent, mode "default"
+    bindsym $mod+c focus child, mode "default"
+
     # back to normal mode by pressing Esc
     bindsym Escape mode "default"
 }
