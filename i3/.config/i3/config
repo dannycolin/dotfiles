@@ -150,7 +150,7 @@ bindsym $mod+Shift+Tab workspace prev
 assign [class="^Pcmanfm$"]      $w1
 assign [class="^UXTerm$"]       $w2
 assign [class="Firefox"]        $w3
-assign [class="^Thunderbird$"]  $w4
+assign [class="^Sylpheed$"]     $w4
 assign [class="^Mumble$"]       $w6
 assign [class="Gimp"]           $w7
 assign [class="^Inkscape$"]     $w7
