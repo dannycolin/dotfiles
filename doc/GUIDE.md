@@ -97,7 +97,9 @@ Use the followeing command :
 
 Change value in `/sys/class/backlight/intel_backlight/brightness`.
 
-*Note : On my thinkpad E450 100% egal to 937*
+*Note :* 
+  - On my thinkpad E450 100% egal to 937
+  - On my thinkpad x230 100% egal to 4438
 
 ### How to bind function key
 
