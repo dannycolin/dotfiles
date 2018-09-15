@@ -19,7 +19,7 @@ set fileencoding=utf-8      " the encoding written to file
 set mouse=                  " NO MOUSE VIM !!!
 set number                  " show linenumbers
 set noswapfile              " turn off swapfile
-set showmatch               " hightlight matching elements like ({[
+set hidden
 
 " Indentation
 set autoindent
@@ -51,33 +51,24 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 " Load plugins "
 """"""""""""""""
 
-packadd! airline.vim
-packadd! emmet.vim
-packadd! fugitive.vim
-packadd! gitgutter.vim
-packadd! nerdtree.vim
-packadd! onedark.vim
-packadd! twig.vim
+packadd! buftabline.vim   " rewrite my own version? At least statusline.vim.
+packadd! nerdtree.vim     " Use :Lexplore instead
+packadd! onedark.vim      " Check how to split language in their own file
+                          " and create a photon.vim 
+packadd! emmet.vim        " Load it only for html, css file
 
-"""""""""""""""
-" Airline.vim "
-"""""""""""""""
+""""""""""""""""""
+" Buftabline.vim "
+""""""""""""""""""
 
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-
-"""""""""""""
-" Emmet.vim "
-"""""""""""""
-
-let g:user_emmet_expandabbr_key = '<C-e>'
+let g:buftabline_indicators = 1
 
 """"""""""""""""
 " Nerdtree.vim "
 """"""""""""""""
 
 let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
@@ -85,19 +76,44 @@ let NERDTreeDirArrows = 1
 " 2. Key mapping "
 """"""""""""""""""
 
-" Show netrw
+" Show NERDTree 
 nnoremap <C-\> :NERDTreeToggle<CR>
+
 " Go to previous buffer and close the last one
 nnoremap <C-w>c :bp\|bd #<CR>
 
 " Switch buffers 
 "   Prevent opening the file in NerdTree by moving the cursor to the next
 "   buffer before switching to the next/prev buffer.
-nnoremap <silent> <expr> <Tab> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":bn\<CR>"
-nnoremap <silent> <expr> <S-Tab> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":bp\<CR>"
+nnoremap <silent> <expr> <C-n> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":bn\<CR>"
+nnoremap <silent> <expr> <C-p> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":bp\<CR>"
 
 " remap shift+: to space
 nnoremap <space> :
+
+" Autoclose 
+inoremap <<TAB> <><ESC>ha
+inoremap (<TAB> ()<ESC>ha
+inoremap [<TAB> []<ESC>ha
+inoremap {<TAB> {}<ESC>ha
+
+"""""""""""""""""
+" 3. Statusline "
+"""""""""""""""""
+
+set laststatus=2
+set statusline=
+set statusline+=%f
+set statusline+=%m
+set statusline+=%r
+set statusline+=%=
+set statusline+=%y
+set statusline+=[%{&fileencoding?&fileencoding:&encoding}]
+set statusline+=[%{&fileformat}]
+set statusline+=\ %l
+set statusline+=/%L
+set statusline+=:
+set statusline+=%c
 
 """"""""""""""""""""""""""
 " 3. Syntax highlighting "
