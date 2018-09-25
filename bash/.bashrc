@@ -58,11 +58,6 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-# Set $HOSTNAME ENVVAR
-export HOSTNAME=$HOSTNAME
-
 # Ignore case on completion
 bind 'set completion-ignore-case on'
 
-# Customize PS1
-source ~/.bashline
