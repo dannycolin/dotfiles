@@ -6,7 +6,7 @@
 | :------------------------- | :---------------------------------- |
 | Super + [0-9]              | Switch to workspace [0-9]           |
 | Super + Shift + [0-9]      | Move application to workspace [0-9] |
-| Super + d                  | Toggle float window                 |
+| Super + d                  | Toggle float (detach) window        |
 | Super + f                  | Toggle fullscreen                   |
 | Super + h                  | Focus left window                   | 
 | Super + j                  | Focus bottom window                 |
@@ -18,8 +18,8 @@
 | Super + Shift + l          | Move window to right                |
 | Super + m                  | Open menu                           |
 | Super + Shift + r          | Restart i3                          |
-| Super + x                  | Split window horizontally           |
-| Super + y                  | Split window vertically             |
+| Super + x                  | Split window horizontally (X axis)  |
+| Super + y                  | Split window vertically (Y axis)    |
 | Super + minus              | Shrink window horizontally          |
 | Super + equal              | Grow window horizontally            |
 | Super + Shift + underscore | Shrink window vertically            |
