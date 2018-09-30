@@ -185,19 +185,7 @@ mode "system" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+s mode "system"
-
-# window mode
-mode "window" {
-    # Split workspace
-    bindsym h split h, mode "default"
-    bindsym v split v, mode "default"
-    
-    # back to normal mode by pressing Esc
-    bindsym Escape mode "default"
-}
-
-bindsym $mod+w mode "window"
+bindsym $mod+s mode "system"
 
 # ------------------------------
 # Startup programs
