@@ -8,7 +8,7 @@ rofi.lines:                          5
 rofi.yoffset:                        24
 
 ! "Font to use" Set from: Default
-rofi.font:                           monospace 11
+rofi.font:                           monospace 12
 
 ! "Border width" Set from: Default
 rofi.bw:                             4
