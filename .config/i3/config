@@ -1,4 +1,16 @@
+# --------------------------------------------------
 # i3 config file
+#
+# 0. Variables
+# 1. Window Manager (containers and bar)
+# 2. Applications assignment
+# 3. Modes
+# 4. Keybinds
+# --------------------------------------------------
+
+# --------------------------------------------------
+# 0. Variables
+# --------------------------------------------------
 
 # Set the Super key as my mod key.
 set $mod Mod4
@@ -6,10 +18,6 @@ set $mod Mod4
 # Define font properties
 set $font-family monospace
 set $font-size 10
-
-# Default font
-# Workaround: Set font size to 0 to disable window title in tabbed and stacked mode
-font pango:$font-family 0 
 
 # Define 16-colors palette
 set $base00 #282c34
@@ -29,7 +37,101 @@ set $base0D #61afef
 set $base0E #c678dd
 set $base0F #be5046
 
-# Basic bar configuration using the Base16 variables.
+# Define workspaces' name
+set $w1 1:files
+set $w2 2:term
+set $w3 3:web
+set $w4 4:mail
+set $w5 5:code
+set $w6 6:chat
+set $w7 7:graph
+set $w8 8:misc
+set $w9 9:misc
+set $w0 10:misc
+
+# --------------------------------------------------
+# 1. Window Manager
+# --------------------------------------------------
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+r restart
+
+# Set background image
+exec --no-startup-id feh --bg-scale /home/sdk/Pictures/Wallpapers/current.jpg
+
+# Default font
+# Workaround: Set font size to 0 to disable window title in tabbed and stacked mode
+font pango:$font-family 0 
+
+# focus follows mouse
+focus_follows_mouse no
+
+# Toggle fullscreen
+bindsym $mod+f fullscreen toggle
+
+# Toggle split horizontal or vertical
+bindsym $mod+y split vertical
+bindsym $mod+x split horizontal
+
+# Basic color configuration using the Base16 variables for windows and borders.
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          $base05 $base0D $base00 $base0D $base0D
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background               $base07
+
+# Disable window title
+new_window pixel 4
+new_float pixel 4
+
+# delaying urgeny hint reset on workspace change
+force_display_urgency_hint 2500 ms
+
+# toggle tiling / floating
+bindsym $mod+d floating toggle
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# switch to workspace
+bindsym $mod+1 workspace $w1
+bindsym $mod+2 workspace $w2
+bindsym $mod+3 workspace $w3
+bindsym $mod+4 workspace $w4
+bindsym $mod+5 workspace $w5
+bindsym $mod+6 workspace $w6
+bindsym $mod+7 workspace $w7
+bindsym $mod+8 workspace $w8
+bindsym $mod+9 workspace $w9
+bindsym $mod+0 workspace $w0
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $w1
+bindsym $mod+Shift+2 move container to workspace $w2
+bindsym $mod+Shift+3 move container to workspace $w3
+bindsym $mod+Shift+4 move container to workspace $w4
+bindsym $mod+Shift+5 move container to workspace $w5
+bindsym $mod+Shift+6 move container to workspace $w6
+bindsym $mod+Shift+7 move container to workspace $w7
+bindsym $mod+Shift+8 move container to workspace $w8
+bindsym $mod+Shift+9 move container to workspace $w9
+bindsym $mod+Shift+0 move container to workspace $w0
+
+# i3status bar
 bar {
     # Position of the bar on the screen [top|bottom]
     position top
@@ -57,93 +159,25 @@ bar {
     }
 }
 
-# Basic color configuration using the Base16 variables for windows and borders.
-# Property Name         Border  BG      Text    Indicator Child Border
-client.focused          $base05 $base0D $base00 $base0D $base0D
-client.focused_inactive $base01 $base01 $base05 $base03 $base01
-client.unfocused        $base01 $base00 $base05 $base01 $base01
-client.urgent           $base08 $base08 $base00 $base08 $base08
-client.placeholder      $base00 $base00 $base05 $base00 $base00
-client.background $base07
+# --------------------------------------------------
+# 2. Applications
+# --------------------------------------------------
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# kill focused application
+bindsym $mod+q kill
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
-# kill focused window
-bindsym $mod+Shift+q kill
-
 # Show rofi application menu
-bindsym $mod+a exec --no-startup-id rofi -show drun
+bindsym $mod+m exec --no-startup-id rofi -show drun
 
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# focus follows mouse
-focus_follows_mouse no
-
-# delaying urgeny hint reset on workspace change
-force_display_urgency_hint 2500 ms
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# set workspace
-set $w1 1:files
-set $w2 2:term
-set $w3 3:web
-set $w4 4:mail
-set $w5 5:code
-set $w6 6:chat
-set $w7 7:graph
-set $w8 8:misc
-set $w9 9:misc
-set $w0 10:misc
-
-# switch to workspace
-bindsym $mod+1 workspace $w1
-bindsym $mod+2 workspace $w2
-bindsym $mod+3 workspace $w3
-bindsym $mod+4 workspace $w4
-bindsym $mod+5 workspace $w5
-bindsym $mod+6 workspace $w6
-bindsym $mod+7 workspace $w7
-bindsym $mod+8 workspace $w8
-bindsym $mod+9 workspace $w9
-bindsym $mod+0 workspace $w0
-
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $w1
-bindsym $mod+Shift+2 move container to workspace $w2
-bindsym $mod+Shift+3 move container to workspace $w3
-bindsym $mod+Shift+4 move container to workspace $w4
-bindsym $mod+Shift+5 move container to workspace $w5
-bindsym $mod+Shift+6 move container to workspace $w6
-bindsym $mod+Shift+7 move container to workspace $w7
-bindsym $mod+Shift+8 move container to workspace $w8
-bindsym $mod+Shift+9 move container to workspace $w9
-bindsym $mod+Shift+0 move container to workspace $w0
-
-# ------------------------------
 # Assign programs to workspace
 #
 # To detect terminal app, we need a .desktop where the exec line
 # looks like :
 #
 #   uxterm -class <name> -e <program_name> <options>
-# ------------------------------
-
 assign [class="^vifm$"]         $w1
 assign [class="^UXTerm$"]       $w2
 assign [class="Firefox"]        $w3
@@ -152,12 +186,48 @@ assign [class="^vim$"]          $w5
 assign [class="Gimp"]           $w7
 assign [class="^Inkscape$"]     $w7
 
-# Disable window title
-new_window pixel 4
-new_float pixel 4
+# ------------------------------
+# 3. Modes
+# ------------------------------
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+# applications mode
+mode "applications" {
+  bindsym b exec firefox      , mode "default"
+#  bindsym c exec uxterm       , mode "default"
+#  bindsym e exec thunderbird  , mode "default"
+#  bindsym f exec vifm         , mode "default"
+#  bindsym g exec gimp         , mode "default"
+#  bindsym i exec weechat      , mode "default"
+#  bindsym p exec okular       , mode "default"
+#  bindsym t exec vim          , mode "default"
+#  bindsym v exec inkscape     , mode "default"
+#  bindsym w exec writer       , mode "default"
+#  bindsym s exec calc         , mode "default"
+
+  bindsym Escape mode "default"
+}
+bindsym $mod+a mode "applications"
+
+# system mode
+mode "system" {
+  bindsym l exec i3lock -i "/home/sdk/Pictures/Wallpapers/current-blur.png", mode "default"
+  bindsym r exec systemctl reboot
+  bindsym p exec systemctl poweroff
+
+  #back to normal mode by pressing Esc
+  bindsym Escape mode "default"
+}
+bindsym $mod+s mode "system"
+
+# ------------------------------
+# 4. Keybinds
+# ------------------------------
+
+# Resize window
+bindsym $mod+minus resize shrink width 5 px or 5 ppt
+bindsym $mod+equal resize grow width 5 px or 5 ppt
+bindsym $mod+Shift+underscore resize shrink height 5 px or 5 ppt
+bindsym $mod+Shift+plus resize grow height 5 px or 5 ppt
 
 # control volume
 bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo false; pactl set-sink-volume 0 -5%"
@@ -169,25 +239,3 @@ bindsym XF86AudioMicMute exec --no-startup-id "pactl set-source-mute alsa_input.
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10"
 bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 10"
 
-# ------------------------------
-# Modes
-# ------------------------------
-
-# system mode
-mode "system" {
-    bindsym l exec i3lock -i "/home/sdk/Pictures/Wallpapers/current-blur.png", mode "default"
-    bindsym r exec systemctl reboot
-    bindsym p exec systemctl poweroff
-
-    #back to normal mode by pressing Esc
-    bindsym Escape mode "default"
-}
-
-bindsym $mod+s mode "system"
-
-# ------------------------------
-# Startup programs
-# ------------------------------
-
-# Set background image
-exec --no-startup-id feh --bg-scale /home/sdk/Pictures/Wallpapers/current.jpg
