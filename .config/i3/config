@@ -5,7 +5,7 @@ set $mod Mod4
 
 # Define font properties
 set $font-family monospace
-set $font-size 12
+set $font-size 10
 
 # Default font
 # Workaround: Set font size to 0 to disable window title in tabbed and stacked mode
@@ -144,11 +144,9 @@ bindsym $mod+Shift+0 move container to workspace $w0
 #   uxterm -class <name> -e <program_name> <options>
 # ------------------------------
 
-assign [class="^Pcmanfm$"]      $w1
 assign [class="^vifm$"]         $w1
 assign [class="^UXTerm$"]       $w2
 assign [class="Firefox"]        $w3
-assign [class="^Sylpheed$"]     $w4
 assign [class="^Thunderbird$"]  $w4
 assign [class="^vim$"]          $w5
 assign [class="Gimp"]           $w7
