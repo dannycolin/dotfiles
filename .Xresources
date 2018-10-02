@@ -36,6 +36,10 @@ xterm*termName: xterm-256color
 *background:   #282c34
 *cursorColor:  #d7d3cb
 
+#ifdef ENV_HOME
+  xterm*background: #00ff00
+#endif
+
 ! black
 *color0:       #282c34
 *color8:       #4a4e56
