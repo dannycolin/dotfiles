@@ -2,9 +2,17 @@
 ! .Xresources config !
 !--------------------!
 
+! Define font size based on screen size
+#if WIDTH == 1366
+  #define FONT_SIZE 10
+#elif WIDTH == 1920
+  #define FONT_SIZE 12
+#endif
+
 ! Set font properties
 *faceName: DejaVu Sans Mono for Powerline
-*faceSize: 12
+*faceSize: FONT_SIZE
+rofi.font: monospace FONT_SIZE
 
 ! Save X numbers of line in history
 *saveLines: 16384
@@ -35,10 +43,6 @@ xterm*termName: xterm-256color
 *foreground:   #d7d3cb
 *background:   #282c34
 *cursorColor:  #d7d3cb
-
-#ifdef ENV_HOME
-  xterm*background: #00ff00
-#endif
 
 ! black
 *color0:       #282c34

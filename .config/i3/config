@@ -16,8 +16,8 @@
 set $mod Mod4
 
 # Define font properties
-set $font-family monospace
-set $font-size 10
+set_from_resource $font-family faceName monospace
+set_from_resource $font-size faceSize 12
 
 # Define 16-colors palette
 set $base00 #282c34

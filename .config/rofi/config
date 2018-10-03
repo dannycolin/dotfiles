@@ -7,8 +7,9 @@ rofi.lines:                          5
 ! "Y-offset relative to location" Set from: Default
 rofi.yoffset:                        24
 
-! "Font to use" Set from: Default
-rofi.font:                           monospace 12
+! "Font to use" Set from: Default (NOTE: the font is setted in .Xresources)
+! 
+! rofi.font:                           monospace FONT_SIZE
 
 ! "Border width" Set from: Default
 rofi.bw:                             4
