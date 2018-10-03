@@ -54,7 +54,7 @@ set $w0 10:misc
 # --------------------------------------------------
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+r restart
+bindsym $mod+Shift+r restart
 
 # Set background image
 exec --no-startup-id feh --bg-scale /home/sdk/Pictures/Wallpapers/current.jpg
@@ -164,13 +164,13 @@ bar {
 # --------------------------------------------------
 
 # kill focused application
-bindsym $mod+q kill
+bindsym $mod+Shift+q kill
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
 # Show rofi application menu
-bindsym $mod+m exec --no-startup-id rofi -show drun
+bindsym $mod+a exec --no-startup-id rofi -show drun
 
 # Assign programs to workspace
 #
@@ -206,7 +206,7 @@ mode "applications" {
 
   bindsym Escape mode "default"
 }
-bindsym $mod+a mode "applications"
+bindsym $mod+Shift+a mode "applications"
 
 # system mode
 mode "system" {
@@ -217,7 +217,7 @@ mode "system" {
   #back to normal mode by pressing Esc
   bindsym Escape mode "default"
 }
-bindsym $mod+s mode "system"
+bindsym $mod+Shift+s mode "system"
 
 # ------------------------------
 # 4. Keybinds

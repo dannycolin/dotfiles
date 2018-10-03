@@ -6,6 +6,7 @@
 | :------------------------- | :---------------------------------- |
 | Super + [0-9]              | Switch to workspace [0-9]           |
 | Super + Shift + [0-9]      | Move application to workspace [0-9] |
+| Super + a                  | Open menu                           |
 | Super + d                  | Toggle float (detach) window        |
 | Super + f                  | Toggle fullscreen                   |
 | Super + h                  | Focus left window                   | 
@@ -16,7 +17,7 @@
 | Super + Shift + j          | Move window to bottom               |
 | Super + Shift + k          | Move window to top                  |
 | Super + Shift + l          | Move window to right                |
-| Super + m                  | Open menu                           |
+| Super + Shift + q          | Close focused application           |
 | Super + Shift + r          | Restart i3                          |
 | Super + x                  | Split window horizontally (X axis)  |
 | Super + y                  | Split window vertically (Y axis)    |
@@ -24,12 +25,13 @@
 | Super + equal              | Grow window horizontally            |
 | Super + Shift + underscore | Shrink window vertically            |
 | Super + Shift + plus       | Grow window vertically              |
-| ========================== | =================================== |
-| Super + s                  | System mode                         |
+| **Modes**                  |                                     |
+| **System**                 |                                     |
+| Super + Shift + s          | System mode                         |
 |         p                  | Poweroff                            |
 |         r                  | Restart                             |
-| ========================== | =================================== |
-| Super + a                  | Applications mode                   |
+| **Applications**           |                                     |
+| Super + Shift + a          | Applications mode                   |
 |         b                  | Web Browser                         |
 |         c                  | Console (Terminal)                  |
 |         e                  | Email Client                        |
