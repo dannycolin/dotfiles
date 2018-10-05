@@ -52,11 +52,18 @@ endif
 " Load plugins "
 """"""""""""""""
 
+packadd! autosave.vim
 packadd! buftabline.vim
 packadd! emmet.vim
 packadd! gitgutter.vim
 packadd! nerdtree.vim
 packadd! onedark.vim
+
+""""""""""""""""
+" Autosave.vim "
+""""""""""""""""
+
+let g:auto_save_silent = 1  " do not display the auto-save notification
 
 """""""""""""
 " Emmet.vim "
