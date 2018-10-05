@@ -52,18 +52,13 @@ endif
 " Load plugins "
 """"""""""""""""
 
-packadd! autosave.vim
+" Move autocmd to a separate plugin
+autocmd InsertLeave,TextChanged * if expand('%') != '' | silent update | endif
 packadd! buftabline.vim
 packadd! emmet.vim
 packadd! gitgutter.vim
 packadd! nerdtree.vim
 packadd! onedark.vim
-
-""""""""""""""""
-" Autosave.vim "
-""""""""""""""""
-
-let g:auto_save_silent = 1  " do not display the auto-save notification
 
 """""""""""""
 " Emmet.vim "
