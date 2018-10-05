@@ -16,7 +16,7 @@
 set clipboard=unnamedplus " Always use CLIPBOARD
 set laststatus=2          " Always show statusline
 set mouse=                " NO MOUSE VIM !!!
-set number                " show linenumbers
+set relativenumber        " show linenumbers
 filetype plugin on        " set config specific to filetype
 
 " Files
