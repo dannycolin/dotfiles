@@ -1,5 +1,6 @@
-DOTHOME := "$(HOME)/Projects/dotfiles"
-CONFIG	:= "$(HOME)/Projects/dotfiles/.config"
+DOTHOME 	:= "$(HOME)/Projects/dotfiles"
+DOTCONFIG	:= "$(HOME)/Projects/dotfiles/_config"
+CONFIG		:= "$(HOME)/Projects/dotfiles/_config"
 
 .PHONY: help
 .SILENT: help install
@@ -17,19 +18,19 @@ help:
 
 install:
 	# dothome
-	ln -fs $(DOTHOME)/.bashrc $(HOME)/.bashrc
-	ln -fs $(DOTHOME)/.gtk-2.0 $(HOME)/.gtk-2.0
-	ln -fs $(DOTHOME)/.profile $(HOME)/.profile
-	ln -fs $(DOTHOME)/.Xresources $(HOME)/.Xresources
+	ln -fs $(DOTHOME)/_bashrc 		$(HOME)/.bashrc
+	ln -fs $(DOTHOME)/_gtk-2.0 		$(HOME)/.gtk-2.0
+	ln -fs $(DOTHOME)/_profile 		$(HOME)/.profile
+	ln -fs $(DOTHOME)/_Xresources $(HOME)/.Xresources
 	# .config
-	ln -fs $(CONFIG)/fontconfig/fonts.conf $(HOME)/.config/fontconfig/fonts.conf
-	ln -fs $(CONFIG)/gtk-3.0/settings.ini $(HOME)/.config/gtk-3.0/settings.ini
-	ln -fs $(CONFIG)/htop/htoprc $(HOME)/.config/htop/htoprc
-	ln -fs $(CONFIG)/i3/config $(HOME)/.config/i3/config
-	ln -fs $(CONFIG)/i3status/config $(HOME)/.config/i3status/config
-	ln -fs $(CONFIG)/nvim/init.vim $(HOME)/.config/nvim/init.vim
-	ln -fs $(CONFIG)/rofi/config $(HOME)/.config/rofi/config
-	ln -fs $(CONFIG)/vifm/vifmrc $(HOME)/.config/vifm/vifmrc
+	ln -fs $(DOTCONFIG)/fontconfig/fonts.conf $(CONFIG)/fontconfig/fonts.conf
+	ln -fs $(DOTCONFIG)/gtk-3.0/settings.ini 	$(CONFIG)/gtk-3.0/settings.ini
+	ln -fs $(DOTCONFIG)/htop/htoprc 					$(CONFIG)/htop/htoprc
+	ln -fs $(DOTCONFIG)/i3/config 						$(CONFIG)/i3/config
+	ln -fs $(DOTCONFIG)/i3status/config 			$(CONFIG)/i3status/config
+	ln -fs $(DOTCONFIG)/nvim/init.vim 				$(CONFIG)/nvim/init.vim
+	ln -fs $(DOTCONFIG)/rofi/config 					$(CONFIG)/rofi/config
+	ln -fs $(DOTCONFIG)/vifm/vifmrc 					$(CONFIG)/vifm/vifmrc
 
 uninstall:
 	# dothome
