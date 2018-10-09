@@ -1,6 +1,6 @@
 DOTHOME 	:= "$(HOME)/Projects/dotfiles"
 DOTCONFIG	:= "$(HOME)/Projects/dotfiles/_config"
-CONFIG		:= "$(HOME)/Projects/dotfiles/_config"
+CONFIG		:= "$(HOME)/.config"
 
 .PHONY: help
 .SILENT: help install
