@@ -1,0 +1,56 @@
+# My setup
+
+## Debian packages
+
+- feh
+- firmware-iwlwifi
+- gimp
+- git
+- gnome-themes-standard
+- gparted
+- gvfs-bin
+- gvfs-fuse
+- htop
+- i3-wm
+- i3lock
+- i3status
+- inkscape
+- keepassx
+- libgtk-3-0
+- libreoffice-calc
+- libreoffice-gtk3
+- libreoffice-writer
+- lm-sensors
+- mosh
+- mpv
+- neovim
+- network-manager
+- okular
+- pulseaudio
+- pwgen
+- rofi
+- ruby-dev
+- sshfs
+- transmission
+- transmission-gtk
+- tree
+- vifm
+- xbacklight
+- xorg
+
+## Firefox extensions
+
+- uBlock Origin
+- uMatrix
+- Privacy Badger
+- HTTPS Everywhere
+- Firefox Multi-Accounts
+- Axe
+
+# VIM extensions
+
+- buftabline
+- nerdtree
+- emmet
+- onedark
+- gitgutter
