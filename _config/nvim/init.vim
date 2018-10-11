@@ -16,7 +16,6 @@
 set clipboard=unnamedplus " Always use CLIPBOARD
 set laststatus=2          " Always show statusline
 set mouse=                " NO MOUSE VIM !!!
-set relativenumber        " show linenumbers
 filetype plugin on        " set config specific to filetype
 
 " Files
@@ -27,6 +26,12 @@ set noswapfile            " turn off swapfile
 set nobackup              " turn off backup file
 set showmatch             " hightlight matching bracket ({[
 set undofile              " Keep an history of undo
+
+" Line number
+" Show relative line number from current line
+" but still show the current line number
+set number
+set relativenumber
 
 " Indentation
 set autoindent
