@@ -1,6 +1,6 @@
-!--------------------!
-! .Xresources config !
-!--------------------!
+! ---------------------------------------- !
+! .Xresources config                       !
+! ---------------------------------------- !
 
 ! Define font size based on screen size
 #if WIDTH == 1366
@@ -35,46 +35,39 @@ rofi.font: monospace FONT_SIZE
 ! Declare xterm TERM name
 xterm*termName: xterm-256color
 
-!-------------!
-! Colorscheme !
-!-------------!
+! ---------------------------------------- !
+! Colorscheme                              !
+!                                          !
+! 0,8   black                              !
+! 1,9   red                                !
+! 2,10  green                              !
+! 3,11  yellow                             !
+! 4,12  blue                               !
+! 5,13  magenta                            !
+! 6,14  cyan                               !
+! 7,15  white                              !
+! ---------------------------------------- !
 
-! special
-*foreground:   #d7d3cb
-*background:   #282c34
-*cursorColor:  #d7d3cb
+*VT100*foreground:   #d7d3cb
+*VT100*background:   #282c34
+*VT100*cursorColor:  #d7d3cb
 
-! black
-*color0:       #282c34
-*color8:       #4a4e56
-
-! red
-*color1:       #be5046
-*color9:       #e06c75
-
-! green
-*color2:       #76a74a
-*color10:      #98c379
-
-! yellow
-*color3:       #c3a44c
-*color11:      #e5c07b
-
-! blue
-*color4:       #3f93c0
-*color12:      #61afef
-
-! magenta
-*color5:       #a45cae
-*color13:      #c678dd
-
-! cyan
-*color6:       #349a93
-*color14:      #56b6c2
-
-! white
-*color7:       #b5b1a9
-*color15:      #d7d3cb
+*VT100*color0:       #282c34
+*VT100*color8:       #4a4e56
+*VT100*color1:       #be5046
+*VT100*color9:       #e06c75
+*VT100*color2:       #76a74a
+*VT100*color10:      #98c379
+*VT100*color3:       #c3a44c
+*VT100*color11:      #e5c07b
+*VT100*color4:       #3f93c0
+*VT100*color12:      #61afef
+*VT100*color5:       #a45cae
+*VT100*color13:      #c678dd
+*VT100*color6:       #349a93
+*VT100*color14:      #56b6c2
+*VT100*color7:       #b5b1a9
+*VT100*color15:      #d7d3cb
 
 ! Specifies whether to combine bold attribute with a brighter color or not.
-*boldColors: false
+*VT100*boldColors: false
