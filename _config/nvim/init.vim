@@ -49,6 +49,16 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+" Autosave (default based on updatetime so every 4000ms)
+"
+" ***Move autocmd to a separate plugin***
+"
+" Values :
+"   InsertLeave
+"   TextChanged, TextChangedI (depends on updatetime)
+"   CursorHold, CursorHoldI (depends on updatetime)
+autocmd CursorHold,CursorHoldI * if expand('%') != '' | silent update | endif
+
 """""""""""""""
 " 1. Plugins  "
 """""""""""""""
@@ -57,8 +67,6 @@ endif
 " Load plugins "
 """"""""""""""""
 
-" Move autocmd to a separate plugin
-autocmd InsertLeave,TextChanged * if expand('%') != '' | silent update | endif
 packadd! buftabline.vim
 packadd! emmet.vim
 packadd! gitgutter.vim
