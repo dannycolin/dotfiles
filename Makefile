@@ -18,10 +18,10 @@ help:
 
 install:
 	# dothome
-	ln -fs $(DOTHOME)/_bashrc 		$(HOME)/.bashrc
-	ln -fs $(DOTHOME)/_gtk-2.0 		$(HOME)/.gtk-2.0
-	ln -fs $(DOTHOME)/_profile 		$(HOME)/.profile
-	ln -fs $(DOTHOME)/_Xresources $(HOME)/.Xresources
+	ln -fs $(DOTHOME)/_bashrc 			$(HOME)/.bashrc
+	ln -fs $(DOTHOME)/_gtkrc-2.0 		$(HOME)/.gtkrc-2.0
+	ln -fs $(DOTHOME)/_profile 			$(HOME)/.profile
+	ln -fs $(DOTHOME)/_Xresources 	$(HOME)/.Xresources
 	# .config
 	ln -fs $(DOTCONFIG)/fontconfig/fonts.conf $(CONFIG)/fontconfig/fonts.conf
 	ln -fs $(DOTCONFIG)/gtk-3.0/settings.ini 	$(CONFIG)/gtk-3.0/settings.ini
