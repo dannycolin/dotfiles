@@ -38,13 +38,13 @@ set $base0E #c678dd
 set $base0F #be5046
 
 # Define workspaces' name
-set $w1 1:files
-set $w2 2:term
-set $w3 3:web
-set $w4 4:mail
-set $w5 5:code
-set $w6 6:chat
-set $w7 7:graph
+set $w1 1:term
+set $w2 2:web
+set $w3 3:mail
+set $w4 4:graph
+set $w5 5:chat
+set $w6 6:misc
+set $w7 7:misc
 set $w8 8:misc
 set $w9 9:misc
 set $w0 10:misc
@@ -178,13 +178,10 @@ bindsym $mod+a exec --no-startup-id rofi -show drun
 # looks like :
 #
 #   uxterm -class <name> -e <program_name> <options>
-assign [class="^vifm$"]         $w1
-assign [class="^UXTerm$"]       $w2
-assign [class="Firefox"]        $w3
-assign [class="^Thunderbird$"]  $w4
-assign [class="^vim$"]          $w5
-assign [class="Gimp"]           $w7
-assign [class="^Inkscape$"]     $w7
+assign [class="Firefox"]        $w2
+assign [class="^Thunderbird$"]  $w3
+assign [class="Gimp"]           $w4
+assign [class="^Inkscape$"]     $w4
 
 # ------------------------------
 # 3. Modes
