@@ -187,24 +187,6 @@ assign [class="^Inkscape$"]     $w4
 # 3. Modes
 # ------------------------------
 
-# applications mode
-mode "applications" {
-  bindsym b exec firefox      , mode "default"
-#  bindsym c exec uxterm       , mode "default"
-#  bindsym e exec thunderbird  , mode "default"
-#  bindsym f exec vifm         , mode "default"
-#  bindsym g exec gimp         , mode "default"
-#  bindsym i exec weechat      , mode "default"
-#  bindsym p exec okular       , mode "default"
-#  bindsym t exec vim          , mode "default"
-#  bindsym v exec inkscape     , mode "default"
-#  bindsym w exec writer       , mode "default"
-#  bindsym s exec calc         , mode "default"
-
-  bindsym Escape mode "default"
-}
-bindsym $mod+Shift+a mode "applications"
-
 # system mode
 mode "system" {
   bindsym l exec i3lock -i "/home/sdk/Pictures/Wallpapers/current-blur.png", mode "default"
