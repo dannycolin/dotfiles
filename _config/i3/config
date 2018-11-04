@@ -131,6 +131,8 @@ bindsym $mod+Shift+8 move container to workspace $w8
 bindsym $mod+Shift+9 move container to workspace $w9
 bindsym $mod+Shift+0 move container to workspace $w0
 
+#exec_always --no-startup-id killall polybar; polybar -r top
+
 # i3status bar
 bar {
     # Position of the bar on the screen [top|bottom]
@@ -218,3 +220,5 @@ bindsym XF86AudioMicMute exec --no-startup-id "pactl set-source-mute alsa_input.
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10"
 bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 10"
 
+# Screenshot
+bindsym $mod+Print exec --no-startup-id scrot ~/Pictures/%Y-%m-%d-%H-%M-%S-screenshot.png
