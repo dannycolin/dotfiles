@@ -131,35 +131,7 @@ bindsym $mod+Shift+8 move container to workspace $w8
 bindsym $mod+Shift+9 move container to workspace $w9
 bindsym $mod+Shift+0 move container to workspace $w0
 
-#exec_always --no-startup-id killall polybar; polybar -r top
-
-# i3status bar
-bar {
-    # Position of the bar on the screen [top|bottom]
-    position top
-
-    # Display informations in the bar
-    status_command i3status
-
-    # Font of the bar
-    font pango:$font-family $font-size
-
-    # Display tray icons
-    tray_output none
- 
-    colors {
-        background $base00
-        separator  $base00
-        statusline $base07
-
-        # State             Border  BG      Text
-        focused_workspace   $base0D $base0D $base00
-        active_workspace    $base03 $base03 $base00
-        inactive_workspace  $base00 $base00 $base07
-        urgent_workspace    $base08 $base08 $base00
-        binding_mode        $base0A $base0A $base00
-    }
-}
+exec --no-startup-id killall polybar; polybar -r top
 
 # --------------------------------------------------
 # 2. Applications

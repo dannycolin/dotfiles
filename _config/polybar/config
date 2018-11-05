@@ -1,0 +1,147 @@
+;==========================================================
+; Polybar config file
+;
+; 1. theme
+; 2. bar/top
+; 3. modules
+;   3.1 i3
+;   3.2 wlan
+;   3.3 ethernet
+;   3.4 battery
+;   3.5 volume
+;   3.6 date
+; 4. settings
+; 5. global/wm
+;
+;==========================================================
+
+[theme]
+
+color0  = ${xrdb:VT100*color0}
+color1  = ${xrdb:VT100*color1}
+color2  = ${xrdb:VT100*color2}
+color3  = ${xrdb:VT100*color3}
+color4  = ${xrdb:VT100*color4}
+color5  = ${xrdb:VT100*color5}
+color6  = ${xrdb:VT100*color6}
+color7  = ${xrdb:VT100*color7}
+color8  = ${xrdb:VT100*color8}
+color9  = ${xrdb:VT100*color9}
+color10 = ${xrdb:VT100*color10}
+color11 = ${xrdb:VT100*color11}
+color12 = ${xrdb:VT100*color12}
+color13 = ${xrdb:VT100*color13}
+color14 = ${xrdb:VT100*color14}
+color15 = ${xrdb:VT100*color15}
+
+[bar/top]
+
+; Bar
+width = 100%
+height= 28
+
+background = ${theme.color0}
+foreground = ${theme.color15}
+
+padding-right = 1 
+
+font-0 = monospace:size=12
+
+; Modules
+modules-left = i3
+modules-right = wlan eth battery volume date
+
+module-margin-right =1
+
+[module/i3]
+
+type = internal/i3
+
+enable-scroll = false
+
+label-mode = %mode%
+label-mode-foreground = ${theme.color0}
+label-mode-background = ${theme.color11}
+label-mode-padding = 1
+label-focused = %name%
+label-focused-foreground = ${theme.color0}
+label-focused-background = ${theme.color12}
+label-focused-padding = 1
+label-unfocused = %name%
+label-unfocused-padding = 1
+label-urgent = %name%
+label-urgent-foreground = ${theme.color0}
+label-urgent-background = ${theme.color9}
+label-urgent-padding = 1
+
+[module/wlan]
+
+type = internal/network
+interface = wlp4s0
+
+interval = 5.0
+
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+
+label-connected = W: %signal%% [%essid%]
+label-connected-foreground = ${theme.color15}
+label-disconnected = W: down
+label-disconnected-foreground = ${theme.color15}
+
+[module/eth]
+
+type = internal/network
+interface = enp0s25
+
+interval = 5.0
+
+format-connected = <label-connected>
+
+label-connected = E: up 
+label-connected-foreground = ${theme.color15}
+
+[module/battery]
+
+type = internal/battery
+
+full-at = 99
+
+battery = BAT0
+adapter = ADP1
+
+format-charging = <label-charging>
+format-discharging = <label-discharging>
+format-full = <label-full>
+
+label-charging = B: %percentage%% [charging]
+label-discharging = B: %percentage%% [discharging]
+label-full = B: %percentage%% [full]
+
+[module/volume]
+
+type = internal/pulseaudio
+
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+format-volume = <label-volume>
+format-muted = <label-muted>
+
+label-volume = V: %percentage%%
+label-muted = V: %percentage%% [muted]
+
+[module/date]
+type = internal/date
+
+interval = 1.0
+
+date = %a %d %b %H:%M
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-bottom = 10
+margin-top = 10
+
+; vim:ft=dosini
