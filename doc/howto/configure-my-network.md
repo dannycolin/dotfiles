@@ -1,3 +1,8 @@
+### Change network interface name
+
+https://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/
+https://www.freedesktop.org/software/systemd/man/systemd.link.html
+
 ### Setting a PEAP connection with nmcli
 
 Create a new connection :
