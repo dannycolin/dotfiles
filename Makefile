@@ -29,6 +29,7 @@ install:
 	ln -fs $(DOTCONFIG)/i3/config 						$(CONFIG)/i3/config
 	ln -fs $(DOTCONFIG)/i3status/config 			$(CONFIG)/i3status/config
 	ln -fs $(DOTCONFIG)/nvim/init.vim 				$(CONFIG)/nvim/init.vim
+	ln -fs $(DOTCONFIG)/polybar/config 				$(CONFIG)/polybar/config
 	ln -fs $(DOTCONFIG)/rofi/config 					$(CONFIG)/rofi/config
 	ln -fs $(DOTCONFIG)/vifm/vifmrc 					$(CONFIG)/vifm/vifmrc
 
