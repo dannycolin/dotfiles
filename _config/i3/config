@@ -49,8 +49,11 @@ set $w0 10:misc
 # 1. Window Manager
 # --------------------------------------------------
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+# restart i3 (and polybar) 
+bindsym $mod+Shift+r restart, exec --no-startup-id killall polybar; polybar -r top
+
+# Start polybar
+exec_always --no-startup-id killall polybar; polybar -r top
 
 # Set background image
 exec --no-startup-id feh --bg-scale /home/sdk/Pictures/Wallpapers/current.jpg
@@ -126,8 +129,6 @@ bindsym $mod+Shift+7 move container to workspace $w7
 bindsym $mod+Shift+8 move container to workspace $w8
 bindsym $mod+Shift+9 move container to workspace $w9
 bindsym $mod+Shift+0 move container to workspace $w0
-
-exec --no-startup-id killall polybar; polybar -r top
 
 # --------------------------------------------------
 # 2. Applications
