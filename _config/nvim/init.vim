@@ -16,6 +16,7 @@
 set clipboard=unnamedplus " Always use CLIPBOARD
 set laststatus=2          " Always show statusline
 set mouse=                " NO MOUSE VIM !!!
+set colorcolumn=81        " Highlight 81th column
 filetype plugin on        " set config specific to filetype
 
 " Files
@@ -123,6 +124,8 @@ set statusline+=%l/%L]                          "cursor line/total lines
 " 4. Syntax highlighting "
 """"""""""""""""""""""""""
 
-syntax on                 " turn on syntax highlighting
-colorscheme onedark       " set the colorscheme
+syntax on                           " turn on syntax highlighting
+colorscheme onedark                 " set the colorscheme
 
+" override theme's colors
+highlight ColorColumn ctermbg=238 guibg=#3B4048
