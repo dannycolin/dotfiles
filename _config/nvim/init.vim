@@ -42,10 +42,6 @@ set smarttab
 set softtabstop=2
 set tabstop=2
 
-" Show a symbol in place of the following characters
-set listchars=space:→,trail:•
-set list
-
 " Use 24-bit (true-color) mode in Vim/Neovim.
 " Without that the background color is wrong.
 if (has("termguicolors"))
