@@ -150,9 +150,9 @@ bindsym $mod+a exec --no-startup-id rofi -show drun
 #
 #   uxterm -class <name> -e <program_name> <options>
 assign [class="Firefox"]        $w2
-assign [class="^Thunderbird$"]  $w3
-assign [class="Gimp"]           $w4
-assign [class="^Inkscape$"]     $w4
+assign [class="^Thunderbird$"]  $w4
+assign [class="Gimp"]           $w5
+assign [class="^Inkscape$"]     $w5
 
 # ------------------------------
 # 3. Modes
