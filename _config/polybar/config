@@ -97,7 +97,7 @@ label-urgent-padding = 1
 [module/wlan]
 
 type = internal/network
-interface = wlp4s0
+interface = wlan0
 
 interval = 5.0
 
@@ -112,7 +112,7 @@ label-disconnected-foreground = ${theme.color15}
 [module/eth]
 
 type = internal/network
-interface = enp0s25
+interface = eth0
 
 interval = 5.0
 
