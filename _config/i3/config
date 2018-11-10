@@ -34,16 +34,16 @@ set $color14 #56b6c2
 set $color15 #d7d3cb
 
 # Define workspaces' name
-set $w1 1:term
-set $w2 2:web
-set $w3 3:mail
-set $w4 4:graph
-set $w5 5:chat
-set $w6 6:misc
-set $w7 7:misc
-set $w8 8:misc
-set $w9 9:misc
-set $w0 10:misc
+set $w1 1:
+set $w2 2:
+set $w3 3:
+set $w4 4:
+set $w5 5:
+set $w6 6:6
+set $w7 7:7
+set $w8 8:8
+set $w9 9:9
+set $w0 10:10
 
 # --------------------------------------------------
 # 1. Window Manager
