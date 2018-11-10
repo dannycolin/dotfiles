@@ -75,7 +75,6 @@ separator = " "
 type = internal/i3
 
 enable-scroll = false
-enable-click = false
 
 strip-wsnumbers = true
 
