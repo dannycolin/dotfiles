@@ -1,0 +1,81 @@
+configuration {
+  modi: "drun";
+	lines: 5;
+	columns: 1;
+	location: 2;
+	yoffset: 24;
+	hide-scrollbar: true;
+	display-drun: "application: ";
+	kb-row-up: "Control+p";
+	kb-row-down: "Control+n";
+	kb-cancel: "Escape";
+}
+
+* {
+  background-color: #282c34;
+  text-color: #d7d3cb;
+/* 
+ * Colorscheme  
+ *              
+ * 0,8   black  
+ * 1,9   red    
+ * 2,10  green  
+ * 3,11  yellow 
+ * 4,12  blue   
+ * 5,13  magenta
+ * 6,14  cyan   
+ * 7,15  white  
+ *
+ */
+
+  --color0: #282c34;
+  --color1: #be5046;
+  --color2: #76a74a;
+  --color3: #c3a44c;
+  --color4: #3f93c0;
+  --color5: #a45cae;
+  --color6: #349a93;
+  --color7: #b5b1a9;
+  --color8: #4a4e56;
+  --color8-50p: rgba(74,78,86, 30%);
+  --color9: #e06c75;
+  --color10: #98c379;
+  --color11: #e5c07b;
+  --color12: #61afef;
+  --color13: #c678dd;
+  --color14: #56b6c2;
+  --color15: #d7d3cb;
+}
+
+#window {
+  background-color: @--color0;
+  border: 4px;
+  border-color: #61afef;
+  font: "monospace 12";
+  padding: 5px;
+  width: 100%;
+}
+
+#listview {
+  border: 1px dash 0px 0px;
+  border-color: @--color7;
+}
+
+#element {
+  padding: 2px 0;
+}
+
+#element .selected {
+  background-color: @--color12;
+  text-color: @--color0;
+}
+
+#element .normal {
+  background-color: @--color8-50p;
+}
+
+#element .alternate .normal {
+  background-color: @--color0;
+}
+
+/* vim:ft=css */
