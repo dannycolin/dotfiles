@@ -17,50 +17,28 @@
 
 [theme]
 
-; ---------------------------------------- ;
-; Colorscheme                              ;
-;                                          ;
-; 0,8   black                              ;
-; 1,9   red                                ;
-; 2,10  green                              ;
-; 3,11  yellow                             ;
-; 4,12  blue                               ;
-; 5,13  magenta                            ;
-; 6,14  cyan                               ;
-; 7,15  white                              ;
-; ---------------------------------------- ;
-
-color0  = #282c34
-color1  = #be5046
-color2  = #76a74a
-color3  = #c3a44c
-color4  = #3f93c0
-color5  = #a45cae
-color6  = #349a93
-color7  = #b5b1a9
-color8  = #4a4e56
-color9  = #e06c75
-color10 = #98c379
-color11 = #e5c07b
-color12 = #61afef
-color13 = #c678dd
-color14 = #56b6c2
-color15 = #d7d3cb
+white     = #ffffff
+blue60    = #0060df
+blue50    = #0a84ff
+grey70    = #38383d
+grey90    = #0c0c0d
+red50     = #ff0039
+yellow50  = #ffe900
 
 [bar/top]
 
 ; Bar
 width = 100%
 
-background = ${theme.color0}
-foreground = ${theme.color15}
+background = ${theme.grey90}
+foreground = ${theme.white}
 
 padding-right = 1 
 
-border-bottom-size = 1
-border-bottom-color = ${theme.color0}
+overline-size = 2
 
-font-0 = monospace:size=12:style=bold:antialias=true;3
+
+font-0 = monospace:size=12:style=bold:antialias=true;2
 font-1 = forkawesome:size=12:antialias=true;1
 
 ; Modules
@@ -79,19 +57,16 @@ enable-scroll = false
 strip-wsnumbers = true
 
 label-mode = %mode%
-label-mode-foreground = ${theme.color0}
-label-mode-background = ${theme.color11}
+label-mode-foreground = ${theme.yellow50}
 label-mode-padding = 1
 label-focused = %name%
-label-focused-foreground = ${theme.color0}
-label-focused-background = ${theme.color12}
+label-focused-foreground = ${theme.blue50}
 label-focused-padding = 1
 label-focused-underline = #ff0000
 label-unfocused = %name%
 label-unfocused-padding = 1
 label-urgent = %name%
-label-urgent-foreground = ${theme.color0}
-label-urgent-background = ${theme.color9}
+label-urgent-foreground = ${theme.red50}
 label-urgent-padding = 1
 
 [module/wlan]
@@ -105,9 +80,6 @@ format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 
 label-connected =  %signal%%
-label-connected-foreground = ${theme.color15}
-label-disconnected = W: down
-label-disconnected-foreground = ${theme.color15}
 
 [module/eth]
 
@@ -119,7 +91,6 @@ interval = 5.0
 format-connected = <label-connected>
 
 label-connected = E: up 
-label-connected-foreground = ${theme.color15}
 
 [module/battery]
 
@@ -139,9 +110,9 @@ label-discharging = %percentage%%
 label-full = %percentage%%
 
 ramp-capacity-0 = 
-ramp-capacity-0-foreground = ${theme.color9}
+ramp-capacity-0-foreground = ${theme.red50}
 ramp-capacity-1 = 
-ramp-capacity-1-foreground = ${theme.color9}
+ramp-capacity-1-foreground = ${theme.red50}
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
