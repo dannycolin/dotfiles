@@ -33,6 +33,8 @@ set $color13 #c678dd
 set $color14 #56b6c2
 set $color15 #d7d3cb
 
+set $blue50 #0a84ff
+
 # Define workspaces' name
 set $w1 1:
 set $w2 2:
@@ -74,7 +76,7 @@ bindsym $mod+x split horizontal
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border   BG      Text     Indicator Child Border
-client.focused          $color12 $color0 $color0  $color12  $color12
+client.focused          $blue50  $color0 $color0  $blue50   $blue50
 client.focused_inactive $color8  $color0 $color15 $color8   $color8
 client.unfocused        $color8  $color0 $color15 $color8   $color8
 client.urgent           $color9  $color0 $color0  $color9   $color9
@@ -82,8 +84,8 @@ client.placeholder      $color8  $color0 $color15 $color8   $color8
 client.background                $color0
 
 # Disable window title
-new_window pixel 4
-new_float pixel 4
+new_window pixel 2
+new_float pixel 2
 
 # delaying urgeny hint reset on workspace change
 force_display_urgency_hint 2500 ms
