@@ -2,80 +2,67 @@ configuration {
   modi: "drun";
 	lines: 5;
 	columns: 1;
-	location: 2;
+	location: 0;
 	yoffset: 24;
 	hide-scrollbar: true;
-	display-drun: "application: ";
+	display-drun: "";
 	kb-row-up: "Control+p";
 	kb-row-down: "Control+n";
 	kb-cancel: "Escape";
 }
 
 * {
-  background-color: #282c34;
-  text-color: #d7d3cb;
-/* 
- * Colorscheme  
- *              
- * 0,8   black  
- * 1,9   red    
- * 2,10  green  
- * 3,11  yellow 
- * 4,12  blue   
- * 5,13  magenta
- * 6,14  cyan   
- * 7,15  white  
- *
- */
-
-  --color0: #282c34;
-  --color1: #be5046;
-  --color2: #76a74a;
-  --color3: #c3a44c;
-  --color4: #3f93c0;
-  --color5: #a45cae;
-  --color6: #349a93;
-  --color7: #b5b1a9;
-  --color8: #4a4e56;
-  --color8-50p: rgba(74,78,86, 30%);
-  --color9: #e06c75;
-  --color10: #98c379;
-  --color11: #e5c07b;
-  --color12: #61afef;
-  --color13: #c678dd;
-  --color14: #56b6c2;
-  --color15: #d7d3cb;
+  --white: #ffffff;
+  --blue50: #0a84ff;
+  --blue60: #0060df;
+  --grey60: #4a4a4f;
+  --grey70: #38383d;
+  --grey80: #2a2a2e;
+  --grey90: #0c0c0d;
+  background-color: @--grey60;
+  text-color: @--white;
 }
 
-#window {
-  background-color: @--color0;
-  border: 4px;
-  border-color: #61afef;
-  font: "monospace 12";
+window {
+  background-color: @--grey70;
+  border: 2px;
+  border-color: @--blue50;
+  font: "monospace 10";
+  padding: 3px;
+}
+
+inputbar {
+  border: 1px;
+  border-color: @--blue50;
+  border-radius: 3px;
   padding: 5px;
-  width: 100%;
 }
 
-#listview {
-  border: 1px dash 0px 0px;
-  border-color: @--color7;
+prompt {
+  font: "forkawesome 11";
+} 
+
+listview {
+  background-color: @--grey80;
+  padding: 5px;
 }
 
-#element {
-  padding: 2px 0;
+element {
+  background-color: @--grey80;
+  border-radius: 3px;
+  padding: 10px;
 }
 
-#element .selected {
-  background-color: @--color12;
-  text-color: @--color0;
+element .selected {
+  background-color: @--blue60;
+  text-color: @--white;
+  font-weight: bold;
 }
 
-#element .normal {
-  background-color: @--color8-50p;
+element .normal {
 }
 
-#element .alternate .normal {
-  background-color: @--color0;
+element .alternate .normal {
 }
 
 /* vim:ft=css */
