@@ -5,7 +5,7 @@ configuration {
 	location: 0;
 	yoffset: 24;
 	hide-scrollbar: true;
-	display-drun: "";
+	display-drun: " ";
 	kb-row-up: "Control+p";
 	kb-row-down: "Control+n";
 	kb-cancel: "Escape";
@@ -19,7 +19,7 @@ configuration {
   --grey70: #38383d;
   --grey80: #2a2a2e;
   --grey90: #0c0c0d;
-  background-color: @--grey60;
+  background-color: @--grey70;
   text-color: @--white;
 }
 
@@ -28,19 +28,20 @@ window {
   border: 2px;
   border-color: @--blue50;
   font: "monospace 10";
-  padding: 3px;
 }
 
-inputbar {
+inputbar, prompt, case-indicator {
+  background-color: @--grey70;
+}
+
+entry {
+  background-color: @--grey60;
   border: 1px;
   border-color: @--blue50;
   border-radius: 3px;
   padding: 5px;
+  margin: 4px 0 2px 0;
 }
-
-prompt {
-  font: "forkawesome 11";
-} 
 
 listview {
   background-color: @--grey80;
@@ -50,7 +51,7 @@ listview {
 element {
   background-color: @--grey80;
   border-radius: 3px;
-  padding: 10px;
+  padding: 8px;
 }
 
 element .selected {
