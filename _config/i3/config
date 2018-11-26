@@ -15,25 +15,16 @@
 # Set the Super key as my mod key.
 set $mod Mod4
 
-# Define 16-colors palette
-set $color0  #282c34
-set $color1  #be5046
-set $color2  #76a74a
-set $color3  #c3a44c
-set $color4  #3f93c0
-set $color5  #a45cae
-set $color6  #349a93
-set $color7  #b5b1a9
-set $color8  #4a4e56
-set $color9  #e06c75
-set $color10 #98c379
-set $color11 #e5c07b
-set $color12 #61afef
-set $color13 #c678dd
-set $color14 #56b6c2
-set $color15 #d7d3cb
-
-set $blue50 #0a84ff
+# Define colors 
+set $white      #ffffff
+set $blue60     #0060df
+set $blue50     #0a84ff
+set $grey60     #4a4a4f
+set $grey70     #38383d
+set $grey90     #0c0c0d
+set $red50      #ff0039
+set $teal50     #00c8d7 
+set $yellow50   #ffe900
 
 # Define workspaces' name
 set $w1 1:
@@ -76,12 +67,19 @@ bindsym $mod+x split horizontal
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border   BG      Text     Indicator Child Border
-client.focused          $blue50  $color0 $color0  $blue50   $blue50
-client.focused_inactive $color8  $color0 $color15 $color8   $color8
-client.unfocused        $color8  $color0 $color15 $color8   $color8
-client.urgent           $color9  $color0 $color0  $color9   $color9
-client.placeholder      $color8  $color0 $color15 $color8   $color8
-client.background                $color0
+#client.focused          $blue50  $grey90 $grey90  $blue50   $blue50
+#client.focused_inactive $grey70  $grey90 $white   $grey70   $grey70
+#client.unfocused        $grey70  $grey90 $white   $grey70   $grey70
+#client.urgent           $teal50  $grey90 $grey90  $teal50   $teal50
+#client.placeholder      $grey70  $grey90 $white   $grey70   $grey70
+#client.background                $grey90
+
+client.focused          $blue50  $grey90 $grey90  $blue50   $blue50
+client.focused_inactive $grey60  $grey90 $white   $grey60   $grey60
+client.unfocused        $grey60  $grey90 $white   $grey60   $grey60
+client.urgent           $teal50  $grey90 $grey90  $teal50   $teal50
+client.placeholder      $grey60  $grey90 $white   $grey60   $grey60
+client.background                $grey90
 
 # Disable window title
 new_window pixel 2
