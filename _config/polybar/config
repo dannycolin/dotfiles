@@ -23,6 +23,7 @@ blue50    = #0a84ff
 grey70    = #38383d
 grey90    = #0c0c0d
 red50     = #ff0039
+teal50    = #00c8d7 
 yellow50  = #ffe900
 
 [bar/top]
@@ -66,7 +67,7 @@ label-focused-underline = #ff0000
 label-unfocused = %name%
 label-unfocused-padding = 1
 label-urgent = %name%
-label-urgent-foreground = ${theme.red50}
+label-urgent-foreground = ${theme.teal50}
 label-urgent-padding = 1
 
 [module/wlan]
