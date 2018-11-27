@@ -40,7 +40,7 @@ overline-size = 2
 
 
 font-0 = monospace:size=10:style=normal:antialias=true;2
-font-1 = forkawesome:size=11:antialias=true;1
+font-1 = forkawesome:size=10:antialias=true;1
 
 ; Modules
 modules-left = i3
