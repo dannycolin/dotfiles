@@ -12,14 +12,15 @@ help:
 	Usage: make [command]\n\
 	\n\
 	make help	Show this help message\n\
-	make link 	Install all dotfiles\n\
-	make unlink	Uninstall all dotfiles\n\
+	make install	Install all dotfiles\n\
+	make uninstall	Uninstall all dotfiles\n\
 	\n"
 
 install:
 	# dothome
 	ln -fs $(DOTHOME)/_bashrc 			$(HOME)/.bashrc
 	ln -fs $(DOTHOME)/_gtkrc-2.0 		$(HOME)/.gtkrc-2.0
+	ln -fs $(DOTHOME)/_inputrc 			$(HOME)/.inputrc
 	ln -fs $(DOTHOME)/_profile 			$(HOME)/.profile
 	ln -fs $(DOTHOME)/_Xresources 	$(HOME)/.Xresources
 	# .config
