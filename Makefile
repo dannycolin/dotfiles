@@ -24,6 +24,7 @@ install:
 	ln -fs $(DOTHOME)/_profile 			$(HOME)/.profile
 	ln -fs $(DOTHOME)/_Xresources 	$(HOME)/.Xresources
 	# .config
+	ln -fs $(DOTCONFIG)/bspwm/bspwmrc 				$(CONFIG)/bspwm/bspwmrc
 	ln -fs $(DOTCONFIG)/fontconfig/fonts.conf $(CONFIG)/fontconfig/fonts.conf
 	ln -fs $(DOTCONFIG)/gtk-3.0/settings.ini 	$(CONFIG)/gtk-3.0/settings.ini
 	ln -fs $(DOTCONFIG)/htop/htoprc 					$(CONFIG)/htop/htoprc
@@ -32,6 +33,7 @@ install:
 	ln -fs $(DOTCONFIG)/nvim/init.vim 				$(CONFIG)/nvim/init.vim
 	ln -fs $(DOTCONFIG)/polybar/config 				$(CONFIG)/polybar/config
 	ln -fs $(DOTCONFIG)/rofi/config.rasi 			$(CONFIG)/rofi/config.rasi
+	ln -fs $(DOTCONFIG)/sxhkd/sxhkdrc					$(CONFIG)/sxhkd/sxhkdrc
 	ln -fs $(DOTCONFIG)/vifm/vifmrc 					$(CONFIG)/vifm/vifmrc
 
 uninstall:

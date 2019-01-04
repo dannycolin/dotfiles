@@ -1,0 +1,60 @@
+# ----------------------------------------
+# wm independent hotkeys
+# ----------------------------------------
+
+# make sxhkd reload its configuration files:
+super + Escape
+  pkill -USR1 -x sxhkd
+
+# terminal emulator
+super + Return
+	uxterm
+
+# program launcher
+super + a
+	rofi -show drun
+
+XF86Audio{Lower,Raise}Volume
+  pactl set-sink-volume 0 {-,+}5%
+
+XF86Audio{_,Mic}Mute
+  pactl \
+    {set-sink-mute alsa_output,set-source-mute alsa_input}\
+    .pci-0000_00_1b.0.analog-stereo toggle
+
+# system poweroff, reboot
+super + shift + s; {p,r}
+  systemctl {poweroff, reboot}
+
+# ----------------------------------------
+# bspwm hotkeys
+# ----------------------------------------
+
+# quit bspwm normally
+super + ctrl + q
+	bspc quit
+
+# close window
+super + shift + q
+	bspc node -c
+
+# set the window state
+super + {t,f}
+	bspc node -t {tiled,floating}
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
