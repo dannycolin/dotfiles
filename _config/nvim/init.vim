@@ -72,6 +72,7 @@ packadd! emmet.vim
 packadd! gitgutter.vim
 packadd! nerdtree.vim
 packadd! onedark.vim
+packadd! surround.vim
 
 """""""""""""
 " Emmet.vim "
