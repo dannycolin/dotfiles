@@ -57,8 +57,14 @@ type = internal/bspwm
 
 enable-scroll = false
 
-label-focused = %name%
+; There's a Em Space (U+2003) in front of %name% to simulate a separator to 
+; workaround a bug that create separator on label-empty space with no value.
+label-empty =
+label-focused =  %name%
 label-focused-foreground = ${theme.blue50}
+label-occupied =  %name%
+label-urgent = %name%
+label-urgent-foreground = ${theme.teal50}
 
 [module/i3]
 
