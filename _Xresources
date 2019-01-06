@@ -9,45 +9,80 @@
   #define FONT_SIZE 12
 #endif
 
-! Set font properties
-*faceName: monospace
-*faceSize: FONT_SIZE
+! ---------------------------------------- !
+! Rofi                                     !
+! ---------------------------------------- !
 rofi.font: monospace FONT_SIZE
 
+! ---------------------------------------- !
+! URxvt                                    !
+! ---------------------------------------- !
+
+! Set font
+URxvt.font: xft:monospace:size=FONT_SIZE,xft:forkawesome:pixelsize=11
+
+! Perl extension
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard
+
+! Clickable URL (depends on defaut and matcher)
+URxvt.url-launcher: /usr/local/bin/firefox
+URxvt.matcher.button: 1
+
+! Scrollbar
+URxvt.scrollBar: false
+
+! Colors
+URxvt*foreground:   #d7d3cb
+URxvt*background:   #282c34
+URxvt*cursorColor:  #d7d3cb
+
+URxvt*color0:       #282c34
+URxvt*color1:       #be5046
+URxvt*color2:       #76a74a
+URxvt*color3:       #c3a44c
+URxvt*color4:       #3f93c0
+URxvt*color5:       #a45cae
+URxvt*color6:       #349a93
+URxvt*color7:       #b5b1a9
+URxvt*color8:       #4a4e56
+URxvt*color9:       #e06c75
+URxvt*color10:      #98c379
+URxvt*color11:      #e5c07b
+URxvt*color12:      #61afef
+URxvt*color13:      #c678dd
+URxvt*color14:      #56b6c2
+URxvt*color15:      #d7d3cb
+
+! ---------------------------------------- !
+! Xterm                                    !
+! ---------------------------------------- !
+
+! Declare xterm TERM name
+xterm*termName: xterm-256color
+
+! Set font properties
+xterm*faceName: monospace
+xterm*faceSize: FONT_SIZE
+
 ! Save X numbers of line in history
-*saveLines: 16384
+xterm*saveLines: 16384
 
-! select to CLIPBOARD instead of PRIMARY
-*selectToClipboard: true
+! Select to CLIPBOARD instead of PRIMARY
+xterm*selectToClipboard: true
 
-! consider URL as words when triple clicking on it
-*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
+! Consider URL as words when triple clicking on it
+xterm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
 
 ! Custom keybindings
 ! Ctrl Shift C - Copy
 ! Ctrl Shift V - Paste
 ! Shift Mouse1 - Open URL in Firefox
-*translations: #override \n\
+xterm*translations: #override \n\
     Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
     Shift <Btn1Up>: exec-formatted("firefox '%t'", CLIPBOARD) select-start() select-end()
 
-! Declare xterm TERM name
-xterm*termName: xterm-256color
-
-! ---------------------------------------- !
-! Colorscheme                              !
-!                                          !
-! 0,8   black                              !
-! 1,9   red                                !
-! 2,10  green                              !
-! 3,11  yellow                             !
-! 4,12  blue                               !
-! 5,13  magenta                            !
-! 6,14  cyan                               !
-! 7,15  white                              !
-! ---------------------------------------- !
-
+! Colors
 *VT100*foreground:   #d7d3cb
 *VT100*background:   #282c34
 *VT100*cursorColor:  #d7d3cb
