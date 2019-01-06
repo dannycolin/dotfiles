@@ -14,6 +14,7 @@ super + Return
 super + a
 	rofi -show drun
 
+# sound control
 XF86Audio{Lower,Raise}Volume
   pactl set-sink-volume 0 {-,+}5%
 
@@ -21,6 +22,10 @@ XF86Audio{_,Mic}Mute
   pactl \
     {set-sink-mute alsa_output,set-source-mute alsa_input}\
     .pci-0000_00_1b.0.analog-stereo toggle
+
+# brightness control
+XF86MonBrightness{Down,Up}
+  xbacklight -{dec,inc} 10
 
 # system poweroff, reboot
 super + shift + s; {p,r}
