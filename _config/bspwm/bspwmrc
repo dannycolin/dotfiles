@@ -32,3 +32,7 @@ bspc rule -a "Gimp-2.8:gimp-2.8"                    desktop="^5"
 bspc rule -a "Inkscape:inkscape"                    desktop="^5" 
 bspc rule -a "Thunderbird:Mail"                     desktop="^4"
 bspc rule -a "weechat:xterm"                        desktop="^3"
+
+# External rules
+bspc config external_rules_command ~/.config/bspwm/window_type
+
