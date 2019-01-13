@@ -1,11 +1,30 @@
-#! /bin/sh
+#!/usr/bin/env bash
 
+# ---------------------------------------- 
 # Autostart
+# ---------------------------------------- 
 
-sxhkd &
-polybar -r top &
+applications=(
+  "polybar" 
+  "sxhkd"
+)
+
+# Only start applications if they aren't already running
+for application in "${applications[@]}"; do
+  running=$(pidof sxhkd)
+  
+  if [[ ! "$running" ]]; then
+    sxhkd &
+    polybar -r top &
+  fi
+done
+
 feh --bg-scale /home/sdk/Pictures/Wallpapers/current.jpg
 xsetroot -cursor_name left_ptr
+
+# ---------------------------------------- 
+# bspwm 
+# ---------------------------------------- 
 
 # Global configurations
 
@@ -27,6 +46,10 @@ bspc config window_gap            0
 # List all WM with:
 #   bspc wm -d
 
+# clean rules list to avoid duplicate on config reload
+bspc rule -r *:*
+
+# Move to desktop
 bspc rule -a "Firefox Developer Edition:Navigator"  desktop="^2"
 bspc rule -a "Gimp-2.8:gimp-2.8"                    desktop="^5" 
 bspc rule -a "Inkscape:inkscape"                    desktop="^5" 

@@ -35,9 +35,9 @@ super + shift + s; {p,r}
 # bspwm hotkeys
 # ----------------------------------------
 
-# quit bspwm normally
-super + ctrl + q
-	bspc quit
+# reload bspwm configuration
+super + shift + r
+	~/.config/bspwm/bspwmrc
 
 # close window
 super + shift + q
