@@ -28,6 +28,9 @@ URxvt.perl-ext-common: default,matcher,selection-to-clipboard
 URxvt.url-launcher: /usr/local/bin/firefox
 URxvt.matcher.button: 1
 
+! Save X numbers of line in history
+URxvt*saveLines: 5000
+
 ! Scrollbar
 URxvt.scrollBar: false
 
@@ -65,7 +68,7 @@ xterm*faceName: monospace
 xterm*faceSize: FONT_SIZE
 
 ! Save X numbers of line in history
-xterm*saveLines: 16384
+xterm*saveLines: 5000
 
 ! Select to CLIPBOARD instead of PRIMARY
 xterm*selectToClipboard: true
