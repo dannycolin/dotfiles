@@ -25,6 +25,7 @@ install:
 	ln -fs $(DOTHOME)/_Xresources 	$(HOME)/.Xresources
 	# .config
 	ln -fs $(DOTCONFIG)/bspwm/bspwmrc 				$(CONFIG)/bspwm/bspwmrc
+	ln -fs $(DOTCONFIG)/bspwm/window_type 		$(CONFIG)/bspwm/window_type
 	ln -fs $(DOTCONFIG)/fontconfig/fonts.conf $(CONFIG)/fontconfig/fonts.conf
 	ln -fs $(DOTCONFIG)/gtk-3.0/settings.ini 	$(CONFIG)/gtk-3.0/settings.ini
 	ln -fs $(DOTCONFIG)/htop/htoprc 					$(CONFIG)/htop/htoprc
