@@ -31,6 +31,10 @@ set fastrun
 
 set sortnumbers
 
+" Show relative number in front of files and directories
+
+set relativenumber
+
 " Maximum number of changes that can be undone.
 
 set undolevels=100
