@@ -6,7 +6,6 @@
 # Backlog
 
 - add vifmrc
-- add auto-install script
 - Key remap/swap idea
   - remap CAPS LOCK (shift:both_capslock. Both Shift together enable Caps Lock)
   - swap R_Shift with Backspace
@@ -18,3 +17,9 @@
 - add systemd config
   - auto-lock screen when closing the lid
   - autologin at boot
+- intall script
+  - .desktop files
+  - apt packages
+  - networks' configs 
+  - symlinks
+  - systemd configs
