@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Thunderbird Beta
+Comment=Email Client
+GenericName=Email Client
+X-GNOME-FullName=Thunderbird Beta
+Exec=/usr/local/bin/thunderbird
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=~/.local/bin/thunderbird/chrome/icons/default/default16.png
+Categories=Network;Email;
+StartupWMClass=Thunderbird
+StartupNotify=true

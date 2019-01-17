@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Firefox Developer Edition
+Comment=Web Browser
+GenericName=Web Browser
+X-GNOME-FullName=Firefox Developer Edition Web Browser
+Exec=/usr/local/bin/firefox %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=~/.local/bin/firefox/browser/chrome/icons/default/default16.png
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
+StartupWMClass=Firefox
+StartupNotify=true
