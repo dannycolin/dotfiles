@@ -1,0 +1,8 @@
+settings=(
+  [homedir]="$HOME"
+  [dotdir]="$HOME/.dotfiles/user"
+)
+
+dotfiles=(
+	"test"
+)

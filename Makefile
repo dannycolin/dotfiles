@@ -1,5 +1,5 @@
-DOTHOME 	:= "$(HOME)/Projects/dotfiles"
-DOTCONFIG	:= "$(HOME)/Projects/dotfiles/_config"
+DOTHOME 	:= "$(HOME)/.dotfiles/user"
+DOTCONFIG	:= "$(HOME)/.dotfiles/user/.config"
 CONFIG		:= "$(HOME)/.config"
 
 .PHONY: help
@@ -18,11 +18,11 @@ help:
 
 install:
 	# dothome
-	ln -fs $(DOTHOME)/_bashrc 			$(HOME)/.bashrc
-	ln -fs $(DOTHOME)/_gtkrc-2.0 		$(HOME)/.gtkrc-2.0
-	ln -fs $(DOTHOME)/_inputrc 			$(HOME)/.inputrc
-	ln -fs $(DOTHOME)/_profile 			$(HOME)/.profile
-	ln -fs $(DOTHOME)/_Xresources 	$(HOME)/.Xresources
+	ln -fs $(DOTHOME)/.bashrc 			$(HOME)/.bashrc
+	ln -fs $(DOTHOME)/.gtkrc-2.0 		$(HOME)/.gtkrc-2.0
+	ln -fs $(DOTHOME)/.inputrc 			$(HOME)/.inputrc
+	ln -fs $(DOTHOME)/.profile 			$(HOME)/.profile
+	ln -fs $(DOTHOME)/.Xresources 	$(HOME)/.Xresources
 	# .config
 	ln -fs $(DOTCONFIG)/bspwm/bspwmrc 				$(CONFIG)/bspwm/bspwmrc
 	ln -fs $(DOTCONFIG)/bspwm/window_type 		$(CONFIG)/bspwm/window_type
@@ -40,16 +40,21 @@ install:
 uninstall:
 	# dothome
 	unlink $(HOME)/.bashrc
-	unlink $(HOME)/.gtk-2.0
+	unlink $(HOME)/.gtkrc-2.0
+	unlink $(HOME)/.inputrc
 	unlink $(HOME)/.profile
 	unlink $(HOME)/.Xresources
 	# .config
+	unlink $(HOME)/.config/bspwm/bspwmrc
+	unlink $(HOME)/.config/bspwm/window_type
 	unlink $(HOME)/.config/fontconfig/fonts.conf
 	unlink $(HOME)/.config/gtk-3.0/settings.ini
 	unlink $(HOME)/.config/htop/htoprc
 	unlink $(HOME)/.config/i3/config
 	unlink $(HOME)/.config/i3status/config
 	unlink $(HOME)/.config/nvim/init.vim
+	unlink $(HOME)/.config/polybar/config
 	unlink $(HOME)/.config/rofi/config.rasi
+	unlink $(HOME)/.config/sxhkd/sxhkdrc
 	unlink $(HOME)/.config/vifm/vifmrc
 
