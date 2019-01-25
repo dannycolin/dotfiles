@@ -99,6 +99,12 @@ let NERDTreeDirArrows = 1
 " 2. Key mapping "
 """"""""""""""""""
 
+" Don't took an arrow in the knee
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 " Show netrw
 nnoremap <C-\> :NERDTreeToggle<CR>
 " Go to previous buffer and close the last one
