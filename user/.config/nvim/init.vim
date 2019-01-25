@@ -29,6 +29,10 @@ set nobackup              " turn off backup file
 set showmatch             " hightlight matching bracket ({[
 set undofile              " Keep an history of undo
 
+" Fuzzy finder
+set path+=**
+set wildmenu
+
 " Line number
 " Show relative line number from current line
 " but still show the current line number
