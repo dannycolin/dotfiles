@@ -23,3 +23,5 @@
   - networks' configs 
   - symlinks
   - systemd configs
+- Add apt pinning for testing and unstable
+  - a priority of -1 never install the package even if recommended
