@@ -13,6 +13,7 @@
 " 0. General Settings "
 """""""""""""""""""""""
 
+set nocompatible          " Stop living in the past
 set clipboard=unnamedplus " Always use CLIPBOARD
 set laststatus=2          " Always show statusline
 set mouse=                " NO MOUSE VIM !!!
