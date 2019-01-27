@@ -4,18 +4,19 @@
 # Autostart
 # ---------------------------------------- 
 
-applications=(
-  "polybar" 
-  "sxhkd"
+declare -A apps
+
+apps=(
+  [polybar]="polybar -r top"
+  [sxhkd]="sxhkd"
 )
 
-# Only start applications if they aren't already running
-for application in "${applications[@]}"; do
-  running=$(pidof sxhkd)
-  
+# Detect if applications are already running. If not, start them.
+for app in "${!apps[@]}"; do
+  running="$(pgrep "$app")"
+
   if [[ ! "$running" ]]; then
-    sxhkd &
-    polybar -r top &
+    ${apps["$app"]} &
   fi
 done
 
