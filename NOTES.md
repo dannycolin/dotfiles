@@ -1,10 +1,10 @@
 # Next
 
-- add .desktop files
 - add qt config file
 
 # Backlog
 
+- create custom mode in Rofi for nmcli
 - add vifmrc
 - Key remap/swap idea
   - remap CAPS LOCK (shift:both_capslock. Both Shift together enable Caps Lock)
