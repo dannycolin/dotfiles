@@ -94,6 +94,8 @@ autocmd FileType html,markdown EmmetInstall
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+let NERDTreeShowLineNumbers=1
+autocmd FileType nerdtree setlocal relativenumber
 
 """"""""""""""""""
 " 2. Key mapping "
