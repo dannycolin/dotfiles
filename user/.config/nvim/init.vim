@@ -48,11 +48,6 @@ set smarttab
 set softtabstop=2
 set tabstop=2
 
-" Use 24-bit (true-color) mode in Vim/Neovim.
-" Without that the background color is wrong.
-if (has("termguicolors"))
-  set termguicolors
-endif
 
 " Autosave (default based on updatetime so every 4000ms)
 "
@@ -96,6 +91,19 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowLineNumbers=1
 autocmd FileType nerdtree setlocal relativenumber
+
+"""""""""""""""
+" onedark.vim "
+"""""""""""""""
+
+" Use 24-bit (true-color) if available
+if ($TERM == "xterm-256color")
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+else
+  let g:onedark_termcolors = 16
+endif
 
 """"""""""""""""""
 " 2. Key mapping "
@@ -143,3 +151,4 @@ colorscheme onedark                 " set the colorscheme
 
 " override theme's colors
 highlight ColorColumn ctermbg=238 guibg=#3B4048
+
