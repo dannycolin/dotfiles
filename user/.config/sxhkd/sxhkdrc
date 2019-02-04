@@ -63,3 +63,10 @@ super + ctrl + {h,j,k,l}
 super + ctrl + space
 	bspc node -p cancel
 
+# resize focused node
+super + {minus,equal,underscore,plus}
+  {bspc node -z right -20 0 & bspc node -z left 20 0, \
+  bspc node -z right 20 0 & bspc node -z left -20 0, \
+  bspc node -z top 0 20 & bspc node -z bottom 0 -20, \
+  bspc node -z bottom 0 20 & bspc node -z top 0 -20}
+  
