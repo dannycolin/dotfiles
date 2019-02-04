@@ -25,7 +25,7 @@ URxvt.font: xft:monospace:size=FONT_SIZE,xft:forkawesome:pixelsize=11
 URxvt.perl-ext-common: default,matcher,selection-to-clipboard
 
 ! Clickable URL (depends on defaut and matcher)
-URxvt.url-launcher: /usr/local/bin/firefox
+URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 
 ! Save X numbers of line in history
