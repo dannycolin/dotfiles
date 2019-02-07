@@ -97,10 +97,8 @@ autocmd FileType nerdtree setlocal relativenumber
 """""""""""""""
 
 " Use 24-bit (true-color) if available
-if ($TERM == "xterm-256color")
-  if (has("termguicolors"))
-    set termguicolors
-  endif
+if (has("termguicolors"))
+  set termguicolors
 else
   let g:onedark_termcolors = 16
 endif
