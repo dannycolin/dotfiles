@@ -19,7 +19,7 @@ rofi.font: monospace FONT_SIZE
 ! ---------------------------------------- !
 
 ! Set font
-URxvt.font: xft:monospace:size=FONT_SIZE,xft:forkawesome:pixelsize=11
+URxvt.font: xft:monospace:size=FONT_SIZE,xft:Symbola:size=FONT_SIZE
 
 ! Perl extension
 URxvt.perl-ext-common: default,matcher,selection-to-clipboard
