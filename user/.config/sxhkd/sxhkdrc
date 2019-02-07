@@ -8,7 +8,7 @@ super + ctrl + r
 
 # terminal emulator
 super + Return
-	uxterm
+	urxvt
 
 # program launcher
 super + a
