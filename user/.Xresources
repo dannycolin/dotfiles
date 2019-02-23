@@ -34,6 +34,12 @@ URxvt*saveLines: 5000
 ! Scrollbar
 URxvt.scrollBar: false
 
+! Remap CLIPBOARD binding
+URxvt.keysym.C-M-c: builtin-string:
+URxvt.keysym.C-M-v: builtin-string:
+URxvt.keysym.C-c: eval:selection_to_clipboard
+URxvt.keysym.C-v: eval:paste_clipboard
+
 ! Colors
 URxvt*foreground:   #d7d3cb
 URxvt*background:   #282c34
