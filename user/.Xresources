@@ -34,11 +34,15 @@ URxvt*saveLines: 5000
 ! Scrollbar
 URxvt.scrollBar: false
 
+! Disable ISO mode on Ctrl+Shift
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
 ! Remap CLIPBOARD binding
-URxvt.keysym.C-M-c: builtin-string:
-URxvt.keysym.C-M-v: builtin-string:
-URxvt.keysym.C-c: eval:selection_to_clipboard
-URxvt.keysym.C-v: eval:paste_clipboard
+URxvt.keysym.Control-Meta-c: builtin-string:
+URxvt.keysym.Control-Meta-v: builtin-string:
+URxvt.keysym.Control-Shift-V: eval:paste_clipboard
+URxvt.keysym.Control-Shift-C: eval:selection_to_clipboard
 
 ! Colors
 URxvt*foreground:   #d7d3cb
