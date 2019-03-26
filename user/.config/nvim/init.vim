@@ -18,6 +18,7 @@ set clipboard=unnamedplus " Always use CLIPBOARD
 set laststatus=2          " Always show statusline
 set mouse=                " NO MOUSE VIM !!!
 set colorcolumn=81        " Highlight 81th column
+set showcmd               " Show current command
 filetype plugin on        " set config specific to filetype
 
 " Files
