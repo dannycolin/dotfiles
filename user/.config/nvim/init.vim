@@ -75,6 +75,8 @@ packadd! nerdtree.vim
 packadd! onedark.vim
 packadd! surround.vim
 
+packadd! indentline.vim
+
 """""""""""""
 " Emmet.vim "
 """""""""""""
