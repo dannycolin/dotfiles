@@ -36,6 +36,7 @@ install:
 	ln -fs $(DOTCONFIG)/rofi/config.rasi 			$(CONFIG)/rofi/config.rasi
 	ln -fs $(DOTCONFIG)/sxhkd/sxhkdrc					$(CONFIG)/sxhkd/sxhkdrc
 	ln -fs $(DOTCONFIG)/vifm/vifmrc 					$(CONFIG)/vifm/vifmrc
+	ln -fs $(DOTCONFIG)/youtube-dl/config 		$(CONFIG)/youtube-dl/config
 
 uninstall:
 	# dothome
@@ -57,4 +58,4 @@ uninstall:
 	unlink $(HOME)/.config/rofi/config.rasi
 	unlink $(HOME)/.config/sxhkd/sxhkdrc
 	unlink $(HOME)/.config/vifm/vifmrc
-
+	unlink $(HOME)/.config/youtube-dl/config
