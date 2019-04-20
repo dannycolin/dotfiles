@@ -2,6 +2,6 @@ configuration {
   font: "monospace 10";
   lines: 5;
   modi: "drun,run,ssh";
-  theme: "~/.config/rofi/themes/Photon-dark";
+  theme: "~/.config/rofi/themes/Photon-dark.rasi";
 }
 
