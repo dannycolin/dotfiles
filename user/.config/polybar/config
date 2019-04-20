@@ -42,7 +42,7 @@ overline-size = 2
 
 
 font-0 = monospace:size=10:style=normal:antialias=true;2
-font-1 = forkawesome:size=10:antialias=true;1
+font-1 = materialdesignicons:size=12:antialias=true;2
 
 ; Modules
 modules-left = bspwm i3
@@ -94,10 +94,19 @@ interface = wlan0
 
 interval = 5.0
 
-format-connected = <label-connected>
+format-connected = <ramp-signal> <label-connected>
 format-disconnected = <label-disconnected>
 
-label-connected =  %signal%%
+label-connected = %signal%%
+label-disconnected = 郎
+
+ramp-signal-font = 2
+
+ramp-signal-0 = 爛
+ramp-signal-1 = 嵐
+ramp-signal-2 = 襤
+ramp-signal-3 = 蠟
+
 
 [module/eth]
 
@@ -108,7 +117,7 @@ interval = 5.0
 
 format-connected = <label-connected>
 
-label-connected = 
+label-connected = 
 
 [module/battery]
 
@@ -119,26 +128,27 @@ full-at = 99
 battery = BAT0
 adapter = ADP1
 
-format-charging = <ramp-capacity> <label-charging>
+format-charging = <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <ramp-capacity> <label-full>
 
-label-charging = %percentage%%+
+label-charging =  %percentage%%
 label-discharging = %percentage%%
-label-full = %percentage%%
+label-full =  %percentage%%
 
-ramp-capacity-0 = 
+ramp-capacity-font = 2
+
+ramp-capacity-0 = 
 ramp-capacity-0-foreground = ${theme.red50}
-ramp-capacity-1 = 
+ramp-capacity-1 = 
 ramp-capacity-1-foreground = ${theme.red50}
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-5 = 
-ramp-capacity-6 = 
-ramp-capacity-7 = 
-ramp-capacity-8 = 
-ramp-capacity-9 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
 
 [module/volume]
 
@@ -146,11 +156,17 @@ type = internal/pulseaudio
 
 sink = alsa_output.pci-0000_12_00.3.analog-stereo
 
-format-volume = <label-volume>
+format-volume = <ramp-volume> <label-volume>
 format-muted = <label-muted>
 
-label-volume =  %percentage%%
-label-muted =  %percentage%%
+label-volume = %percentage%%
+label-muted = ﹨ %percentage%%
+
+ramp-volume-font = 2
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 [module/date]
 type = internal/date
