@@ -1,0 +1,17 @@
+# Do not use the Last-modified header to set the file modification time.
+--no-mtime
+
+# Save under ~/Downloads directory.
+--output ~/Downloads/%(title)s.%(ext)s
+
+# Download the playlist, if the URL refers to a video and a playlist.
+--yes-playlist
+
+# Escape all kind of weird characters in file name.
+--restrict-filenames
+
+# Prefer free video formats unless a specific one is requested
+--prefer-free-formats
+
+# Format
+--audio-format opus
