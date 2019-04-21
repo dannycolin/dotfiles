@@ -3,9 +3,9 @@
 ## Installation
 
 ```
-git clone git@gitlab.com:dannycolin/dotfiles
-cd dotfiles
-make link
+git clone git@gitlab.com:dannycolin/dotfiles ~/.dotfiles
+cd ~/.dotfiles
+stow user
 ```
 
 NB.: You can type `make help` to see the list of available commands.
