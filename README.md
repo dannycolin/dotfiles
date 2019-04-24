@@ -60,7 +60,7 @@ stow user
 - [Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
 - [HTTPS Everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/)
 - [Privacy Badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
-- [Stylus]()
+- [Stylus](https://addons.mozilla.org/en-US/firefox/addon/styl-us/)
 - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
 - [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/)
 - [Zotero Connector](https://www.zotero.org/download/)
