@@ -1,5 +1,15 @@
 # dotfiles
 
+## Table of Content
+
+0. [Installation]()
+0. [System Configuration]()
+0. [Thinkpad E450]()
+0. [Thinkpad X230]()
+0. [Window Manager Keybindings]()
+0. [Browser Extensions]()
+0. [Text Editor Extensions]()
+
 ## Installation
 
 ```
@@ -8,11 +18,14 @@ cd ~/.dotfiles
 stow user
 ```
 
-NB.: You can type `make help` to see the list of available commands.
+## System Configuration
 
-## Window Manager
+| Operating System       | [Debian](https://debian.org)                  |
+| Window Manager         | [bspwm](https://github.com/baskerville/bspwm) |
+| Applications' Launcher | [Rofi](https://github.com/davatorium/rofi)    |
+| Status Bar             | [Polybar](https://github.com/jaagr/polybar)   |
 
-###  Keybindings
+### Window Manager Keybindings
 
 | Key binding                | Action                              |
 | :------------------------- | :---------------------------------- |
@@ -31,8 +44,6 @@ NB.: You can type `make help` to see the list of available commands.
 | Super + Shift + l          | Move window to right                |
 | Super + Shift + q          | Close focused application           |
 | Super + Shift + r          | Reload configuration                |
-| Super + x                  | Split window horizontally (X axis)  |
-| Super + y                  | Split window vertically (Y axis)    |
 | Super + minus              | Shrink window horizontally          |
 | Super + equal              | Grow window horizontally            |
 | Super + Shift + underscore | Shrink window vertically            |
@@ -42,3 +53,26 @@ NB.: You can type `make help` to see the list of available commands.
 | Super + Shift + s          | System mode                         |
 |         p                  | Poweroff                            |
 |         r                  | Restart                             |
+
+## Browser Extensions
+
+- [Axe Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/axe-devtools/)
+- [Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
+- [HTTPS Everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/)
+- [Privacy Badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
+- [Stylus]()
+- [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
+- [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/)
+- [Zotero Connector](https://www.zotero.org/download/)
+
+## Text Editor Extensions
+
+- [buftabline](https://github.com/ap/vim-buftabline)
+- [emmet](https://github.com/mattn/emmet-vim)
+- [gitgutter](https://github.com/airblade/vim-gitgutter)
+- [nerdtree](https://github.com/scrooloose/nerdtree)
+- [onedark](https://github.com/joshdick/onedark.vim)
+- [surround](https://github.com/tpope/vim-surround)
+- [indentline](https://github.com/Yggdroot/indentLine)
+
+
