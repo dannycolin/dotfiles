@@ -5,6 +5,7 @@
 0. [Disable PC Speaker]()
 0. [Lock Screen on Sleep]()
 0. [Set Keyboard Layout to US (options: altgr-intl, caps:swapescape)]()
+0. [Run libvirt as non-root user]()
 
 ## Autologin at Bootup
 
@@ -71,6 +72,28 @@ Open a terminal and enable the new service with:
 ```
 systemctl enable screenlock.service
 ```
+
+## Run libvirt as non-root user
+
+**See also debian wiki on KVM**
+
+Create a file named 
+*/etc/polkit-1/localauthority/50-local.d/50-org.example-libvirt-remote-access.pkla*.
+
+Add the following lines:
+
+```
+[Remote libvirt SSH access]
+Identity=unix-group:virt
+Action=org.libvirt.unix.manage;org.libvirt.unix.monitor
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
+```
+
+Add your user to the libvirt group:
+
+`sudo usermod -aG libvirt [username]`
 
 ## Set Keyboard Layout to US (options: altgr-intl, caps:swapescape)
 
