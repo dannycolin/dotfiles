@@ -93,11 +93,15 @@ ResultActive=yes
 
 Add your user to the libvirt group:
 
-`sudo usermod -aG libvirt [username]`
+```
+sudo usermod -aG libvirt [username]
+```
 
 ## Set Keyboard Layout to US (options: altgr-intl, caps:swapescape)
 
 Create a file named */etc/X11/xorg.conf.d/00-keyboard.conf* that contains:
 
-`localectl --no-convert set-x11-keymap us pc105 altgr-intl caps:swapescape`
+```
+localectl --no-convert set-x11-keymap us pc105 altgr-intl caps:swapescape
+```
 
