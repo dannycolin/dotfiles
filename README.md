@@ -4,8 +4,6 @@
 
 0. [Installation]()
 0. [System Configuration]()
-0. [Thinkpad E450]()
-0. [Thinkpad X230]()
 0. [Window Manager Keybindings]()
 0. [Browser Extensions]()
 0. [Text Editor Extensions]()
@@ -20,6 +18,8 @@ stow user
 
 ## System Configuration
 
+|||
+| --- | --- |
 | Operating System       | [Debian](https://debian.org)                  |
 | Window Manager         | [bspwm](https://github.com/baskerville/bspwm) |
 | Applications' Launcher | [Rofi](https://github.com/davatorium/rofi)    |
