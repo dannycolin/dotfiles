@@ -1,4 +1,4 @@
-# dotfiles
+# ~/.dotfiles
 
 ## Table of Content
 
@@ -74,5 +74,4 @@ stow user
 - [onedark](https://github.com/joshdick/onedark.vim)
 - [surround](https://github.com/tpope/vim-surround)
 - [indentline](https://github.com/Yggdroot/indentLine)
-
 
