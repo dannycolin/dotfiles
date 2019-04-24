@@ -2,6 +2,9 @@
 
 0. [Autologin at Bootup]()
 0. [Autostart X at Login]()
+0. [Change Network Interface Name]()
+0. [Configure Network Manager]()
+0. [Configure PEAP connection with nmcli]()
 0. [Disable PC Speaker]()
 0. [Lock Screen on Sleep]()
 0. [Set Keyboard Layout to US (options: altgr-intl, caps:swapescape)]()
@@ -34,6 +37,67 @@ Add the following to the bottom of one of:
 if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
   exec startx
 fi
+```
+
+## Change network name interface
+
+Create a file named */etc/systemd/network/10-<interface_name>.link* containing:
+
+```
+[Match]
+MACAddress=<mac_address>
+
+[Link]
+Name=<interface_name>
+```
+
+### Configure Network Manager
+
+In */etc/NetworkManager/NetworkManager.conf*, change variable `managed` to `true`.
+
+Modify */etc/network/interfaces* so it looks like:
+
+```
+source /etc/network/interfaces.d/*
+
+auto lo
+iface lo inet loopback
+```
+
+## Configure PEAP connection with nmcli
+
+Create a new connection :
+
+```
+nmcli connection add type wifi con-name <connection_name> ifname <interface_name> ssid <ssid_name>
+```
+
+Add the following properties:
+
+```
+[connection]
+id=<connection_name>
+
+[wifi]
+mode=infrastructure
+ssid=<ssid_name>
+security=802-11-wireless-security
+
+[802-11-wireless-security]
+key-mgmt=wpa-eap
+
+[802-1x]
+eap=peap;
+identity=<username>
+phase2-auth=mschapv2
+password=<password>
+
+[ipv4]
+method=auto
+
+[ipv6]
+addr-gen-mode=stable-privacy
+method=auto
 ```
 
 ### Disable PC Speaker
