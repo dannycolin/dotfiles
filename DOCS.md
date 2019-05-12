@@ -124,7 +124,7 @@ Before=sleep.target
 [Service]
 User=<username>
 Type=forking
-Environment=<display>
+Environment=DISPLAY=:0
 ExecStart=<path to your lock script>
 
 [Install]
@@ -158,7 +158,7 @@ ResultActive=yes
 Add your user to the libvirt group:
 
 ```
-sudo usermod -aG libvirt [username]
+sudo usermod -aG libvirt <username>
 ```
 
 ## Set Keyboard Layout to US (options: altgr-intl, caps:swapescape)
