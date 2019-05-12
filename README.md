@@ -63,6 +63,7 @@ stow --target=$HOME *
 - [Stylus](https://addons.mozilla.org/en-US/firefox/addon/styl-us/)
 - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
 - [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/)
+- [Unpaywall](https://addons.mozilla.org/en-US/firefox/addon/unpaywall/)
 - [Zotero Connector](https://www.zotero.org/download/)
 
 ## Text Editor Extensions
