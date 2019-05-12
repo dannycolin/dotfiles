@@ -12,8 +12,8 @@
 
 ```
 git clone git@gitlab.com:dannycolin/dotfiles ~/.dotfiles
-cd ~/.dotfiles
-stow user
+cd ~/.dotfiles/user
+stow --target=$HOME *
 ```
 
 ## System Configuration
