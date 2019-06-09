@@ -56,11 +56,13 @@ Name=<interface_name>
 
 Create a file named */etc/X11/xorg.conf.d/20-intel.conf* that contains:
 
+```
 Section "Device"
     Identifier  "Intel Graphics" 
     Driver      "intel"
     Option      "Backlight"  "intel_backlight"
 EndSection
+```
 
 ### Configure Network Manager
 
