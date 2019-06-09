@@ -3,6 +3,7 @@
 0. [Autologin at Bootup]()
 0. [Autostart X at Login]()
 0. [Change Network Interface Name]()
+0. [Configure intel_backlight]()
 0. [Configure Network Manager]()
 0. [Configure PEAP connection with nmcli]()
 0. [Disable PC Speaker]()
@@ -50,6 +51,16 @@ MACAddress=<mac_address>
 [Link]
 Name=<interface_name>
 ```
+
+## Configure intel_backlight 
+
+Create a file named */etc/X11/xorg.conf.d/20-intel.conf* that contains:
+
+Section "Device"
+    Identifier  "Intel Graphics" 
+    Driver      "intel"
+    Option      "Backlight"  "intel_backlight"
+EndSection
 
 ### Configure Network Manager
 
@@ -168,4 +179,3 @@ Create a file named */etc/X11/xorg.conf.d/00-keyboard.conf* that contains:
 ```
 localectl --no-convert set-x11-keymap us pc105 altgr-intl caps:swapescape
 ```
-
