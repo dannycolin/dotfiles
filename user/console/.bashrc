@@ -59,5 +59,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Rembember last used directory
+LAST_DIR_FILE="/tmp/.lastdir"
+function cd() {
+  builtin cd "$@"
+  pwd > $LAST_DIR_FILE
+}
+if [ -f "$LAST_DIR_FILE" ]; then
+  cd "$(< $LAST_DIR_FILE)"
+fi
+
 # Custom PS1
 PS1="\w\$ "
