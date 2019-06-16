@@ -26,19 +26,12 @@ shopt -s checkwinsize
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias la='ls -a --group-directories-first'
-    alias lla='ls -lha --group-directories-first'
-    alias grep='grep --color=auto'
-    alias ta='tree -a --dirsfirst -I ".git|node_modules"'
-    alias tla='tree -lha --dirsfirst -I ".git|node_modules"'
 fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
