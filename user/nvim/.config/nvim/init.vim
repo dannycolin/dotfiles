@@ -21,6 +21,12 @@ set colorcolumn=81        " Highlight 81th column
 set showcmd               " Show current command
 filetype plugin on        " set config specific to filetype
 
+" Modeline
+" Turn it off to prevent Arbitrary Code Execution via Modelines
+" CVE-2019-12735
+set modelines=0
+set nomodeline
+
 " Files
 set encoding=utf-8        " the encoding displayed
 set fileencoding=utf-8    " the encoding written to file
