@@ -7,8 +7,8 @@ super + ctrl + r
   pkill -USR1 -x sxhkd
 
 # terminal emulator
-super + Return
-	urxvt
+super + {_,shift + } Return
+	{uxterm, alacritty}
 
 # program launcher
 super + a
