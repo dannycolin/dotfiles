@@ -63,4 +63,9 @@ if [ -f "$LAST_DIR_FILE" ]; then
 fi
 
 # Custom PS1
-PS1="\w\$ "
+# ~/.bash_prompt
+if [ -f ~/.bash_prompt ]; then
+    . ~/.bash_prompt
+else
+  PS1="\w\$ "
+fi
