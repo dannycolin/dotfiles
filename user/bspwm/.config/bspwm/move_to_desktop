@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Gimp class change for every version on Debian. So this is a workaround
+# that let me use regex to move Gimp's window on the right desktop. Why?
+# because bspwm rule's command doesn't support regex.
+
+wid=$1
+class=$2
+instance=$3
+
+if [[ "$class" =~ "Gimp" ]]; then
+  echo "desktop=^5"
+fi
