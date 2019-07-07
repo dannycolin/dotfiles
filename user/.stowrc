@@ -1,5 +1,2 @@
-# Stow 2.2.2 doesn't expand environment variables. It's been fixed in 2.3.0.
-#   see: https://github.com/aspiers/stow/pull/40
-# --target=$HOME
 --no-folding
 --verbose
