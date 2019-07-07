@@ -1,4 +1,4 @@
-#!/usr/bin/env bash 
+#!/bin/bash 
 
 # Set the window state depending on its type. By default, normal windows are 
 # setted tiled and dialog are setted to floating
