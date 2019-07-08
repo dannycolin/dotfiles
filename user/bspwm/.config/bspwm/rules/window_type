@@ -6,8 +6,12 @@
 # For a list of all window types see: 
 #   https://standards.freedesktop.org/wm-spec/latest/ar01s05.html
 
-if [[ "$(xwinfo -t $1)" == "normal" ]]; then
+wid=$1
+class=$2
+instance=$3
+
+if [[ "$(xwinfo -t $wid)" == "normal" ]]; then
   printf "state=tiled"
-elif [[ "$(xwinfo -t $1)" == "dialog" ]]; then
+elif [[ "$(xwinfo -t $wid)" == "dialog" ]]; then
   printf "state=floating"
 fi
