@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Load external rules' files
+
+. ~/.config/bspwm/rules/move_to_desktop
+. ~/.config/bspwm/rules/window_type

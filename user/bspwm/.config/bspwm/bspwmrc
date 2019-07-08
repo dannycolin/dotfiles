@@ -58,6 +58,5 @@ bspc rule -a Thunderbird  desktop="^4"
 bspc rule -a Weechat      desktop="^3"
 
 # External rules
-bspc config external_rules_command ~/.config/bspwm/rules/window_type
-bspc config external_rules_command ~/.config/bspwm/rules/move_to_desktop
+bspc config external_rules_command ~/.config/bspwm/rules/bootstrap
 
