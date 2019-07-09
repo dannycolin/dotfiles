@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 # Set the window state depending on its type. By default, normal windows are 
-# setted tiled and dialog are setted to floating
+# set to tiled and dialog are set to floating
 # 
 # For a list of all window types see: 
 #   https://standards.freedesktop.org/wm-spec/latest/ar01s05.html
