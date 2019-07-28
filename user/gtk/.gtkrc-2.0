@@ -1,5 +1,5 @@
 # Gtk2 settings
-gtk-theme-name="Adwaita"
+gtk-theme-name="Adwaita-dark"
 gtk-icon-theme-name="Adwaita"
 gtk-font-name="monospace 10"
 gtk-cursor-theme-name="Adwaita"
