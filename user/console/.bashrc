@@ -52,12 +52,21 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Rembember last used directory
+# Extend builtin cd function
 LAST_DIR_FILE="/tmp/.lastdir"
-function cd() {
-  builtin cd "$@"
+cd() {
+  # Go back nth directories (e.g `cd .. 5`)
+	if [[ "$1" == ".." && -n "$2" ]]; then
+    for (( i=$2; i>=1; i--)); do
+		  builtin cd "$1"
+    done
+  else
+    builtin cd "$@"
+	fi
+  # Save last directory we were in
   pwd > $LAST_DIR_FILE
 }
+# When opening a new terminal, set the last directory we were in
 if [ -f "$LAST_DIR_FILE" ]; then
   cd "$(< $LAST_DIR_FILE)"
 fi
@@ -69,3 +78,4 @@ if [ -f ~/.bash_prompt ]; then
 else
   PS1="\w\$ "
 fi
+
