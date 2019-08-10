@@ -8,8 +8,9 @@
 0. [Configure PEAP connection with nmcli]()
 0. [Disable PC Speaker]()
 0. [Lock Screen on Sleep]()
-0. [Set Keyboard Layout to US (options: altgr-intl, caps:swapescape)]()
 0. [Run libvirt as non-root user]()
+0. [Set Keyboard Layout to US (options: altgr-intl, caps:swapescape)]()
+0. [Set Swapiness Value]()
 
 ## Autologin at Bootup
 
@@ -180,4 +181,12 @@ Create a file named */etc/X11/xorg.conf.d/00-keyboard.conf* that contains:
 
 ```
 localectl --no-convert set-x11-keymap us pc105 altgr-intl caps:swapescape
+```
+
+## Set Swapiness Value
+
+Create a file named */etc/sysctl.d/10-local.conf* and add:
+
+```
+vm.swapiness=10 
 ```
