@@ -77,11 +77,11 @@ autocmd CursorHold,CursorHoldI * if expand('%') != '' | silent update | endif
 packadd! buftabline.vim
 packadd! emmet.vim
 packadd! gitgutter.vim
+"packadd! indentline.vim
 packadd! nerdtree.vim
 packadd! onedark.vim
 packadd! surround.vim
 
-packadd! indentline.vim
 
 """""""""""""
 " Emmet.vim "
