@@ -73,6 +73,8 @@ URxvt*color15:      #d7d3cb
 ! Declare xterm TERM name
 xterm*termName: xterm-256color
 
+! Hide scrollbar
+xterm*ScrollBar: false
 ! Set font properties
 xterm*faceName: monospace
 xterm*faceSize: FONT_SIZE
