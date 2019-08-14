@@ -1,0 +1,8 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Danny Colin
+	email = contact@dannycolin.com
+
+[color]
+	ui = true
+
