@@ -1,0 +1,7 @@
+# This file should go in /etc/systemd/network/10-interface_name.link
+
+[Match]
+MACAddress={mac_address}
+
+[Link]
+Name={interface_name}
