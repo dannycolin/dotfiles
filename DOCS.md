@@ -1,57 +1,12 @@
 # Documentation
 
-0. [Autologin at Bootup]()
-0. [Autostart X at Login]()
-0. [Change Network Interface Name]()
 0. [Configure intel_backlight]()
 0. [Configure Network Manager]()
 0. [Configure PEAP connection with nmcli]()
 0. [Disable PC Speaker]()
 0. [Lock Screen on Sleep]()
 0. [Run libvirt as non-root user]()
-0. [Set Keyboard Layout to US (options: altgr-intl, caps:swapescape)]()
 0. [Set Swapiness Value]()
-
-## Autologin at Bootup
-
-Open a terminal and type:
-
-```
-systemctl set-default multi-user.target
-systemctl edit getty@tty1.service
-```
-
-Add the following lines to the *override* file that *systemctl* just create:
-
-```
-ExecStart=-/sbin/agetty --noclear %I $TERM`
-ExecStart=-/sbin/agetty --autologin sdk --noclear %I $TERM
-```
-
-## Autostart X at Login
-
-Add the following to the bottom of one of: 
-
-- *~/.bash_profile*
-- *~/.profile* (Note: It will be ignored if *~/.bash_profile* exists)
-
-```
-if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
-  exec startx
-fi
-```
-
-## Change network name interface
-
-Create a file named */etc/systemd/network/10-<interface_name>.link* containing:
-
-```
-[Match]
-MACAddress=<mac_address>
-
-[Link]
-Name=<interface_name>
-```
 
 ## Configure intel_backlight 
 
@@ -173,14 +128,6 @@ Add your user to the libvirt group:
 
 ```
 sudo usermod -aG libvirt <username>
-```
-
-## Set Keyboard Layout to US (options: altgr-intl, caps:swapescape)
-
-Create a file named */etc/X11/xorg.conf.d/00-keyboard.conf* that contains:
-
-```
-localectl --no-convert set-x11-keymap us pc105 altgr-intl caps:swapescape
 ```
 
 ## Set Swapiness Value
