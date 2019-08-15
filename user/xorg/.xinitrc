@@ -1,5 +1,5 @@
 # Load Xresources on boot
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+xrdb ~/.Xresources
 
 # Start the WM
 exec bspwm
