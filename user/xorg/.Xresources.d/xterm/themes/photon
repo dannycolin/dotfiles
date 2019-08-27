@@ -1,0 +1,24 @@
+! ------------------------------------------------------ !
+! Theme: Quantum (https://github.com/kjssad/quantum.vim) !
+! ------------------------------------------------------ !
+
+*VT100*foreground:  #d7d7db
+*VT100*background:  #2a2a2e
+*VT100*cursorColor: #d7d7db
+
+*VT100*color0:      #2a2a2e
+*VT100*color1:      #eb5368
+*VT100*color2:      #87de74
+*VT100*color3:      #ffd866
+*VT100*color4:      #75bfff
+*VT100*color5:      #b98eff
+*VT100*color6:      #6b89ff
+*VT100*color7:      #d7d7db
+*VT100*color8:      #737373
+*VT100*color9:      #ff7de9
+*VT100*color10:     #87de74
+*VT100*color11:     #ffd866
+*VT100*color12:     #75bfff
+*VT100*color13:     #b98eff
+*VT100*color14:     #6b89ff
+*VT100*color15:     #939295
