@@ -20,7 +20,7 @@ for app in "${!apps[@]}"; do
   fi
 done
 
-feh --bg-scale /home/sdk/Pictures/Wallpapers/current.jpg
+feh --bg-scale /home/sdk/Pictures/wallpapers/current.jpg
 xsetroot -cursor_name left_ptr
 
 # ---------------------------------------- 
