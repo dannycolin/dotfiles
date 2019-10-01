@@ -5,3 +5,4 @@ configuration {
   theme: "~/.config/rofi/themes/Photon-dark.rasi";
 }
 
+

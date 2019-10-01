@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# $1 [ d | f ]
+# $2 [ 000 ]
+# $3 [ PATH ]
+
+find $3 -type $1 -exec chmod $2 {} +

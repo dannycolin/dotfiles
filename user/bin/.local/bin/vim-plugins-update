@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ~/.local/share/nvim/site/pack/default/opt
+git submodule update --recursive --remote
