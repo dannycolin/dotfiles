@@ -73,6 +73,6 @@ stow --target=$HOME *
 - [gitgutter](https://github.com/airblade/vim-gitgutter)
 - [nerdtree](https://github.com/scrooloose/nerdtree)
 - [onedark](https://github.com/joshdick/onedark.vim)
+- [quantum](https://github.com/kjssad/quantum.vim)
 - [surround](https://github.com/tpope/vim-surround)
-- [indentline](https://github.com/Yggdroot/indentLine)
 
