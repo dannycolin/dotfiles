@@ -1,7 +1,11 @@
+alias cp='cp -v'
 alias grep='grep --color=auto'
 alias ls='ls --group-directories-first --color=auto'
 alias la='ls -a --group-directories-first'
 alias lla='ls -lha --group-directories-first'
-alias mkdir='mkdir -p'
+alias mkdir='mkdir -pv'
+alias mv='mv -v'
+alias tb="(exec 3<>/dev/tcp/termbin.com/9999; cat >&3; cat <&3; exec 3<&-)"
 alias tree='tree -a --dirsfirst -I ".git|node_modules"'
+alias rm='rm -Iv'
 alias servedir='python3 -m http.server 4000 --bind 127.0.0.1'
