@@ -80,12 +80,10 @@ label-mode-padding = 1
 label-focused = %name%
 label-focused-foreground = ${theme.blue50}
 label-focused-padding-left = 1
-label-focused-underline = #ff0000
 label-unfocused = %name%
 label-unfocused-padding-left = 1
 label-urgent = %name%
-label-urgent-foreground = ${theme.teal50}
-label-urgent-padding = 1
+label-urgent-padding-left = 1
 
 [module/wlan]
 
