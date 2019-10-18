@@ -7,6 +7,7 @@
 ;   3.1 WM 
 ;     3.1.1 bspwm
 ;     3.1.2 i3
+;     3.1.3 xworkspaces
 ;   3.2 wlan
 ;   3.3 ethernet
 ;   3.4 battery
@@ -19,14 +20,10 @@
 
 [theme]
 
-white     = #ffffff
-blue60    = #0060df
 blue50    = #0a84ff
-grey70    = #38383d
+grey10    = #f9f9fa
 grey90    = #0c0c0d
 red50     = #ff0039
-teal50    = #00c8d7 
-yellow50  = #ffe900
 
 [bar/top]
 
@@ -34,7 +31,7 @@ yellow50  = #ffe900
 width = 100%
 
 background = ${theme.grey90}
-foreground = ${theme.white}
+foreground = ${theme.grey10}
 
 padding-right = 1 
 
@@ -45,7 +42,7 @@ font-0 = monospace:size=10:style=normal:antialias=true;2
 font-1 = materialdesignicons:size=12:antialias=true;2
 
 ; Modules
-modules-left = bspwm i3
+modules-left = bspwm i3 xworkspaces
 modules-center = date
 modules-right = wlan eth battery volume
 
@@ -64,7 +61,7 @@ label-focused-foreground = ${theme.blue50}
 label-occupied = %name%
 label-occupied-padding-left = 1
 label-urgent = %name%
-label-urgent-foreground = ${theme.teal50}
+label-urgent-padding-left = 1
 
 [module/i3]
 
@@ -75,8 +72,6 @@ enable-scroll = false
 strip-wsnumbers = true
 
 label-mode = %mode%
-label-mode-foreground = ${theme.yellow50}
-label-mode-padding = 1
 label-focused = %name%
 label-focused-foreground = ${theme.blue50}
 label-focused-padding-left = 1
@@ -84,6 +79,16 @@ label-unfocused = %name%
 label-unfocused-padding-left = 1
 label-urgent = %name%
 label-urgent-padding-left = 1
+
+[module/xworkspaces]
+
+type = internal/xworkspaces
+
+enable-scroll = false
+
+label-active = %name% 
+label-active-foreground = ${theme.blue50}
+label-active-padding-left = 1
 
 [module/wlan]
 
