@@ -1,37 +1,72 @@
 # i3 config file (v4)
 
 # ------------------------------
+# Variables
+# ------------------------------
+
+# Set mode key
+set $mod Mod4
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# Colorscheme
+set $blue50 "#0a84ff"
+set $grey10 "#f9f9fa"
+set $grey80 "#2a2a2e"
+set $grey90 "#0c0c0d"
+
+# ------------------------------
 # General
 # ------------------------------
 
-# Set modifier key
-set $mod Mod4
+# Disable window titlebar
+default_border pixel 2
+default_floating_border pixel 2
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+# Move floating window with $mod+mouse
+floating_modifier $mod
+
+# Disable cycle and mouse focus
+focus_follows_mouse no
+focus_wrapping no
+
+# Set default font
 font pango:monospace 8
 
-# Hide window titles
-default_border pixel 2
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# Disable urgency hint
+force_display_urgency_hint 0
 
 # ------------------------------
 # Key Bindings
 # ------------------------------
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+a exec --no-startup-id rofi -show drun
+bindsym $mod+y split vertical
+bindsym $mod+x split horizontal
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-
-# start a terminal
 bindsym $mod+Return exec xterm
 
-# kill focused window
+bindsym $mod+Shift+c reload
 bindsym $mod+Shift+q kill
+bindsym $mod+Shift+r restart
+
+
+# resize window
+bindsym $mod+equal resize grow width 10 px
+bindsym $mod+minus resize shrink width 10 px
+bindsym $mod+shift+equal resize grow height 10 px
+bindsym $mod+shift+minus resize shrink height 10 px
 
 # change focus
 bindsym $mod+h focus left
@@ -50,19 +85,6 @@ bindsym $mod+f floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -88,18 +110,47 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# Window colors
-set $blue50 "#0a84ff"
-set $grey10 "#f9f9fa"
-set $grey80 "#2a2a2e"
-Set $grey90 "#0c0c0d"
+# sound control
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 
-# Class				Border	Background Foreground Indicator Child_Border
-client.focused			$blue50 $grey90    $grey10    $blue50 	$blue50
+# brightness control
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+
+# ------------------------------
+# Colors
+# ------------------------------
+
+# Class				            Border	Background Foreground Indicator Child_Border
+client.focused			      $blue50 $grey90    $grey10    $blue50 	$blue50
 client.focused_inactive		$grey80 $grey90    $grey10    $grey80 	$grey80
-client.unfocused		$grey80 $grey90    $grey10    $grey80 	$grey80
+client.unfocused		      $grey80 $grey90    $grey10    $grey80 	$grey80
+client.urgent             $grey80 $grey90    $grey10    $grey80   $grey80
+client.placeholder        $grey80 $grey90    $grey10    $grey80   $grey80
 
-# 
+# ------------------------------
+# Rules
+# ------------------------------
+assign [class="Nightly"]      $ws2
+assign [class="Thunderbird"]  $ws4
+assign [class="Gimp"]         $ws5
+assign [class="Inkscape"]     $ws5
+
+# ------------------------------
+# Modes
+# ------------------------------
+bindsym $mod+shift+s mode "system"
+
+mode "system" {
+    bindsym r exec systemctl reboot
+    bindsym p exec systemctl poweroff
+
+    bindsym Escape mode "default"
+}
+
+# ------------------------------
 # Execute 
-#
+# ------------------------------
 exec_always --no-startup-id $HOME/.config/polybar/launch
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpapers/current.jpg
