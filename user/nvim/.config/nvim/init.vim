@@ -55,7 +55,6 @@ set smarttab
 set softtabstop=2
 set tabstop=2
 
-
 " Autosave (default based on updatetime so every 4000ms)
 "
 " ***Move autocmd to a separate plugin***
@@ -77,11 +76,10 @@ autocmd CursorHold,CursorHoldI * if expand('%') != '' | silent update | endif
 packadd! buftabline.vim
 packadd! emmet.vim
 packadd! gitgutter.vim
-"packadd! indentline.vim
+packadd! hexokinase.vim
 packadd! nerdtree.vim
 packadd! onedark.vim
 packadd! surround.vim
-
 
 """""""""""""
 " Emmet.vim "
@@ -90,6 +88,12 @@ packadd! surround.vim
 let g:user_emmet_expandabbr_key = '<C-e>'
 let g:user_emmet_install_global = 0
 autocmd FileType html,markdown EmmetInstall
+
+""""""""""""""""""
+" Hexokinase.vim "
+""""""""""""""""""
+
+let g:Hexokinase_highlighters = ['virtual']
 
 """"""""""""""""
 " Nerdtree.vim "
@@ -109,7 +113,7 @@ autocmd FileType nerdtree setlocal relativenumber
 if (has("termguicolors"))
   set termguicolors
 else
-  let g:onedark_termcolors = 16
+  let g:onedark_termcolors = 256
 endif
 
 """"""""""""""""""
@@ -153,8 +157,8 @@ set statusline+=%l/%L]                          "cursor line/total lines
 " 4. Syntax highlighting "
 """"""""""""""""""""""""""
 
-syntax on                           " turn on syntax highlighting
 colorscheme onedark                 " set the colorscheme
+syntax on                           " turn on syntax highlighting
 
 " override theme's colors
 highlight ColorColumn ctermbg=238 guibg=#3B4048
