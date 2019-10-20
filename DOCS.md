@@ -8,7 +8,18 @@
 0. [Run libvirt as non-root user]()
 0. [Set Swapiness Value]()
 
-## Configure intel_backlight 
+## Configure backlight
+
+### Brightnessctl
+
+**Note**: The i915 driver cause lag issues and to resolve them we need to use the 
+modesetting (default) driver of Xorg. However, modesetting doesn't support the
+*backlight* property. Before of that, we need to use [brightnessctl][brightnessctl].
+
+After following the installation instruction of brightnessctl, make sure to add
+your user to the *video* group and to reboot the computer.
+
+### xbacklight (deprecated)
 
 Create a file named */etc/X11/xorg.conf.d/20-intel.conf* that contains:
 
@@ -20,7 +31,9 @@ Section "Device"
 EndSection
 ```
 
-### Configure Network Manager
+## Configure Network Manager
+
+**Note**: On Fedora, we need to manually set the connection via nmcli.
 
 In */etc/NetworkManager/NetworkManager.conf*, change variable `managed` to `true`.
 
@@ -137,3 +150,5 @@ Create a file named */etc/sysctl.d/10-local.conf* and add:
 ```
 vm.swapiness=10 
 ```
+
+[brightnessctl]: https://github.com/Hummer12007/brightnessctl
