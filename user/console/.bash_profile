@@ -20,9 +20,6 @@ if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
   exec startx
 fi
 
-# Set the ENVVAR for the ssh-agent socket
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
 # Set QT5 theme
 export QT_STYLE_OVERRIDE=adwaita-dark
 #export QT_QPA_PLATFORMTHEME=qt5ct

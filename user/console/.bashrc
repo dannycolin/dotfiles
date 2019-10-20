@@ -71,6 +71,11 @@ if [ -f "$LAST_DIR_FILE" ]; then
   cd "$(< $LAST_DIR_FILE)"
 fi
 
+# SSH socket
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+fi
+
 # Custom PS1
 # ~/.bash_prompt
 if [ -f ~/.bash_prompt ]; then
