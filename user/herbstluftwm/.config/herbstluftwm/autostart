@@ -1,0 +1,111 @@
+#!/usr/bin/bash
+
+# ---------------------------------------- 
+# Autostart
+# ---------------------------------------- 
+
+declare -A apps
+
+apps=(
+  [polybar]="polybar -r top"
+)
+
+# Detect if applications are already running. If not, start them.
+for app in "${!apps[@]}"; do
+  running="$(pgrep "$app")"
+
+  if [[ ! "$running" ]]; then
+    ${apps["$app"]} &
+  fi
+done
+
+feh --bg-scale /home/sdk/Pictures/wallpapers/current.jpg
+xsetroot -cursor_name left_ptr
+
+# ---------------------------------------- 
+# herbstluftwm 
+# ---------------------------------------- 
+
+hc() {
+    herbstclient "$@"
+}
+
+hc emit_hook reload
+
+# remove all existing keybindings
+hc keyunbind --all
+
+# Variable
+Mod=Mod4    # Set mode
+
+# General
+hc keybind $Mod-Shift-r reload
+hc keybind $Mod-Shift-q close
+hc keybind $Mod-Return spawn xterm
+
+# focusing clients
+hc keybind $Mod-h   focus left
+hc keybind $Mod-j   focus down
+hc keybind $Mod-k   focus up
+hc keybind $Mod-l   focus right
+
+# moving clients
+hc keybind $Mod-Shift-h     shift left
+hc keybind $Mod-Shift-j     shift down
+hc keybind $Mod-Shift-k     shift up
+hc keybind $Mod-Shift-l     shift right
+
+# Create pre-selected space
+hc keybind $Mod-Control-h   split   left    0.5
+hc keybind $Mod-Control-j   split   bottom  0.5
+hc keybind $Mod-Control-k   split   top     0.5
+hc keybind $Mod-Control-l   split   right   0.5
+
+# Remove pre-selected space
+hc keybind $Mod-Control-space remove
+
+# Toggle floating state
+hc keybind $Mod-f floating toggle
+
+# tags
+tag_names=( {1..10} )
+tag_keys=( {1..9} 0 )
+
+hc rename default "${tag_names[0]}" || true
+for i in ${!tag_names[@]} ; do
+  hc add "${tag_names[$i]}"
+  key="${tag_keys[$i]}"
+  if ! [ -z "$key" ] ; then
+    hc keybind "$Mod-$key" use_index "$i"
+    hc keybind "$Mod-Shift-$key" move_index "$i"
+  fi
+done
+
+# Theme
+hc attr settings.frame_gap 0
+hc attr settings.frame_bg_transparent 1
+hc attr settings.frame_border_width 0
+hc attr settings.window_border_width 2
+hc attr settings.window_border_active_color "#0a84ff"
+hc attr settings.window_border_normal_color "#2a2a2e"
+hc attr settings.default_frame_layout 3
+
+# mouse
+hc mouseunbind --all
+hc mousebind $Mod-Button1 move
+hc mousebind $Mod-Button2 zoom
+hc mousebind $Mod-Button3 resize
+
+# rules
+hc unrule -F
+hc rule class=Nightly tag=2 
+hc rule class=Thunderbird tag=4
+hc rule focus=on # normally focus new clients
+hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
+hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
+hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
+
+hc set tree_style '╾│ ├└╼─┐'
+
+# unlock, just to be sure
+hc unlock
