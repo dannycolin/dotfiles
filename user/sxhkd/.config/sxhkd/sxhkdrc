@@ -25,7 +25,7 @@ XF86Audio{_,Mic}Mute
 
 # brightness control
 XF86MonBrightness{Down,Up}
-  xbacklight -{dec,inc} 10
+  brightnessctl s {10%-,+10%}
 
 # system poweroff, reboot
 super + shift + s; {p,r}

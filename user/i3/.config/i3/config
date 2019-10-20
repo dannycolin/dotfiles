@@ -115,8 +115,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 
 # brightness control
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +10%
 
 # ------------------------------
 # Colors
