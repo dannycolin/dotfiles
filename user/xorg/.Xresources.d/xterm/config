@@ -11,6 +11,14 @@ xterm*ScrollBar: false
 xterm*faceName: monospace
 xterm*faceSize: FONT_SIZE
 
+! Variable font size
+xterm*faceSize1: 14
+xterm*faceSize2: 16
+xterm*faceSize3: 18
+xterm*faceSize4: 20
+xterm*faceSize5: 22
+xterm*forceBoxChars: false
+
 ! Save X numbers of line in history
 xterm*saveLines: 5000
 
@@ -27,7 +35,10 @@ xterm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35
 xterm*translations: #override \n\
     Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
-    Shift <Btn1Up>: exec-formatted("xdg-open '%t'", CLIPBOARD) select-start() select-end()
+    Shift <Btn1Up>: exec-formatted("xdg-open '%t'", CLIPBOARD) select-start() select-end() \n\
+    Ctrl Shift <Key> minus: smaller-vt-font() \n\
+    Ctrl Shift <Key> plus: larger-vt-font() \n\
+    Ctrl Shift <Key> 0: set-vt-font(d)
 
 ! Specifies whether to combine bold attribute with a brighter color or not.
 *VT100*boldColors: false
