@@ -42,7 +42,9 @@ font-0 = monospace:size=10:style=normal:antialias=true;2
 font-1 = materialdesignicons:size=12:antialias=true;2
 
 ; Modules
-modules-left = bspwm i3 xworkspaces
+; TODO
+;   Find a way to detect the WM and load the appropriate module.
+modules-left = bspwm
 modules-center = date
 modules-right = wlan eth battery volume
 
@@ -89,6 +91,12 @@ enable-scroll = false
 label-active = %name% 
 label-active-foreground = ${theme.blue50}
 label-active-padding-left = 1
+label-empty = %name%
+label-empty-foreground = ${theme.grey10}
+label-empty-padding-left = 1
+label-occupied = %name%
+label-occupied-foreground = ${theme.red50}
+label-occupied-padding-left = 1
 
 [module/wlan]
 
