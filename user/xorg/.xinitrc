@@ -2,4 +2,4 @@
 xrdb ~/.Xresources
 
 # Start the WM
-exec i3
+exec bspwm
