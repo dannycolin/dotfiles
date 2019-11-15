@@ -80,6 +80,7 @@ packadd! hexokinase.vim
 packadd! nerdtree.vim
 packadd! onedark.vim
 packadd! surround.vim
+packadd! twig.vim
 
 """""""""""""
 " Emmet.vim "
