@@ -1,0 +1,11 @@
+#!/bin/bash
+
+install() {
+  cd ~/.local/share/nvim/site/pack/default/
+  git clone --recurse-submodules -j8 git@github.com:dannycolin/vim-plugins.git opt
+}
+
+update() {
+  cd ~/.local/share/nvim/site/pack/default/opt
+  git submodule update --recursive --remote
+}
