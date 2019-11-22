@@ -8,39 +8,6 @@ include-file = .config/polybar/conf.d/themes/photon
 [bar/top]
 include-file = .config/polybar/conf.d/bars/top
 
-[module/i3]
-
-type = internal/i3
-
-enable-scroll = false
-
-strip-wsnumbers = true
-
-label-mode = %mode%
-label-focused = %name%
-label-focused-foreground = ${theme.blue50}
-label-focused-padding-left = 1
-label-unfocused = %name%
-label-unfocused-padding-left = 1
-label-urgent = %name%
-label-urgent-padding-left = 1
-
-[module/xworkspaces]
-
-type = internal/xworkspaces
-
-enable-scroll = false
-
-label-active = %name% 
-label-active-foreground = ${theme.blue50}
-label-active-padding-left = 1
-label-empty = %name%
-label-empty-foreground = ${theme.grey10}
-label-empty-padding-left = 1
-label-occupied = %name%
-label-occupied-foreground = ${theme.red50}
-label-occupied-padding-left = 1
-
 [module/wm]
 include-file = .config/polybar/conf.d/modules/wm
 
