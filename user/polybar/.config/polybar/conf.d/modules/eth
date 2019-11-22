@@ -1,0 +1,8 @@
+type = internal/network
+interface = eth0
+
+interval = 5.0
+
+format-connected = <label-connected>
+
+label-connected = 

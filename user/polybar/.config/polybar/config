@@ -1,70 +1,12 @@
-;==========================================================
+; ----------------------------------------
 ; Polybar config file
-;
-; 1. theme
-; 2. bar/top
-; 3. modules
-;   3.1 WM 
-;     3.1.1 bspwm
-;     3.1.2 i3
-;     3.1.3 xworkspaces
-;   3.2 wlan
-;   3.3 ethernet
-;   3.4 battery
-;   3.5 volume
-;   3.6 date
-;   3.7 brightness
-; 4. settings
-; 5. global/wm
-;
-;==========================================================
+; ----------------------------------------
 
 [theme]
-
-blue50    = #0a84ff
-grey10    = #f9f9fa
-grey90    = #0c0c0d
-red50     = #ff0039
+include-file = .config/polybar/conf.d/themes/photon
 
 [bar/top]
-
-; Bar
-width = 100%
-
-background = ${theme.grey90}
-foreground = ${theme.grey10}
-
-padding-right = 1 
-
-overline-size = 2
-
-
-font-0 = monospace:size=10:style=normal:antialias=true;2
-font-1 = materialdesignicons:size=12:antialias=true;2
-
-; Modules
-; TODO
-;   Find a way to detect the WM and load the appropriate module.
-modules-left = bspwm
-modules-center = date
-modules-right = wlan eth battery brightness volume
-
-separator = " "
-
-[module/bspwm]
-
-type = internal/bspwm
-
-enable-scroll = false
-
-label-empty =
-label-focused = %name%
-label-focused-padding-left = 1
-label-focused-foreground = ${theme.blue50}
-label-occupied = %name%
-label-occupied-padding-left = 1
-label-urgent = %name%
-label-urgent-padding-left = 1
+include-file = .config/polybar/conf.d/bars/top
 
 [module/i3]
 
@@ -99,109 +41,20 @@ label-occupied = %name%
 label-occupied-foreground = ${theme.red50}
 label-occupied-padding-left = 1
 
-[module/wlan]
-
-type = internal/network
-interface = wlan0
-
-interval = 5.0
-
-format-connected = <ramp-signal> <label-connected>
-format-disconnected = <label-disconnected>
-
-label-connected = %signal%%
-label-disconnected = 郎
-
-ramp-signal-font = 2
-
-ramp-signal-0 = 爛
-ramp-signal-1 = 嵐
-ramp-signal-2 = 襤
-ramp-signal-3 = 蠟
-
-
-[module/eth]
-
-type = internal/network
-interface = eth0
-
-interval = 5.0
-
-format-connected = <label-connected>
-
-label-connected = 
+[module/wm]
+include-file = .config/polybar/conf.d/modules/wm
 
 [module/battery]
+include-file = .config/polybar/conf.d/modules/battery
 
-type = internal/battery
+[module/brightness] 
+include-file = .config/polybar/conf.d/modules/brightness
 
-full-at = 99
-
-battery = BAT0
-adapter = ADP1
-
-format-charging = <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
-format-full = <label-full>
-
-label-charging =  %percentage%%
-label-discharging = %percentage%%
-label-full =  %percentage%%
-
-ramp-capacity-font = 2
-
-ramp-capacity-0 = 
-ramp-capacity-0-foreground = ${theme.red50}
-ramp-capacity-1 = 
-ramp-capacity-1-foreground = ${theme.red50}
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-5 = 
-ramp-capacity-6 = 
-ramp-capacity-7 = 
-ramp-capacity-8 = 
+[module/eth]
+include-file = .config/polybar/conf.d/modules/eth
 
 [module/volume]
+include-file = .config/polybar/conf.d/modules/volume
 
-type = internal/pulseaudio
-
-sink = alsa_output.pci-0000_12_00.3.analog-stereo
-
-format-volume = <ramp-volume> <label-volume>
-format-muted = <label-muted>
-
-label-volume = %percentage%%
-label-muted = ﹨ %percentage%%
-
-ramp-volume-font = 2
-
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-
-[module/date]
-type = internal/date
-
-interval = 1.0
-
-date = %a %d %b %H:%M
-
-[module/brightness]
-
-type = internal/backlight
-
-card = intel_backlight
-
-format =  <label>
-
-label = %percentage%%
-
-[settings]
-screenchange-reload = true
-
-[global/wm]
-;margin-bottom = 10
-;margin-top = 10
-
-; vim:ft=dosini
+[module/wlan]
+include-file = .config/polybar/conf.d/modules/wlan
