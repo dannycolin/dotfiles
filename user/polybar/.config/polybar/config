@@ -13,6 +13,7 @@
 ;   3.4 battery
 ;   3.5 volume
 ;   3.6 date
+;   3.7 brightness
 ; 4. settings
 ; 5. global/wm
 ;
@@ -46,7 +47,7 @@ font-1 = materialdesignicons:size=12:antialias=true;2
 ;   Find a way to detect the WM and load the appropriate module.
 modules-left = bspwm
 modules-center = date
-modules-right = wlan eth battery volume
+modules-right = wlan eth battery brightness volume
 
 separator = " "
 
@@ -185,6 +186,16 @@ type = internal/date
 interval = 1.0
 
 date = %a %d %b %H:%M
+
+[module/brightness]
+
+type = internal/backlight
+
+card = intel_backlight
+
+format =  <label>
+
+label = %percentage%%
 
 [settings]
 screenchange-reload = true
