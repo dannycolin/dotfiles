@@ -9,5 +9,5 @@ class=$2
 instance=$3
 
 if [[ "$class" =~ "Gimp" ]]; then
-  printf "desktop=^5"
+  printf "desktop=^4"
 fi
