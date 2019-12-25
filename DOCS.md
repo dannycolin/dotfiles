@@ -1,19 +1,16 @@
 # Documentation
 
-0. [Configure intel_backlight]()
+0. [Configure brightnessctl]()
 0. [Configure Network Manager]()
 0. [Configure PEAP connection with nmcli]()
 0. [Disable PC Speaker]()
 0. [Lock Screen on Sleep]()
 0. [Run libvirt as non-root user]()
 
-## Configure backlight
+## Brightnessctl
 
-### Brightnessctl
-
-**Note**: The i915 driver cause lag issues and to resolve them we need to use the 
-modesetting (default) driver of Xorg. However, modesetting doesn't support the
-*backlight* property. Before of that, we need to use [brightnessctl][brightnessctl].
+I now use the modesetting driver for X11 and xbacklight doesn't work with it.
+However, there's an alternative called brightnessctl.
 
 After following the installation instruction of brightnessctl, make sure to add
 your user to the *video* group and to reboot the computer.
