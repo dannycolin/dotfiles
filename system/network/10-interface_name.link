@@ -1,3 +1,8 @@
+# Manually name a network interface
+#
+# {mac_address}     Mac address of the network physical interface
+# {interface_name}  Name you want to five to the interface (e.g eth0) 
+#
 # This file should go in /etc/systemd/network/10-interface_name.link
 
 [Match]
