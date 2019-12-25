@@ -6,7 +6,6 @@
 0. [Disable PC Speaker]()
 0. [Lock Screen on Sleep]()
 0. [Run libvirt as non-root user]()
-0. [Set Swapiness Value]()
 
 ## Configure backlight
 
@@ -129,14 +128,6 @@ Add your user to the libvirt group:
 
 ```
 sudo usermod -aG libvirt <username>
-```
-
-## Set Swapiness Value
-
-Create a file named */etc/sysctl.d/10-local.conf* and add:
-
-```
-vm.swapiness=10 
 ```
 
 [brightnessctl]: https://github.com/Hummer12007/brightnessctl
