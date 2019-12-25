@@ -19,18 +19,6 @@ modesetting (default) driver of Xorg. However, modesetting doesn't support the
 After following the installation instruction of brightnessctl, make sure to add
 your user to the *video* group and to reboot the computer.
 
-### xbacklight (deprecated)
-
-Create a file named */etc/X11/xorg.conf.d/20-intel.conf* that contains:
-
-```
-Section "Device"
-    Identifier  "Intel Graphics" 
-    Driver      "intel"
-    Option      "Backlight"  "intel_backlight"
-EndSection
-```
-
 ## Configure Network Manager
 
 **Note**: On Fedora, we need to manually set the connection via nmcli.
