@@ -73,14 +73,17 @@ autocmd CursorHold,CursorHoldI * if expand('%') != '' | silent update | endif
 " Load plugins "
 """"""""""""""""
 
-packadd! buftabline.vim
-packadd! emmet.vim
-packadd! gitgutter.vim
-packadd! hexokinase.vim
-packadd! nerdtree.vim
-packadd! onedark.vim
-packadd! surround.vim
-packadd! twig.vim
+call plug#begin()
+
+Plug 'airblade/vim-gitgutter'
+Plug 'ap/vim-buftabline'
+Plug 'joshdick/onedark.vim'
+Plug 'mattn/emmet-vim', { 'for': ['css','html'] }
+Plug 'RRethy/vim-hexokinase', { 'for': ['css'] }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'tpope/vim-surround'
+
+call plug#end()
 
 """""""""""""
 " Emmet.vim "
