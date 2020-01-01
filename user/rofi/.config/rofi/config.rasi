@@ -1,8 +1,14 @@
 configuration {
-  font: "monospace 10";
-  lines: 5;
+  display-drun: "open";
+  display-run: "run";
+  display-ssh: "connect";
+  fake-transparency: true;
   modi: "drun,run,ssh";
-  theme: "~/.config/rofi/themes/Photon-dark.rasi";
+  //case-sensitive: true;
 }
 
+@theme "themes/photon/photon-dark"
 
+listview {
+  scrollbar: false;
+}
