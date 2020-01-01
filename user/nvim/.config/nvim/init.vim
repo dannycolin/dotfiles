@@ -73,7 +73,7 @@ autocmd CursorHold,CursorHoldI * if expand('%') != '' | silent update | endif
 " Load plugins "
 """"""""""""""""
 
-call plug#begin()
+call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-buftabline'
