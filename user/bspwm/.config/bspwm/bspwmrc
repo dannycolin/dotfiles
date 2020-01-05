@@ -52,6 +52,7 @@ bspc config window_gap            0
 bspc rule -r *:*
 
 # Move to desktop
+bspc rule -a Firefox      desktop="^2"
 bspc rule -a Nightly      desktop="^2"
 bspc rule -a Thunderbird  desktop="^3"
 bspc rule -a Inkscape     desktop="^4" 
