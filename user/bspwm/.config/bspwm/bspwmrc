@@ -52,10 +52,13 @@ bspc config window_gap            0
 bspc rule -r *:*
 
 # Move to desktop
-bspc rule -a Firefox      desktop="^2"
-bspc rule -a Nightly      desktop="^2"
-bspc rule -a Thunderbird  desktop="^3"
-bspc rule -a Inkscape     desktop="^4" 
+bspc rule -a Firefox:Navigator  desktop="^2"
+bspc rule -a Nightly            desktop="^2"
+bspc rule -a Thunderbird        desktop="^3"
+bspc rule -a Inkscape           desktop="^4" 
+
+# Sticky windows
+bspc rule -a Firefox:Toolkit sticky=on
 
 # External rules
 bspc config external_rules_command ~/.config/bspwm/rules/bootstrap
