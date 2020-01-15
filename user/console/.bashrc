@@ -11,21 +11,6 @@ HISTCONTROL=ignoreboth
 HISTFILESIZE=2000
 HISTSIZE=1000
 
-# Load aliases
-if [ -f ~/.bash.d/aliases ]; then
-  . ~/.bash.d/aliases
-fi
-
-# Load custom prompt
-if [ -f ~/.bash.d/prompt ]; then
-  . ~/.bash.d/prompt
-fi
-
-# Load custom prompt
-if [ -f ~/.bash.d/lastdir ]; then
-  . ~/.bash.d/lastdir
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -37,14 +22,22 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Load aliases
+[ -f ~/.bash.d/aliases ] && . "$HOME/.bash.d/aliases"
 
-# SSH socket
+# Load custom prompt
+[ -f ~/.bash.d/prompt ] && . "$HOME/.bash.d/prompt"
+
+# Move to latest known directory on startup
+[ -f ~/.bash.d/lastdir ] && . "$HOME/.bash.d/lastdir"
+
+# Load NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion" 
+
+# Set SSH socket
 if [ -z "$SSH_AUTH_SOCK" ]; then
   export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 fi
-
 
