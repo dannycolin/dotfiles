@@ -1,39 +1,29 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# ----------------------------------------
+# ~/.bashrc
+# ----------------------------------------
 
-# If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
-
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
+# Shell options
+shopt -s checkwinsize
 shopt -s histappend
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
+# Set history preferences
+HISTCONTROL=ignoreboth
 HISTFILESIZE=2000
+HISTSIZE=1000
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+# Load aliases
+if [ -f ~/.bash.d/aliases ]; then
+  . ~/.bash.d/aliases
 fi
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+# Load custom prompt
+if [ -f ~/.bash.d/prompt ]; then
+  . ~/.bash.d/prompt
+fi
+
+# Load custom prompt
+if [ -f ~/.bash.d/lastdir ]; then
+  . ~/.bash.d/lastdir
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -52,40 +42,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Extend builtin cd function
-LAST_DIR_FILE="/tmp/.lastdir"
-cd() {
-  # Go back nth directories (e.g `cd .. 5`)
-	if [[ "$1" == ".." && -n "$2" ]]; then
-    for (( i=$2; i>=1; i--)); do
-		  builtin cd "$1"
-    done
-  else
-    builtin cd "$@"
-	fi
-  # Save last directory we were in
-  pwd > $LAST_DIR_FILE
-}
-# When opening a new terminal, set the last directory we were in
-if [ -f "$LAST_DIR_FILE" ]; then
-  cd "$(< $LAST_DIR_FILE)"
-fi
-
-# Time Converter
-timeconv() {
-  date -d ''$1' UTC'
-}
-
 # SSH socket
 if [ -z "$SSH_AUTH_SOCK" ]; then
   export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 fi
 
-# Custom PS1
-# ~/.bash_prompt
-if [ -f ~/.bash_prompt ]; then
-    . ~/.bash_prompt
-else
-  PS1="\w\$ "
-fi
 
