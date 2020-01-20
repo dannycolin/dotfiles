@@ -6,12 +6,13 @@
 # For a list of all window types see: 
 #   https://standards.freedesktop.org/wm-spec/latest/ar01s05.html
 
-wid=$1
-class=$2
-instance=$3
+w_id=$1
+w_class=$2
+w_instance=$3
+w_type="$(xprop -id "$wid" _NET_WM_WINDOW_TYPE)"
 
-if [[ "$(xwinfo -t $wid)" == "normal" ]]; then
+if [[ "$w_type" =~ "NORMAL" ]]; then
   printf "state=tiled"
-elif [[ "$(xwinfo -t $wid)" == "dialog" ]]; then
+elif [[ "$w_type" == "DIALOG" ]]; then
   printf "state=floating"
 fi
