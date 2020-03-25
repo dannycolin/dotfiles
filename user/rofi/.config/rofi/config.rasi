@@ -5,10 +5,11 @@ configuration {
   fake-transparency: true;
   modi: "drun,run,ssh";
   //case-sensitive: true;
+  drun-display-format: 
+    "{name} <span foreground='#737373'>—</span> <span foreground='#74c0ff' size='small'>{generic}</span>";
 }
 
-@theme "themes/photon/photon-dark"
+@import "themes/photon/photon-dark"
+@import "theme.rasi"
 
-listview {
-  scrollbar: false;
-}
+

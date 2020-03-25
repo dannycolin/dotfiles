@@ -1,0 +1,75 @@
+* {
+  // colorscheme
+  --blue-60: #0060df;
+  --grey-60: #4a4a4f;
+  --grey-70: #38383d;
+  --grey-80: #2a2a2e;
+  --grey-90: #0c0c0d;
+  --white-100: #ffffff;
+  
+  font: "monospace 10";
+  spacing: 0;
+}
+
+window {
+  background-color: transparent;
+  children: [ promptbox, mainbox ];
+  orientation: horizontal;
+  position: north;
+  y-offset: -10%;
+}
+
+promptbox {
+  background-color: transparent;
+  children: [ prompt ];
+  expand: false;
+}
+
+prompt {
+  background-color: var(--blue-60);
+  border: 1px 0 1px 1px;
+  border-color: black;
+  border-radius: 3px 0 0 3px;
+  color: var(--white-100);
+  padding: 8px;
+}
+
+mainbox {
+  background-color: transparent;
+}
+
+inputbar {
+  border: 1px;
+  border-color: black;
+  border-radius: 0 3px 3px 0;
+  children: [ entry, ci ];
+}
+entry,ci {
+  background-color: var(--grey-80);
+  color: var(--white-100);
+  padding: 8px;
+}
+
+message {
+  background-color: var(--grey-70);
+}
+
+listview {
+  background-color: var(--grey-70);
+  border: 0 1px 1px 1px;
+  border-color: black;
+  border-radius: 0 0 3px 3px;
+  fixed-height: false;
+  lines: 5;
+}
+
+element {
+  background-color: var(--grey-70);
+  color: var(--white-100);
+  padding: 8px;
+}
+
+element selected {
+  background-color: var(--blue-60);
+}
+

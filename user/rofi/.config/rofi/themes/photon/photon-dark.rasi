@@ -1,0 +1,10 @@
+@import "colorscheme"
+@import "common"
+
+* {
+  --background: var(--grey-60);
+  --foreground: var(--white-100);
+  --primary-color: var(--blue-60);
+  --secondary-color: var(--grey-50);
+  --separator-color: var(--grey-50);
+}
