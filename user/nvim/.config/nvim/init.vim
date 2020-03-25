@@ -77,10 +77,11 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-buftabline'
-Plug 'joshdick/onedark.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+Plug 'kjssad/quantum.vim'
 Plug 'mattn/emmet-vim', { 'for': ['css','html'] }
 Plug 'RRethy/vim-hexokinase', { 'for': ['css'] }
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 
 call plug#end()
@@ -98,6 +99,13 @@ autocmd FileType html,markdown EmmetInstall
 """"""""""""""""""
 
 let g:Hexokinase_highlighters = ['virtual']
+
+"""""""""""""""""""""""""
+" Markdown-Preview.nvim "
+"""""""""""""""""""""""""
+
+let g:mkdp_browser = 'firefox'
+let g:mkdp_port = '9000'
 
 """"""""""""""""
 " Nerdtree.vim "
@@ -161,7 +169,7 @@ set statusline+=%l/%L]                          "cursor line/total lines
 " 4. Syntax highlighting "
 """"""""""""""""""""""""""
 
-colorscheme onedark                 " set the colorscheme
+colorscheme quantum                 " set the colorscheme
 syntax on                           " turn on syntax highlighting
 
 " override theme's colors
