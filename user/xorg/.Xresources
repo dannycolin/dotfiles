@@ -10,6 +10,5 @@
 #endif
 
 #include ".Xresources.d/xterm/config"
-#include ".Xresources.d/xterm/themes/onedark"
-
+#include ".Xresources.d/xterm/themes/quantum"
 
