@@ -8,8 +8,9 @@ shopt -s histappend
 
 # Set history preferences
 HISTCONTROL=ignoreboth
-HISTFILESIZE=2000
-HISTSIZE=1000
+HISTFILESIZE=500
+HISTIGNORE="cd*:clear:ls*:la*:lla*:rm*:tree*"
+HISTSIZE=500
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -25,11 +26,8 @@ fi
 # Load aliases
 [ -f ~/.bash.d/aliases ] && . "$HOME/.bash.d/aliases"
 
-# Load custom prompt
-[ -f ~/.bash.d/prompt ] && . "$HOME/.bash.d/prompt"
-
-# Move to latest known directory on startup
-[ -f ~/.bash.d/lastdir ] && . "$HOME/.bash.d/lastdir"
+# Load user-specific bash completion
+[ -s "$HOME/share/bash_completion" ] && . "$HOME/share/bash_completion" 
 
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
@@ -41,3 +39,8 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
   export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 fi
 
+# Temporary PS1
+PS1=" \w \$ "
+
+# Bashd
+[ -f ~/Projects/bash.d/bashd ] && . "$HOME/Projects/bash.d/bashd"
