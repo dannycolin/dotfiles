@@ -5,12 +5,12 @@ sink = alsa_output.pci-0000_12_00.3.analog-stereo
 format-volume = <ramp-volume> <label-volume>
 format-muted = <label-muted>
 
-label-volume = %percentage%%
-label-muted = ﹨ %percentage%%
+label-volume = V: %percentage%%
+label-muted = V: %percentage%% [m]
 
 ramp-volume-font = 2
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 =
+ramp-volume-1 =
+ramp-volume-2 =
 

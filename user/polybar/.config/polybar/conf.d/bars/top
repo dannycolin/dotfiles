@@ -8,7 +8,6 @@ padding-right = 1
 overline-size = 2
 
 font-0 = monospace:size=10:style=normal:antialias=true;2
-font-1 = materialdesignicons:size=12:antialias=true;2
 
 modules-left = wm
 modules-center = date

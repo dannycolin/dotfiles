@@ -2,6 +2,6 @@ type = internal/backlight
 
 card = intel_backlight
 
-format =  <label>
+format = <label>
 
-label = %percentage%%
+label = L: %percentage%%
