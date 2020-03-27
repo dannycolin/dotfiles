@@ -3,25 +3,28 @@
 ; ----------------------------------------
 
 [theme]
-include-file = .config/polybar/conf.d/themes/photon
+include-file = ~/.config/polybar/conf.d/themes/photon
 
 [bar/top]
-include-file = .config/polybar/conf.d/bars/top
+include-file = ~/.config/polybar/conf.d/bars/top
 
 [module/wm]
-include-file = .config/polybar/conf.d/modules/wm
+include-file = ~/.config/polybar/conf.d/modules/wm
 
 [module/battery]
-include-file = .config/polybar/conf.d/modules/battery
+include-file = ~/.config/polybar/conf.d/modules/battery
 
 [module/brightness] 
-include-file = .config/polybar/conf.d/modules/brightness
+include-file = ~/.config/polybar/conf.d/modules/brightness
+
+[module/date]
+include-file = ~/.config/polybar/conf.d/modules/date
 
 [module/eth]
-include-file = .config/polybar/conf.d/modules/eth
+include-file = ~/.config/polybar/conf.d/modules/eth
 
 [module/volume]
-include-file = .config/polybar/conf.d/modules/volume
+include-file = ~/.config/polybar/conf.d/modules/volume
 
 [module/wlan]
-include-file = .config/polybar/conf.d/modules/wlan
+include-file = ~/.config/polybar/conf.d/modules/wlan
