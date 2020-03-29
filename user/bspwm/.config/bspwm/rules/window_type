@@ -5,9 +5,9 @@
 w_id=$1
 w_class=$2
 w_instance=$3
-w_type="$(xprop -id "$wid" _NET_WM_WINDOW_TYPE)"
+w_type="$(xprop -id "$w_id" _NET_WM_WINDOW_TYPE)"
 # This works w/o quotes in a regular script. 
-w_name="$(xprop -id $wid _NET_WM_NAME)"
+w_name="$(xprop -id $w_id _NET_WM_NAME)"
 
 # Set by default _NET_WM_WINDOW_TYPE of `normal` to `tiled` and `dialog` to 
 # floating.
@@ -24,6 +24,6 @@ fi
 # differenciate it by its window class or id. To fix this issue, we use
 # xprop to get the _NET_WM_NAME and if it matches the Thunderbird about page
 # one then we apply a floating state to it.
-if [[ "$w_name" =~ "About Mozilla Thunderbird" ]]; then
+if [[ "$w_name" =~ "About" ]]; then
   printf "state=floating"
 fi
