@@ -1,0 +1,136 @@
+#!/bin/bash
+#
+# ------------------------------------------------------------------------------
+# Post-Install
+#
+# This script contains all the install and configuration procedure that I need to
+# do after a fresh install.
+#
+# TODO:
+#   * Add a section to get input (e.g username) from stdin
+#   * Document steps that depend on others and in which order they need to be run
+#   * Write a function for each steps and how to detect their dependencies
+#   * Split some function like "Desktop Environment"
+# ------------------------------------------------------------------------------
+
+# Get .dotfiles 
+
+dnf install git stow
+git clone https://github.com/dannycolin/dotfiles.git ~/.dotfiles
+
+# Install Desktop Environment
+
+dnf install xorg-x11-server-Xorg \
+            xorg-x11-server-xinit \
+            xterm \
+            bspwm \
+            sxhkd \
+            brightnessctl \
+            pulseaudio \
+            pulseaudio-utils \
+            gnome-themes-extra
+            adwaita-qt4 \
+            adwaita-qt5 \
+            feh \
+            rofi \
+            polybar \
+            i3lock
+rm ~/.bashrc ~/.bash_profile
+cd ~/.dotfiles/user
+stow --target=$HOME bspwm console polybar rofi sxhkd xorg
+
+# Set keyboard
+
+localectl --no-convert set-x11-keymap us evdev altgr-intl caps:escape
+
+# Generate XDG folders
+
+dnf xdg-user-dirs
+xdg-user-dirs-update
+
+# Configure Network Interface
+
+* change interface name to eth0 and wlan0. I will need to cp the file and sed
+  the mac address and interface name
+  (see: .dotfiles/system/network/10-interface_name.link)
+
+dnf install NetworkManager-wifi \
+            NetworkManager-tui \
+            nm-connection-editor
+
+# Install default applications
+
+dnf install gimp \
+            inkscape \
+            keepassxc \
+            pcmanfm \
+            htop \
+            okular
+
+# Install Office Suite
+
+dnf install libreoffice \
+            libreoffice-gtk3 \
+            libreoffice-langpack-fr
+
+# Install main file manager and utilities
+
+dnf install vifm \
+            sshfs
+
+# Set ssh-agent service
+cd ~/.dotfiles/user
+stow --target=$HOME services
+# Systemctl needs to be run without sudo when --user is used
+systemctl enable --user ssh-agent.service
+systemctl start --user ssh-agent.service
+
+# Install developer environment
+
+dnf install neovim \
+            ruby \
+            ruby-devel
+dnf group install "C Development Tools and Libraries"
+
+# Freaking needed by Jekyll... if it isn't installed, gcc returns the following
+# error:
+#
+#   `error:/usr/lib/rpm/redhat/redhat-hardened-cc1: No such file or directory`
+dnf install redhat-rpm-config 
+
+# NVM
+
+* I need to find a way to get the latest version number of node and npm so I can
+  build the path to the executable and create the symlink.
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+bash
+nvm install --lts
+exit
+
+## Vim
+ln -s /usr/bin/nvim ~/.local/bin/vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim -c "PlugInstall"
+
+
+# Install Firefox Nightly
+
+* Firefox needs `ffmpeg` to play videos and this packages is only available in
+  RPMFusion Free.
+
+# Install Virt-Manager
+
+dnf install virt-manager
+usermod -aG libvirt <username>
+
+# Install Screenlock
+#
+# TODO:
+#   * Try to run it with `--user`
+#   * Use stow instead of `cp`
+
+cp ~/.dotfiles/system/services/screenlock.service /etc/systemd/system/
+systemctl enable screenlock.service
+
