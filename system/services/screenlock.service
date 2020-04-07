@@ -1,0 +1,14 @@
+# Create */etc/systemd/system/screenlock.service*
+
+[Unit]
+Description=Lock the screen
+Before=sleep.target
+
+[Service]
+User=sdk
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/i3lock -i /home/<username>/Pictures/wallpapers/current.png
+
+[Install]
+WantedBy=sleep.target
