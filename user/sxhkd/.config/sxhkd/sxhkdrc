@@ -31,6 +31,10 @@ XF86MonBrightness{Down,Up}
 super + shift + s; {p,r}
   systemctl {poweroff, reboot}
 
+# screenlock
+super + shift + l
+  i3lock -i ~/Pictures/wallpapers/current.png
+
 # ----------------------------------------
 # bspwm hotkeys
 # ----------------------------------------
