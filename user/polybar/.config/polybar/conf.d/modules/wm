@@ -1,3 +1,5 @@
+[module/wm]
+
 type = internal/bspwm
 
 enable-scroll = false

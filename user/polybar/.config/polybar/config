@@ -2,29 +2,17 @@
 ; Polybar config file
 ; ----------------------------------------
 
-[theme]
+; theme
 include-file = ~/.config/polybar/conf.d/themes/photon
 
-[bar/top]
+; bars
 include-file = ~/.config/polybar/conf.d/bars/top
 
-[module/wm]
+; modules
 include-file = ~/.config/polybar/conf.d/modules/wm
-
-[module/battery]
 include-file = ~/.config/polybar/conf.d/modules/battery
-
-[module/brightness] 
 include-file = ~/.config/polybar/conf.d/modules/brightness
-
-[module/date]
 include-file = ~/.config/polybar/conf.d/modules/date
-
-[module/eth]
 include-file = ~/.config/polybar/conf.d/modules/eth
-
-[module/volume]
 include-file = ~/.config/polybar/conf.d/modules/volume
-
-[module/wlan]
 include-file = ~/.config/polybar/conf.d/modules/wlan

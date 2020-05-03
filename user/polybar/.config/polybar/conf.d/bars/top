@@ -1,3 +1,5 @@
+[bar/top]
+
 width = 100%
 
 background = ${theme.grey90}

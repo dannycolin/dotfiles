@@ -1,3 +1,5 @@
+[module/wlan]
+
 type = internal/network
 interface = wlan0
 

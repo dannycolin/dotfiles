@@ -1,3 +1,5 @@
+[module/eth]
+
 type = internal/network
 interface = eth0
 

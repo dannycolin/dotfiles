@@ -1,3 +1,5 @@
+[module/brightness] 
+
 type = internal/backlight
 
 card = intel_backlight

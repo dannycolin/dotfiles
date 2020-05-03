@@ -1,3 +1,5 @@
+[module/battery]
+
 type = internal/battery
 
 full-at = 99
