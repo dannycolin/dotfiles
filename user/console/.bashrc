@@ -39,6 +39,20 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
   export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 fi
 
+# File renaming with `mv`
+# 
+# if there isn't a second parameter you'll be prompted to edit the filename on 
+# command line.
+function mv() {
+  if [ "$#" -ne 1 ] || [ ! -e "$1" ]; then
+    command mv "$@"
+    return
+  fi
+
+  read -ei "$1" newfilename
+  command mv -v -- "$1" "$newfilename"
+}
+
 # Temporary PS1
 PS1=" \w \$ "
 
