@@ -32,7 +32,7 @@ super + shift + s; {p,r}
   systemctl {poweroff, reboot}
 
 # screenlock
-super + shift + l
+super + shift + s; l
   i3lock -i ~/Pictures/wallpapers/current.png
 
 # ----------------------------------------
