@@ -1,6 +1,26 @@
-[theme]
+[theme/colors]
 
 blue50    = #0a84ff
 grey10    = #f9f9fa
 grey90    = #0c0c0d
 red50     = #ff0039
+
+bar-bg  = ${self.grey90}
+bar-fg  = ${self.grey10}
+
+battery-low = ${self.red50}
+
+wm-focused-fg = ${self.blue50}
+
+[theme/icons]
+; Adwaita icon 
+; Should be moved to ../themes/adwaita and adwaita color should also be used
+volume-muted  = 
+volume-low    = 
+volume-medium = 
+volume-high   = 
+
+wireless-offline   = 
+wireless-ok        = 
+wireless-good      = 
+wireless-excellent = 

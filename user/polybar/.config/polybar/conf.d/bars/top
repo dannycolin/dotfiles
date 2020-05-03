@@ -2,17 +2,18 @@
 
 width = 100%
 
-background = ${theme.grey90}
-foreground = ${theme.grey10}
+background = ${theme/colors.bar-bg}
+foreground = ${theme/colors.bar-fg}
 
 padding-right = 1 
 
 overline-size = 2
 
 font-0 = monospace:size=10:style=normal:antialias=true;2
+font-1 = adwaita:size=12:style=normal:antialias=true;2
 
 modules-left = wm
 modules-center = date
-modules-right = wlan eth battery brightness volume
+modules-right = wlan eth battery volume
 
 separator = " "
