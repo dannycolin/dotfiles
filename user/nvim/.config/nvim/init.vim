@@ -19,6 +19,7 @@ set laststatus=2          " Always show statusline
 set mouse=                " NO MOUSE VIM !!!
 set colorcolumn=81        " Highlight 81th column
 set showcmd               " Show current command
+set shortmess-=S          " Show count when searching with `/`
 filetype plugin on        " set config specific to filetype
 
 " Modeline
