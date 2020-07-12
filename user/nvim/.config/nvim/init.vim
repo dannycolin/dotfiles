@@ -71,6 +71,9 @@ endif
 "   CursorHold, CursorHoldI (depends on updatetime)
 autocmd CursorHold,CursorHoldI * if expand('%') != '' | silent update | endif
 
+" Remove white space on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 """""""""""""""
 " 1. Plugins  "
 """""""""""""""
