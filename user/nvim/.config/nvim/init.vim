@@ -56,6 +56,11 @@ set smarttab
 set softtabstop=2
 set tabstop=2
 
+" Use 24-bit (true-color) if available
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 " Autosave (default based on updatetime so every 4000ms)
 "
 " ***Move autocmd to a separate plugin***
@@ -117,17 +122,6 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowLineNumbers=1
 autocmd FileType nerdtree setlocal relativenumber
-
-"""""""""""""""
-" onedark.vim "
-"""""""""""""""
-
-" Use 24-bit (true-color) if available
-if (has("termguicolors"))
-  set termguicolors
-else
-  let g:onedark_termcolors = 256
-endif
 
 """"""""""""""""""
 " 2. Key mapping "
