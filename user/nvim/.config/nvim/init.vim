@@ -88,7 +88,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-buftabline'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'kjssad/quantum.vim'
-Plug 'mattn/emmet-vim', { 'for': ['css','html'] }
+Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'markdown'] }
 Plug 'RRethy/vim-hexokinase', { 'for': ['css'] }
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
