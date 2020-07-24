@@ -5,10 +5,10 @@ Description=Lock the screen
 Before=sleep.target
 
 [Service]
-User=sdk
+User=%i
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/i3lock -i /home/<username>/Pictures/wallpapers/current.png
+ExecStart=/usr/bin/i3lock -i /home/%i/Pictures/wallpapers/current.png
 
 [Install]
 WantedBy=sleep.target
