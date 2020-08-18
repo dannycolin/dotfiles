@@ -128,12 +128,13 @@ client.placeholder      $grey-80  $grey-90  $grey-10  $grey-80  $grey-80
 client.background       $grey-90
 
 # Rules
-assign [class="^Nightly$"]  2
-assign [class="^Daily$"]    3
-assign [class="^Gimp"]      4
+assign [instance="^Navigator$"] 2
+assign [instance="^Mail$"]      3
+assign [class="^Gimp"]          4
 
-for_window [class="^Daily$" window_role="About"] floating enable
-for_window [class="^Nightly$" window_role="About"] floating enable
+for_window [instance="^Mail$" window_role="About"] floating enable
+for_window [instance="^Browser$" window_role="About"] floating enable
+for_window [instance="^Toolkit$" title="Picture-in-Picture"] sticky enable
 
 # Modes
 mode "system" {
