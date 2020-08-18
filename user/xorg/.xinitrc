@@ -2,7 +2,7 @@
 xrdb ~/.Xresources
 
 # Set wallpaper
-. .fehbg
+sh .fehbg
 
 # Set default mouse pointer
 # 
