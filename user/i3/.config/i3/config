@@ -52,6 +52,10 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
+# swap window
+bindsym $mod+m mark swappable
+bindsym $mod+s swap container with mark swappable; unmark swappable
+
 # split in horizontal or vertical orientation
 bindsym $mod+x split h
 bindsym $mod+y split v
