@@ -1,3 +1,4 @@
+alias batstatus='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 alias cp='cp -v'
 alias cwd='pwd | xclip -sel clip'
 alias grep='grep --color=auto'
