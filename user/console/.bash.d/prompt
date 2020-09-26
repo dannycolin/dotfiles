@@ -3,13 +3,19 @@
 bash_prompt() {
   local git_branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
   local git_status="$(git status --porcelain 2> /dev/null)"
-  
+
   if [[ -n "$git_branch" ]] && [[ -n "$git_status" ]]; then
     PS1=" \w [$git_branch*] \$ "
   elif [[ -n "$git_branch" ]]; then
     PS1=" \w [$git_branch] \$ "
   else
     PS1=" \w \$ "
+  fi
+
+  local hg_branch="$(hg branch 2> /dev/null)"
+
+  if [[ -n "$hg_branch" ]]; then
+    PS1=" \w [$gh_branch] \$ "
   fi
 }
 
