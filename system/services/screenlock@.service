@@ -1,0 +1,36 @@
+[Unit]
+Description=Lock the screen
+Before=sleep.target suspend.target
+
+[Service]
+User=%i
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/i3lock \
+  -i /home/%i/Pictures/wallpapers/current.png \
+  --indicator \
+  --indpos="48:1032" \
+  --ring-width=4 \
+  --radius=24 \
+  --insidecolor=f9f9fa1a \
+  --insidevercolor=12bc001a \
+  --insidewrongcolor=d700221a \
+  --ringcolor=f9f9facc \
+  --ringvercolor=12bc00cc \
+  --ringwrongcolor=d70022cc \
+  --keyhlcolor=12bc00cc \
+  --bshlcolor=12bc00cc \
+  --linecolor=00000000 \
+  --veriftext="" \
+  --wrongtext="" \
+  --noinputtext="" \
+  --force-clock \
+  --timecolor=f9f9facc \
+  --timepos="915:540" \
+  --timesize=72 \
+  --timestr="%%H:%%M" \
+  --datecolor=f9f9facc \
+  --datesize=18
+
+[Install]
+WantedBy=sleep.target suspend.target
