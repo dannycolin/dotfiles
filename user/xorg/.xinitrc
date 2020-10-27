@@ -19,4 +19,4 @@ sh .fehbg
 xsetroot -cursor_name left_ptr
 
 # Start the WM
-exec i3
+exec bspwm
