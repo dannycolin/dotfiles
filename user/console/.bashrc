@@ -8,9 +8,9 @@ shopt -s histappend
 
 # Set history preferences
 HISTCONTROL=ignoreboth
-HISTFILESIZE=500
-HISTIGNORE="cd*:clear:ls*:la*:lla*:rm*:tree*"
-HISTSIZE=500
+HISTFILESIZE=1000
+HISTIGNORE="clear:rm*"
+HISTSIZE=1000
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
