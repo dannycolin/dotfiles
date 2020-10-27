@@ -1,3 +1,12 @@
+# Fix Gnome apps slow to start due to failing services (dbus timeout)
+# This happens if you have flatpak and especially the xdg-desktop-portal package
+# installed on your system
+#
+# See:
+# - https://github.com/flatpak/xdg-desktop-portal-gtk/issues/72
+# - https://dbus.freedesktop.org/doc/dbus-update-activation-environment.1.html
+dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+
 # Load Xresources on boot
 xrdb ~/.Xresources
 
