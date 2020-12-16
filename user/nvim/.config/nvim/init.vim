@@ -86,6 +86,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-buftabline'
+Plug 'cohama/lexima.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'kjssad/quantum.vim'
 Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'markdown'] }
@@ -141,7 +142,7 @@ nnoremap <C-\> :NERDTreeToggle<CR>
 " Go to previous buffer and close the last one
 nnoremap <C-w>c :bp\|bd #<CR>
 
-" Switch buffers 
+" Switch buffers
 "   Prevent opening the file in NerdTree by moving the cursor to the next
 "   buffer before switching to the next/prev buffer.
 nnoremap <silent> <expr> <C-n> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":bn\<CR>"
