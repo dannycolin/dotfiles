@@ -2,6 +2,9 @@
 # ~/.bash_profile
 # ---------------------------------------
 
+# Needed for qt5ct to work correctly
+export QT_QPA_PLATFORMTHEME=qt5ct
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
