@@ -50,6 +50,7 @@ set relativenumber
 " Indentation
 set autoindent
 set expandtab
+set shiftround
 set shiftwidth=2
 set smartindent
 set smarttab
