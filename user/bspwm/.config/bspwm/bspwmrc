@@ -66,5 +66,5 @@ bspc rule -a Nightly:Browser state=floating
 bspc rule -a Nightly:Toolkit state=floating
 
 # External rules
-bspc config external_rules_command ~/.config/bspwm/rules/bootstrap
+bspc config external_rules_command ~/.config/bspwm/bspwm_rules
 

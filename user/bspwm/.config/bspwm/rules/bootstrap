@@ -1,6 +1,33 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Load external rules' files
+w_class=$2
+w_id=$1
+w_instance=$3
+w_name="$(xprop -id $w_id _NET_WM_NAME)"
 
-. ~/.config/bspwm/rules/move_to_desktop
-. ~/.config/bspwm/rules/window_type
+
+# ----------------------------------------
+# Windows State
+# ----------------------------------------
+
+# Thunderbird About Window
+if [[ "$w_name" =~ "About" ]]; then
+  printf "state=floating"
+fi
+
+# Android Emulator
+if [[ "$w_name" =~ "Android Emulator" ]]; then
+  printf "state=floating"
+fi
+
+# ----------------------------------------
+# Move to Desktop
+# ----------------------------------------
+
+if [[ "$w_class" =~ "Gimp" ]]; then
+  printf "desktop=^4"
+fi
+
+if [[ "$w_class" =~ "Inkscape" ]]; then
+  printf "desktop=^4"
+fi

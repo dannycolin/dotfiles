@@ -8,10 +8,12 @@ w_instance=$3
 # This works w/o quotes in a regular script.
 w_name="$(xprop -id $w_id _NET_WM_NAME)"
 
-# Thunderbird about page doesn't open as a floating window and we can't
-# differenciate it by its window class or id. To fix this issue, we use
-# xprop to get the _NET_WM_NAME and if it matches the Thunderbird about page
-# one then we apply a floating state to it.
+# Thunderbird About Window
 if [[ "$w_name" =~ "About" ]]; then
+  printf "state=floating"
+fi
+
+# Android Emulator
+if [[ "$w_name" =~ "Android Emulator" ]]; then
   printf "state=floating"
 fi
