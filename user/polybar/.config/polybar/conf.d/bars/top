@@ -14,7 +14,7 @@ font-1 = adwaita:size=12:style=normal:antialias=true;2
 
 modules-left = bspwm i3
 modules-center = date
-modules-right = wlan eth battery volume
+modules-right = updates wlan eth battery volume
 
 separator = " "
 

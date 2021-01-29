@@ -1,0 +1,9 @@
+[module/updates]
+
+type = custom/script
+
+exec = ~/.config/polybar/conf.d/scripts/updates-dnf.sh
+interval = 3600
+
+format = <label>
+label = U: %output%

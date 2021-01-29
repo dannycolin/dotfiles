@@ -14,5 +14,6 @@ include-file = ~/.config/polybar/conf.d/modules/battery
 include-file = ~/.config/polybar/conf.d/modules/brightness
 include-file = ~/.config/polybar/conf.d/modules/date
 include-file = ~/.config/polybar/conf.d/modules/eth
+include-file = ~/.config/polybar/conf.d/modules/updates
 include-file = ~/.config/polybar/conf.d/modules/volume
 include-file = ~/.config/polybar/conf.d/modules/wlan
