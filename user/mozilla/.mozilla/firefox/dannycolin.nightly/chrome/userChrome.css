@@ -1,0 +1,5 @@
+/* userChrome.css */
+
+.tab-background[selected="true"] {
+  border-top: solid 1px #0a84ff !important;
+}
