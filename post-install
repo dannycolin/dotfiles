@@ -1,19 +1,6 @@
-#!/bin/bash
-#
-# ------------------------------------------------------------------------------
-# Post-Install
-#
-# This script contains all the install and configuration procedure that I need to
-# do after a fresh install.
-#
-# TODO:
-#   * Add a section to get input (e.g username) from stdin
-#   * Document steps that depend on others and in which order they need to be run
-#   * Write a function for each steps and how to detect their dependencies
-#   * Split some function like "Desktop Environment"
-# ------------------------------------------------------------------------------
+# Post-install documentation
 
-# Get .dotfiles 
+# Get .dotfiles
 
 dnf install git stow
 git clone https://github.com/dannycolin/dotfiles.git ~/.dotfiles
@@ -96,7 +83,7 @@ dnf group install "C Development Tools and Libraries"
 # error:
 #
 #   `error:/usr/lib/rpm/redhat/redhat-hardened-cc1: No such file or directory`
-dnf install redhat-rpm-config 
+dnf install redhat-rpm-config
 
 # NVM
 
@@ -134,3 +121,13 @@ usermod -aG libvirt <username>
 cp ~/.dotfiles/system/services/screenlock.service /etc/systemd/system/
 systemctl enable screenlock.service
 
+# Add /usr/local/lib(64) to $LD_LIBRARY_PATH
+
+* Create `/etc/ld.so.conf.d/usrlocal.conf`
+* Add the following lines:
+
+  ```
+  /usr/local/lib
+  /usr/local/lib64
+  ```
+* Run `[sudo] ldconfig -v`
