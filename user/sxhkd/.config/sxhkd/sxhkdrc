@@ -1,10 +1,10 @@
 # ----------------------------------------
-# wm independent hotkeys
+# General hotkeys
 # ----------------------------------------
 
 # make sxhkd reload its configuration files:
 super + ctrl + r
-  pkill -USR1 -x sxhkd
+  pkill -USR1 -x sxhkd; ~/.config/bspwm/bspwmrc
 
 # terminal emulator
 super + {_,shift + } Return
@@ -36,12 +36,8 @@ super + shift + s; l
   i3lock -i ~/Pictures/wallpapers/current.png
 
 # ----------------------------------------
-# bspwm hotkeys
+# Window manager specific hotkeys
 # ----------------------------------------
-
-# reload bspwm configuration
-super + shift + r
-	~/.config/bspwm/bspwmrc
 
 # close window
 super + shift + q
@@ -51,7 +47,7 @@ super + shift + q
 super + {t,f}
 	bspc node -t {tiled,floating}
 
-# focus the node in the given direction
+# focus or move the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
@@ -69,4 +65,4 @@ super + {minus,equal,underscore,plus}
   bspc node -z right 20 0 & bspc node -z left -20 0, \
   bspc node -z top 0 20 & bspc node -z bottom 0 -20, \
   bspc node -z bottom 0 20 & bspc node -z top 0 -20}
-  
+
