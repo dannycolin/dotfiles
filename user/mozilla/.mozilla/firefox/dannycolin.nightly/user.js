@@ -9,17 +9,28 @@
 // -----------------------------------------------------------------------------
 
 user_pref("browser.aboutConfig.showWarning", false);
-user_pref("browser.tabs.closeWindowWithLastTab", false);
 
+user_pref("browser.discovery.enabled", false);
+
+user_pref("browser.newtabpage.activity-stream.default.sites", "");
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 
-// Compact theme
-user_pref("extensions.activeThemeID", "firefox-compact-dark@mozilla.org");
+user_pref("browser.tabs.closeWindowWithLastTab", false);
+user_pref("browser.tabs.drawInTitlebar", false);
+
+user_pref("browser.toolbars.bookmarks.visibility", "never");
+
+// browser.uidensity
+//
+//  0 - default
+//  1 - compact (deprecated with bug 1693028)
+//  2 - touch
 user_pref("browser.uidensity", 1);
 
-// List of website pinning in Top Sites
-user_pref("browser.newtabpage.activity-stream.default.sites", "");
+user_pref("browser.urlbar.showSearchSuggestionsFirst", false);
+user_pref("browser.urlbar.suggest.history", false);
+user_pref("browser.urlbar.suggest.topsites", false);
 
 // Devtools
 user_pref("devtools.cache.disabled", true);
@@ -43,7 +54,11 @@ user_pref("gfx.webrender.all", true);
 
 // Proton redesign
 user_pref("browser.proton.enabled", true);
-user_pref("browser.proton.tabs.enabled", true);
+
 user_pref("browser.proton.appmenu.enabled", true);
+user_pref("browser.proton.contextmenus.enabled", true);
+user_pref("browser.proton.doorhangers.enabled", true);
+user_pref("browser.proton.tabs.enabled", true);
 user_pref("browser.proton.toolbar.enabled", true);
+user_pref("browser.proton.urlbar.enabled", true);
 
