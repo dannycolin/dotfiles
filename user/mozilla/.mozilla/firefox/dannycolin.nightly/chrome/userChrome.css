@@ -1,16 +1,1 @@
 /* userChrome.css */
-
-/* Active tab: Change the color background so it has a higher contrast ratio */
-#tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[multiselected="true"]:-moz-lwtheme,
-#tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]:-moz-lwtheme {
-  --lwt-selected-tab-background-color: #4a4a4f;
-	background-color: transparent;
-	background-image:
-    linear-gradient(
-      var(--lwt-selected-tab-background-color, transparent),
-      var(--lwt-selected-tab-background-color, transparent)),
-    linear-gradient(
-      var(--toolbar-bgcolor),
-      var(--toolbar-bgcolor)),
-    var(--lwt-header-image, none) !important;
-}

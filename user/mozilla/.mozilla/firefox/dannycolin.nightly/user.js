@@ -32,14 +32,18 @@ user_pref("browser.urlbar.showSearchSuggestionsFirst", false);
 user_pref("browser.urlbar.suggest.history", false);
 user_pref("browser.urlbar.suggest.topsites", false);
 
+user_pref("extensions.activeThemeID", "firefox-compact-dark@mozilla.org");
+
+// Load userChrome.css
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+
+// -----------------------------------------------------------------------------
 // Devtools
+// -----------------------------------------------------------------------------
 user_pref("devtools.cache.disabled", true);
 user_pref("devtools.chrome.enabled", true);
 user_pref("devtools.debugger.remote-enabled", true);
 user_pref("devtools.theme", "dark");
-
-// Load userChrome.css
-user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // -----------------------------------------------------------------------------
 // Nightly Settings
@@ -54,11 +58,13 @@ user_pref("gfx.webrender.all", true);
 
 // Proton redesign
 user_pref("browser.proton.enabled", true);
-
-user_pref("browser.proton.appmenu.enabled", true);
 user_pref("browser.proton.contextmenus.enabled", true);
 user_pref("browser.proton.doorhangers.enabled", true);
+user_pref("browser.proton.infobars.enabled", true);
+user_pref("browser.proton.modals.enabled", true);
+user_pref("browser.proton.places-tooltip.enabled", true);
 user_pref("browser.proton.tabs.enabled", true);
 user_pref("browser.proton.toolbar.enabled", true);
 user_pref("browser.proton.urlbar.enabled", true);
+user_pref("browser.aboutwelcome.design", "proton");
 
