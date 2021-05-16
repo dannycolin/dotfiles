@@ -82,6 +82,8 @@ set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 set ignorecase
 set smartcase
 
+set caseoptions=p
+
 " Don't highlight search results automatically
 
 set nohlsearch
