@@ -54,6 +54,7 @@ bspc rule -a Nightly            desktop="^2"
 bspc rule -a Daily              desktop="^3"
 bspc rule -a Thunderbird        desktop="^3"
 bspc rule -a Inkscape           desktop="^4"
+bspc rule -a Steam              desktop="^5"
 
 # Sticky windows
 bspc rule -a Firefox:Toolkit sticky=on
@@ -64,6 +65,8 @@ bspc rule -a Firefox:Browser state=floating
 bspc rule -a Firefox:Toolkit state=floating
 bspc rule -a Nightly:Browser state=floating
 bspc rule -a Nightly:Toolkit state=floating
+bspc rule -a Microsoft-edge-dev border=off
+bspc rule -a "Microsoft Teams - Preview" border=off
 
 # Temporary fix for Firefox starting as a floating window only in my main profile.
 # I can reproduce it with mozregression...
