@@ -27,12 +27,12 @@ fi
 [ -f ~/.bash.d/aliases ] && . "$HOME/.bash.d/aliases"
 
 # Load user-specific bash completion
-[ -s "$HOME/share/bash_completion" ] && . "$HOME/share/bash_completion" 
+[ -s "$HOME/share/bash_completion" ] && . "$HOME/share/bash_completion"
 
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion" 
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
 # Set SSH socket
 if [ -z "$SSH_AUTH_SOCK" ]; then
@@ -40,8 +40,8 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
 fi
 
 # File renaming with `mv`
-# 
-# if there isn't a second parameter you'll be prompted to edit the filename on 
+#
+# if there isn't a second parameter you'll be prompted to edit the filename on
 # command line.
 function mv() {
   if [ "$#" -ne 1 ] || [ ! -e "$1" ]; then
@@ -51,6 +51,12 @@ function mv() {
 
   read -ei "$1" newfilename
   command mv -v -- "$1" "$newfilename"
+}
+
+# Create a folder and cd into it
+mkcd () {
+  mkdir -p -- "$1" &&
+  cd -P -- "$1"
 }
 
 # Temporary PS1
