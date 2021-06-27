@@ -5,6 +5,8 @@ width = 100%
 background = ${theme/colors.bar-bg}
 foreground = ${theme/colors.bar-fg}
 
+enable-ipc = true
+
 padding-right = 1
 
 overline-size = 2
