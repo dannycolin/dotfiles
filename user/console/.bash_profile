@@ -18,6 +18,11 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# set XDG DIRS
+if [ -f "$HOME/.config/user-dirs.dirs" ]; then
+  . "$HOME/.config/user-dirs.dirs"
+fi
+
 # Autostart X at login
 if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
   exec startx
