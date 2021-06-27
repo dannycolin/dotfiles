@@ -108,6 +108,9 @@ vim -c "PlugInstall"
   RPMFusion Free.
 
 # Install Virt-Manager
+#
+# To install virtio drivers for Windows VM see:
+# https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md
 
 dnf install virt-manager
 usermod -aG libvirt <username>
