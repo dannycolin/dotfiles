@@ -97,6 +97,13 @@ Plug 'tpope/vim-surround'
 
 call plug#end()
 
+"""""""""""
+" Builtin "
+"""""""""""
+
+" enable syntax highlight of fenced code blocks in Markdown
+let g:markdown_fenced_languages = ['bash=sh', 'css', 'html', 'javascript', 'python']
+
 """""""""""""
 " Emmet.vim "
 """""""""""""
