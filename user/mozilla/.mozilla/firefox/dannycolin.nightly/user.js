@@ -37,6 +37,9 @@ user_pref("extensions.activeThemeID", "firefox-compact-dark@mozilla.org");
 // Load userChrome.css
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
+// Disable middle mouse click paste
+user_pref("middlemouse.paste", false);
+
 // -----------------------------------------------------------------------------
 // Devtools
 // -----------------------------------------------------------------------------
