@@ -12,11 +12,11 @@ xterm*faceName: monospace
 xterm*faceSize: FONT_SIZE
 
 ! Variable font size
-xterm*faceSize1: 14
-xterm*faceSize2: 16
-xterm*faceSize3: 18
-xterm*faceSize4: 20
-xterm*faceSize5: 22
+xterm*faceSize1: 10
+xterm*faceSize2: 12
+xterm*faceSize3: 14
+xterm*faceSize4: 26
+xterm*faceSize5: 18
 xterm*forceBoxChars: false
 
 ! Save X numbers of line in history
