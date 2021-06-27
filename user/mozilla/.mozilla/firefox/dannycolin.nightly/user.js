@@ -59,15 +59,3 @@ user_pref("fission.sessionHistoryInParent", true);
 // WebRender
 user_pref("gfx.webrender.all", true);
 
-// Proton redesign
-user_pref("browser.proton.enabled", true);
-user_pref("browser.proton.contextmenus.enabled", true);
-user_pref("browser.proton.doorhangers.enabled", true);
-user_pref("browser.proton.infobars.enabled", true);
-user_pref("browser.proton.modals.enabled", true);
-user_pref("browser.proton.places-tooltip.enabled", true);
-user_pref("browser.proton.tabs.enabled", true);
-user_pref("browser.proton.toolbar.enabled", true);
-user_pref("browser.proton.urlbar.enabled", true);
-user_pref("browser.aboutwelcome.design", "proton");
-
