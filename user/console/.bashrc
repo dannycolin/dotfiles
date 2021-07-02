@@ -24,7 +24,7 @@ if ! shopt -oq posix; then
 fi
 
 # Load aliases
-[ -f ~/.bash.d/aliases ] && . "$HOME/.bash.d/aliases"
+[ -f ~/.config/bash/aliases ] && . "$HOME/.config/bash/aliases"
 
 # Load user-specific bash completion
 [ -s "$HOME/share/bash_completion" ] && . "$HOME/share/bash_completion"
