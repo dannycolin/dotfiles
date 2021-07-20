@@ -28,17 +28,17 @@ done
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
-bspc config border_width          	1
-bspc config click_to_focus        	button1
-bspc config focused_border_color  	"#0a84ff"
-bspc config gapless_monocle       	true
-bspc config ignore_ewmh_focus     	true
-bspc config initial_polarity      	second_child
-bspc config normal_border_color   	"#4a4a4f"
-bspc config remove_disabled_monitors 	true
+bspc config border_width          	    1
+bspc config click_to_focus        	    button1
+bspc config focused_border_color  	    "#0a84ff"
+bspc config gapless_monocle       	    true
+bspc config ignore_ewmh_focus     	    true
+bspc config initial_polarity      	    second_child
+bspc config normal_border_color   	    "#4a4a4f"
+bspc config remove_disabled_monitors 	  true
 bspc config remove_unplugged_monitors 	true
-bspc config split_ratio           	0.50
-bspc config window_gap            	0
+bspc config split_ratio           	    0.50
+bspc config window_gap            	    0
 
 # Rules
 #
@@ -55,8 +55,9 @@ bspc rule -a Firefox:Navigator  desktop="^2"
 bspc rule -a Nightly            desktop="^2"
 bspc rule -a Daily              desktop="^3"
 bspc rule -a Thunderbird        desktop="^3"
-bspc rule -a Inkscape           desktop="^4"
-bspc rule -a Steam              desktop="^5"
+bspc rule -a discord            desktop="^4"
+bspc rule -a Inkscape           desktop="^5"
+bspc rule -a Steam              desktop="^6"
 
 # Sticky windows
 bspc rule -a Firefox:Toolkit sticky=on
@@ -67,6 +68,8 @@ bspc rule -a Firefox:Browser state=floating
 bspc rule -a Firefox:Toolkit state=floating
 bspc rule -a Nightly:Browser state=floating
 bspc rule -a Nightly:Toolkit state=floating
+
+# Misc rules
 bspc rule -a Microsoft-edge-dev border=off
 bspc rule -a "Microsoft Teams - Preview" border=off
 
@@ -75,5 +78,5 @@ bspc rule -a "Microsoft Teams - Preview" border=off
 bspc rule -a Nightly:Navigator state=tiled
 
 # External rules
-bspc config external_rules_command ~/.config/bspwm/bspwm_rules
+bspc config external_rules_command ~/.config/bspwm/rules
 

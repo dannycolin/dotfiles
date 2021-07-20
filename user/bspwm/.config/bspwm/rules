@@ -25,9 +25,5 @@ fi
 # ----------------------------------------
 
 if [[ "$w_class" =~ "Gimp" ]]; then
-  printf "desktop=^4"
-fi
-
-if [[ "$w_class" =~ "Inkscape" ]]; then
-  printf "desktop=^4"
+  printf "desktop=^5"
 fi
