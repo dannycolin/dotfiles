@@ -1,8 +1,8 @@
 [theme/colors]
 
-blue50    = #0a84ff
-grey10    = #f9f9fa
-grey90    = #0c0c0d
+blue50    = #357bcf
+grey10    = #ffffff
+grey90    = #000000
 red50     = #ff0039
 
 bar-bg  = ${self.grey90}
@@ -13,7 +13,7 @@ battery-low = ${self.red50}
 wm-focused-fg = ${self.blue50}
 
 [theme/icons]
-; Adwaita icon 
+; Adwaita icon
 ; Should be moved to ../themes/adwaita and adwaita color should also be used
 volume-muted  = 
 volume-low    = 

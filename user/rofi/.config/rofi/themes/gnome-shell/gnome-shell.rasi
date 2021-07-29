@@ -1,0 +1,76 @@
+configuration {
+  font: "Cantarell 11";
+  drun-display-format: "{name}";
+  show-icons: true;
+}
+
+window,
+mainbox,
+inputbar,
+case-indicator,
+listview,
+element {
+  background-color: #2d2d2d;
+  color: #ffffff;
+}
+
+window {
+  color: #ffffff;
+  fullscreen: true;
+  margin: 24px 0 0 0;
+  padding: 10%;
+}
+
+inputbar {
+  padding: 0 25%;
+  margin: 0 0 64px 0;
+}
+
+prompt {
+  enabled: false;
+}
+
+entry {
+  background-color: #353535;
+  border: 1px solid;
+  border-color: #282828;
+  border-radius: 50%;
+  color: #ffffff;
+  padding: 8px 16px;
+  placeholder: "Type to search";
+  placeholder-color: #858585;
+}
+
+listview {
+  columns: 6;
+  fixed-columns: true;
+  lines: 3;
+  spacing: 64px;
+}
+
+@media (min-width: 1920) {
+  listview {
+    columns: 8;
+  }
+}
+
+element {
+  orientation: vertical;
+  horizontal-align: 0;
+  padding: 8px;
+}
+
+element.selected {
+  background-color: #353535;
+  border-radius: 8px;
+}
+
+element-icon {
+  size: 64px;
+}
+
+element-text {
+  horizontal-align: 0.5;
+  highlight: none;
+}
+

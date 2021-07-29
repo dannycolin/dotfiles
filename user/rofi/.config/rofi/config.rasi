@@ -3,13 +3,9 @@ configuration {
   display-run: "run";
   display-ssh: "connect";
   fake-transparency: true;
-  modi: "drun,run,ssh";
-  //case-sensitive: true;
-  drun-display-format:
-    "{name} <span foreground='#737373'>—</span> <span foreground='#74c0ff' size='small'>{generic}</span>";
+  modi: "drun";
 }
 
-@import "themes/photon/photon-dark"
-@import "theme.rasi"
+@import "themes/gnome-shell/gnome-shell.rasi"
 
 

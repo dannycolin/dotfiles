@@ -1,7 +1,0 @@
-* {
-  drun-display-format: "{name} — <span foreground='#74c0ff'>{generic}</span>";
-}
-
-listview {
-  scrollbar: false;
-}

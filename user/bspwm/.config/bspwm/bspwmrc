@@ -24,17 +24,29 @@ done
 # bspwm
 # ----------------------------------------
 
+# Colorscheme
+
+declare -A colors
+
+colors=(
+  [blue]="#15539e"
+  [grey-70]="#353535"
+  [grey-80]="#2d2d2d"
+  [grey-90]="#1b1b1b"
+)
+
 # Global configurations
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
-bspc config border_width          	    1
+bspc config border_width          	    2
 bspc config click_to_focus        	    button1
-bspc config focused_border_color  	    "#0a84ff"
+#bspc config focused_border_color  	    "#0a84ff"
+bspc config focused_border_color  	    "${colors["blue"]}"
 bspc config gapless_monocle       	    true
 bspc config ignore_ewmh_focus     	    true
 bspc config initial_polarity      	    second_child
-bspc config normal_border_color   	    "#4a4a4f"
+bspc config normal_border_color   	    "${colors["grey-70"]}"
 bspc config remove_disabled_monitors 	  true
 bspc config remove_unplugged_monitors 	true
 bspc config split_ratio           	    0.50

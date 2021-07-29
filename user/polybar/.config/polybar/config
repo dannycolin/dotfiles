@@ -3,7 +3,7 @@
 ; ----------------------------------------
 
 ; theme
-include-file = ~/.config/polybar/conf.d/themes/photon
+include-file = ~/.config/polybar/conf.d/themes/adwaita-dark
 
 ; bars
 include-file = ~/.config/polybar/conf.d/bars/top
