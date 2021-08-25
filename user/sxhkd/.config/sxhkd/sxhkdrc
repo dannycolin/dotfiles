@@ -2,9 +2,9 @@
 # General hotkeys
 # ----------------------------------------
 
-# make sxhkd reload its configuration files:
+# reload desktop environment
 super + ctrl + r
-  pkill -USR1 -x sxhkd; ~/.config/bspwm/bspwmrc
+  pkill -USR1 -x sxhkd; ~/.config/bspwm/bspwmrc; polybar-msg cmd restart
 
 # terminal emulator
 super + {_,shift + } Return
