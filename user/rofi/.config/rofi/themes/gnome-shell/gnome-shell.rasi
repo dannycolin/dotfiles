@@ -4,21 +4,20 @@ configuration {
   show-icons: true;
 }
 
-window,
-mainbox,
-inputbar,
-case-indicator,
-listview,
-element {
-  background-color: #2d2d2d;
+* {
+  background-color: transparent;
   color: #ffffff;
 }
 
 window {
-  color: #ffffff;
-  fullscreen: true;
-  margin: 24px 0 0 0;
+  background-color: #2d2d2d;
+}
+
+window {
+  width: 100%;
+  height: 100%;
   padding: 10%;
+  y-offset: 24px;
 }
 
 inputbar {
@@ -35,7 +34,6 @@ entry {
   border: 1px solid;
   border-color: #282828;
   border-radius: 50%;
-  color: #ffffff;
   padding: 8px 16px;
   placeholder: "Type to search";
   placeholder-color: #858585;
@@ -60,7 +58,9 @@ element {
   padding: 8px;
 }
 
-element.selected {
+element.selected,
+element-icon.selected,
+element-text.selected {
   background-color: #353535;
   border-radius: 8px;
 }
