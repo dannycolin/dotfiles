@@ -14,6 +14,15 @@ super + {_,shift + } Return
 super + a
 	rofi -show drun
 
+# take a screeshot
+super + s
+  maim \
+    -u \
+    -i $(xdotool getactivewindow) \
+    ~/Pictures/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png \
+    && \
+    mpv /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
+
 # sound control
 XF86Audio{Lower,Raise}Volume
   pactl set-sink-volume 0 {-,+}5%
