@@ -2,6 +2,7 @@
 
 type = internal/bspwm
 
+
 enable-scroll = false
 
 label-empty =
@@ -13,10 +14,15 @@ label-occupied-padding-left = 2
 label-urgent = %name%
 label-urgent-padding-left = 2
 
-[module/i3]
+[module/xworkspaces]
 
-type = internal/i3
+type = internal/xworkspaces
 
-format = <label-state>
-
-label-focused-foreground = ${theme/colors.wm-focused-fg}
+label-empty =
+label-active = %index%
+label-active-padding-left = 2
+label-active-foreground = ${theme/colors.wm-focused-fg}
+label-occupied = %index%
+label-occupied-padding-left = 2
+label-urgent = %index%
+label-urgent-padding-left = 2

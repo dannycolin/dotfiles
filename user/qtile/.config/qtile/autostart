@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# ----------------------------------------
+# Autostart
+# ----------------------------------------
+
+declare -A apps
+
+apps=(
+  [polybar]="polybar -r top"
+)
+
+# Detect if applications are already running. If not, start them.
+for app in "${!apps[@]}"; do
+  running="$(pgrep "$app")"
+
+  if [[ ! "$running" ]]; then
+    ${apps["$app"]} &
+  fi
+done
+
