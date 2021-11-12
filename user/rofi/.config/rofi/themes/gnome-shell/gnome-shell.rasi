@@ -66,6 +66,7 @@ element-text.selected {
 }
 
 element-icon {
+  horizontal-align: 0.5;
   size: 64px;
 }
 

@@ -4,8 +4,7 @@ configuration {
   display-ssh: "connect";
   fake-transparency: true;
   modi: "drun";
+  theme: "themes/gnome-shell/gnome-shell.rasi";
 }
-
-@import "themes/gnome-shell/gnome-shell.rasi"
 
 
