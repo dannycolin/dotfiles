@@ -3,17 +3,6 @@ set completion-ignore-case On
 Tab: complete
 set editing-mode vi
 
-# operate-and-get-next allows you to navigagte to history
-# and then keep executing commands successively from 
-# that point onwards
-# NOTE: for this to work you must also add 'stty discard undef' to 
-# your .profile
-#set keymap vi-insert
-#"\C-o": operate-and-get-next
-
-#set keymap vi-command
-#"\C-o": operate-and-get-next
-
 #vi mode
 $if mode=vi
 set keymap vi-command
@@ -92,9 +81,17 @@ Control-l: clear-screen
 "ca:": "da:i"
 "gg": beginning-of-history
 "G": end-of-history
-?: reverse-search-history
-#/: forward-search-history
+/: reverse-search-history
+
+# Context sensitive history
+#
+# e.g. type `npm`, arrow up and it will only show history items starting with
+# `npm`.
+"k": history-search-backward
+"j": history-search-forward
 
 set keymap vi-insert
 Control-l: clear-screen
+
 $endif
+
