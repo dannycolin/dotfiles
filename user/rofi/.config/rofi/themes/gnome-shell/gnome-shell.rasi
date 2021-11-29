@@ -1,12 +1,7 @@
-configuration {
-  font: "Cantarell 11";
-  drun-display-format: "{name}";
-  show-icons: true;
-}
-
 * {
   background-color: transparent;
   color: #ffffff;
+  font: "Cantarell 11";
 }
 
 window {
@@ -53,6 +48,7 @@ listview {
 }
 
 element {
+  children: [element-icon, element-text];
   orientation: vertical;
   horizontal-align: 0;
   padding: 8px;
