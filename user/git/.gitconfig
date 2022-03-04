@@ -8,3 +8,6 @@
 
 [init]
 	defaultBranch = main
+[cinnabar]
+	helper = /home/sdk/.mozbuild/git-cinnabar/git-cinnabar-helper
+	version-check = 1639616875
