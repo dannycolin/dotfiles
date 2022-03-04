@@ -87,6 +87,10 @@ user_pref("gfx.webrender.all", true);
 // to use h264 instead of VP8/VP9.
 user_pref("media.ffmpeg.vaapi.enabled", true);
 
+// Global Privacy Control
+user_pref("privacy.globalprivacycontrol.enabled", true);
+user_pref("privacy.globalprivacycontrol.functionality.enabled", true);
+
 // OffCanvas2D
 //
 // Temporarily disable the half implemented new OffCanvas2D API in Firefox to
