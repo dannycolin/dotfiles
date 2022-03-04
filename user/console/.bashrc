@@ -39,6 +39,10 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
   export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 fi
 
+if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+  export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
+fi
+
 # File renaming with `mv`
 #
 # if there isn't a second parameter you'll be prompted to edit the filename on
