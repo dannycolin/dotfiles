@@ -1,4 +1,5 @@
 set completion-ignore-case On
+
 #TAB: menu-complete
 Tab: complete
 set editing-mode vi
