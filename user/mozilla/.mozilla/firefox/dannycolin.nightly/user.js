@@ -62,7 +62,6 @@ user_pref("network.trr.mode", 3);
 user_pref("devtools.cache.disabled", true);
 user_pref("devtools.chrome.enabled", true);
 user_pref("devtools.debugger.remote-enabled", true);
-user_pref("devtools.theme", "dark");
 
 // -----------------------------------------------------------------------------
 // Nightly Settings
