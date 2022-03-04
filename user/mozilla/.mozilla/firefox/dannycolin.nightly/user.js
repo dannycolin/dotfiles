@@ -52,6 +52,10 @@ user_pref("middlemouse.paste", false);
 // Load userChrome.css
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
+// DoH
+user_pref("network.trr.mode", 3);
+//user_pref("network.trr.uri", "https://doh.mullvad.net/dns-query");
+
 // -----------------------------------------------------------------------------
 // Devtools
 // -----------------------------------------------------------------------------
