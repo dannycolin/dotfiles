@@ -91,6 +91,8 @@ Plug 'cohama/lexima.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'kjssad/quantum.vim'
 Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'markdown'] }
+Plug 'https://github.com/chikamichi/mediawiki.vim'
+Plug 'mhinz/vim-signify'
 Plug 'RRethy/vim-hexokinase', { 'for': ['css'] }
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
