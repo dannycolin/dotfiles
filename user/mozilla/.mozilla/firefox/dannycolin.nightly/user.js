@@ -87,3 +87,12 @@ user_pref("gfx.webrender.all", true);
 // to use h264 instead of VP8/VP9.
 user_pref("media.ffmpeg.vaapi.enabled", true);
 
+// OffCanvas2D
+//
+// Temporarily disable the half implemented new OffCanvas2D API in Firefox to
+// fix the broken embedded images in Element Web
+// See:
+// - https://bugzilla.mozilla.org/show_bug.cgi?id=801176
+// - https://github.com/matrix-org/matrix-react-sdk/pull/7440
+user_pref("gfx.offscreencanvas.enabled", false);
+
