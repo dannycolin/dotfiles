@@ -74,3 +74,16 @@ user_pref("fission.sessionHistoryInParent", true);
 // WebRender
 user_pref("gfx.webrender.all", true);
 
+// VA-API
+//
+// On Fedora, you need to install:
+// - libva-intel-driver
+// - libva-utils (optional)   Use `vainfo` to see if the drivers are properly
+//                            working.
+// - igt-gpu-tools            Use `sudo intel_gpu_top` while playing a video
+//                            to see if it is hardware accelerated.
+//
+// You also need to install `h264ify` on addons.mozilla.org to force youtube
+// to use h264 instead of VP8/VP9.
+user_pref("media.ffmpeg.vaapi.enabled", true);
+
