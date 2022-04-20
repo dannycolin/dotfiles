@@ -9,6 +9,10 @@
   #define FONT_SIZE 12
 #endif
 
+! Set font dpi
+Xft.dpi: 192
+Xcursor.size: 32
+
 #include ".Xresources.d/xterm/config"
 #include ".Xresources.d/xterm/themes/quantum"
 

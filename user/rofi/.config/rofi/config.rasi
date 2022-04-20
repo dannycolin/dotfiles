@@ -3,9 +3,11 @@ configuration {
   drun-display-format: "{name}";
   display-run: "run";
   display-ssh: "connect";
+  dpi: 1;
   fake-transparency: true;
   modi: "drun";
-  theme: "themes/gnome-shell/gnome-shell.rasi";
 }
+
+@theme "themes/gnome-shell/gnome-shell.rasi"
 
 

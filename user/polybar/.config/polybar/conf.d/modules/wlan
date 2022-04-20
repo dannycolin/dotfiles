@@ -1,7 +1,7 @@
 [module/wlan]
 
 type = internal/network
-interface = wlan0
+interface = wlp170s0
 
 interval = 5.0
 

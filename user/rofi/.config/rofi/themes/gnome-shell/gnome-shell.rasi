@@ -12,7 +12,7 @@ window {
   width: 100%;
   height: 100%;
   padding: 10%;
-  y-offset: 24px;
+  y-offset: 32px;
 }
 
 inputbar {
@@ -52,6 +52,7 @@ element {
   orientation: vertical;
   horizontal-align: 0;
   padding: 8px;
+  spacing: 64px;
 }
 
 element.selected,
@@ -63,7 +64,7 @@ element-text.selected {
 
 element-icon {
   horizontal-align: 0.5;
-  size: 64px;
+  size: 128px;
 }
 
 element-text {

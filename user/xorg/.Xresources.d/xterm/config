@@ -9,7 +9,7 @@ xterm*termName: xterm-256color
 xterm*ScrollBar: false
 ! Set font properties
 xterm*faceName: monospace
-xterm*faceSize: FONT_SIZE
+xterm*faceSize: 10
 
 ! Variable font size
 xterm*faceSize1: 10

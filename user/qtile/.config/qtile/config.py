@@ -70,7 +70,7 @@ keys = [
 # Groups
 groups = [
     Group("1"),
-    Group("2", matches=[Match(wm_class=["Firefox", "Nightly"])]),
+    Group("2", matches=[Match(wm_class=["Firefox", "Nightly", "Navigator"])]),
     Group("3", matches=[Match(wm_class=["Thunderbird", "Daily"])]),
     Group("4", matches=[Match(wm_class=["discord"])]),
     Group("5"),
