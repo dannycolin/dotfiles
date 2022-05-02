@@ -19,3 +19,6 @@ for app in "${!apps[@]}"; do
   fi
 done
 
+xrandr --output eDP-1 --scale 1.33
+polybar-msg cmd restart
+

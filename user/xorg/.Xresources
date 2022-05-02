@@ -2,16 +2,29 @@
 ! .Xresources config                       !
 ! ---------------------------------------- !
 
-! Define font size based on screen size
-#if WIDTH == 1366
+! Define properties based on screen size
+! See: https://www.x.org/releases/X11R7.7/doc/man/man1/xrdb.1.xhtml
+#if WIDTH < 1920
+  #define CURSOR_SIZE 32
   #define FONT_SIZE 10
-#elif WIDTH == 1920
-  #define FONT_SIZE 12
+  #define SCREEN_DPI 96
 #endif
 
-! Set font dpi
-Xft.dpi: 192
-Xcursor.size: 32
+#if WIDTH == 1920
+  #define CURSOR_SIZE 32
+  #define FONT_SIZE 12
+  #define SCREEN_DPI 96
+#endif
+
+#if WIDTH >= 2000
+  #define CURSOR_SIZE 48
+  #define FONT_SIZE 12
+  #define SCREEN_DPI 192
+#endif
+
+! Global configuration
+Xcursor.size: CURSOR_SIZE
+Xft.dpi: SCREEN_DPI
 
 #include ".Xresources.d/xterm/config"
 #include ".Xresources.d/xterm/themes/quantum"

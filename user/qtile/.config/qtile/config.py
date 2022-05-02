@@ -71,7 +71,7 @@ keys = [
 groups = [
     Group("1"),
     Group("2", matches=[Match(wm_class=["Firefox", "Nightly", "Navigator"])]),
-    Group("3", matches=[Match(wm_class=["Thunderbird", "Daily"])]),
+    Group("3", matches=[Match(wm_class=["Thunderbird", "Daily", "Mail"])]),
     Group("4", matches=[Match(wm_class=["discord"])]),
     Group("5"),
     Group("6"),
@@ -93,8 +93,7 @@ layouts = [
         border_focus="#15539e",
         border_normal="#353535",
         border_width=2,
-        fair=False,
-        grow_amount=5
+        grow_amount=5,
     ),
     layout.Floating(
         border_focus="#15539e",

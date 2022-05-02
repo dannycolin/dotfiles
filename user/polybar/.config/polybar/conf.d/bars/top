@@ -11,19 +11,16 @@ foreground = ${theme/colors.bar-fg}
 
 enable-ipc = true
 
-padding-right = 1
-
 overline-size = 2
 
-font-0 = cantarell:size=10:style=bold:antialias=true;2
-font-1 = adwaita:size=10:style=normal:antialias=true;2
+font-0 = cantarell:size=10:style=bold:antialias=true;4
+font-1 = adwaita:size=10:style=normal:antialias=true;4
 
+module-margin = 1
 
 modules-left = xworkspaces
 modules-center = date
 modules-right = updates wlan eth battery volume
-
-module-margin = 1
 
 separator = " "
 
