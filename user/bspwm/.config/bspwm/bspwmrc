@@ -63,10 +63,10 @@ bspc config window_gap            	    0
 bspc rule -r *:*
 
 # Move to desktop
-bspc rule -a Firefox:Navigator  desktop="^2"
+bspc rule -a *:Navigator        desktop="^2"
 bspc rule -a Nightly            desktop="^2"
 bspc rule -a Daily              desktop="^3"
-bspc rule -a Thunderbird        desktop="^3"
+bspc rule -a *:Mail             desktop="^3"
 bspc rule -a discord            desktop="^4"
 bspc rule -a Inkscape           desktop="^5"
 bspc rule -a Steam              desktop="^6"
@@ -87,7 +87,7 @@ bspc rule -a "Microsoft Teams - Preview" border=off
 
 # Temporary fix for Firefox starting as a floating window only in my main profile.
 # I can reproduce it with mozregression...
-bspc rule -a Nightly:Navigator state=tiled
+bspc rule -a firefox-nightly:Navigator state=tiled
 
 # External rules
 bspc config external_rules_command ~/.config/bspwm/rules
