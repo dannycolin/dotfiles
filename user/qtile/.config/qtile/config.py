@@ -3,18 +3,20 @@ import subprocess
 
 from typing import List
 
-from libqtile import hook, layout
+from libqtile import bar, hook, layout, widget
 from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
-
 from libqtile.log_utils import logger
+
+from extra import resize_left, resize_right
+
 
 # Globals
 mod = "mod4"
 terminal = guess_terminal()
 
-# Keybinds
+# Keybind
 keys = [
     # Move window focus
     Key([mod], "h", lazy.layout.left()),
@@ -29,10 +31,11 @@ keys = [
     Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
 
     # Resize windows
-    Key([mod, "control"], "h", lazy.layout.grow_left()),
-    Key([mod, "control"], "l", lazy.layout.grow_right()),
+    Key([mod, "control"], "h", lazy.function(resize_left)),
+    Key([mod, "control"], "l", lazy.function(resize_right)),
     Key([mod, "control"], "j", lazy.layout.grow_down()),
     Key([mod, "control"], "k", lazy.layout.grow_up()),
+
 
     # Volume
     Key([], 'XF86AudioMute',
@@ -93,7 +96,9 @@ layouts = [
         border_focus="#15539e",
         border_normal="#353535",
         border_width=2,
+        fair=False,
         grow_amount=5,
+        ratio=1.5
     ),
     layout.Floating(
         border_focus="#15539e",
@@ -104,8 +109,32 @@ layouts = [
 
 # Screen
 screens = [
-    Screen()
+        Screen()
+        ]
+"""
+screens = [
+  Screen(
+      top=bar.Bar(
+          [
+              widget.GroupBox(),
+              widget.Spacer(length=bar.STRETCH),
+              widget.Clock(
+                format="%a %d %b %H:%M"
+              ),
+              widget.Spacer(length=bar.STRETCH),
+              #              widget.BatteryIcon,
+              widget.Clock()
+          ],
+          48,
+      ),
+  ),
 ]
+"""
+
+widget_defaults = dict(
+    font="Canterell Bold",
+    fontsize=26
+)
 
 # Floating windows
 mouse = [
@@ -118,6 +147,7 @@ mouse = [
 floating_layout = layout.Floating(float_rules=[
     *layout.Floating.default_float_rules,
     Match(wm_instance_class="Browser", wm_class="Nightly"),
+    Match(wm_instance_class="Browser", wm_class="firefox-nightly"),
     Match(wm_instance_class="Browser", wm_class="Firefox")
 ])
 
