@@ -90,6 +90,7 @@ Plug 'ap/vim-buftabline'
 Plug 'cohama/lexima.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'kjssad/quantum.vim'
+Plug 'Mofiqul/adwaita.nvim'
 Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'markdown'] }
 Plug 'https://github.com/chikamichi/mediawiki.vim'
 Plug 'mhinz/vim-signify'
@@ -178,7 +179,7 @@ set statusline+=%l/%L]                          "cursor line/total lines
 " 4. Syntax highlighting "
 """"""""""""""""""""""""""
 
-colorscheme quantum                 " set the colorscheme
+colorscheme adwaita                 " set the colorscheme
 syntax on                           " turn on syntax highlighting
 
 " override theme's colors

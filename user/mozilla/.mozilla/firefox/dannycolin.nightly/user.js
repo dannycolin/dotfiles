@@ -62,6 +62,7 @@ user_pref("network.trr.mode", 3);
 user_pref("devtools.cache.disabled", true);
 user_pref("devtools.chrome.enabled", true);
 user_pref("devtools.debugger.remote-enabled", true);
+user_pref("layout.css.color-mix.enabled", true);
 
 // -----------------------------------------------------------------------------
 // Nightly Settings
@@ -105,4 +106,7 @@ user_pref("privacy.globalprivacycontrol.functionality.enabled", true);
 // - https://bugzilla.mozilla.org/show_bug.cgi?id=801176
 // - https://github.com/matrix-org/matrix-react-sdk/pull/7440
 user_pref("gfx.offscreencanvas.enabled", false);
+
+// Use the refactored Screenshot tool
+user_pref("screenshots.browser.component.enabled", true);
 

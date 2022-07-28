@@ -3,11 +3,12 @@ configuration {
   drun-display-format: "{name}";
   display-run: "run";
   display-ssh: "connect";
-  dpi: 1;
   fake-transparency: true;
   modi: "drun";
+  show-icons: true;
 }
 
-@theme "themes/gnome-shell/gnome-shell.rasi"
+//@theme "themes/gnome-shell/gnome-shell2.rasi"
+@theme "themes/gnome-shell/gnome-shell3.rasi"
 
 

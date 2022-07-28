@@ -10,7 +10,7 @@
 systemctl --user import-environment DISPLAY XAUTHORITY
 
 if command -v dbus-update-activation-environment >/dev/null 2>&1; then
-    dbus-update-activation-environment DISPLAY XAUTHORITY
+    dbus-update-activation-environment --systemd DISPLAY XAUTHORITY
 fi
 
 # Load Xresources on boot
@@ -23,6 +23,13 @@ sh .fehbg
 #
 # This is needed to prevent showing a cross pointer when hovering polybar
 xsetroot -cursor_name left_ptr
+
+# Xorg fails to boot when the eGPU is connected so we need to run
+# `xrandr --auto`. This is probably due to the HiDPi configuration
+# in my dotfiles.
+#xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+xrandr --output eDP-1-1 --scale 1.25x1.25
 
 # Start the WM
 #exec bspwm

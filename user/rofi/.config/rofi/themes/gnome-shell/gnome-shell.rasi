@@ -16,12 +16,13 @@ window {
 }
 
 inputbar {
-  padding: 0 25%;
+  width: 200px;
   margin: 0 0 64px 0;
 }
 
 prompt {
   enabled: false;
+  width: 200px;
 }
 
 entry {

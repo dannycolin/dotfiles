@@ -26,6 +26,9 @@ fi
 # Load aliases
 [ -f ~/.config/bash/aliases ] && . "$HOME/.config/bash/aliases"
 
+# Load functions
+[ -f ~/.config/bash/functions ] && . "$HOME/.config/bash/functions"
+
 # Load user-specific bash completion
 [ -s "$HOME/share/bash_completion" ] && . "$HOME/share/bash_completion"
 
