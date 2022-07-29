@@ -9,12 +9,11 @@ export QT_AUTO_SCREEN_SET_FACTOR=0
 export QT_SCALE_FACTOR=1.75
 export QT_FONT_DPI=96
 
-# Needed for qt5ct to work correctly
+# Set qt5ct as the QT platform theme manager
 export QT_QPA_PLATFORMTHEME=qt5ct
 
-# if running bash
+# source ~/.bashrc if running bash
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
 	    . "$HOME/.bashrc"
     fi

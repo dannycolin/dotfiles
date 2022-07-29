@@ -68,6 +68,3 @@ mkcd () {
 
 # Temporary PS1
 PS1=" \w \$ "
-
-# Bashd
-[ -f ~/Projects/bash.d/bashd ] && . "$HOME/Projects/bash.d/bashd"
