@@ -7,8 +7,8 @@ use-ui-max = false
 format-volume = <ramp-volume> <label-volume>
 format-muted = <label-muted>
 
-label-volume = %percentage%%
-label-muted =  %percentage%%
+label-volume = V: %percentage%%
+label-muted = V: %percentage%% [m]
 
 ramp-volume-font = 1
 

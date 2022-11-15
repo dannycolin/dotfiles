@@ -11,7 +11,6 @@ from libqtile.log_utils import logger
 
 from extra import resize_left, resize_right
 
-
 # Globals
 mod = "mod4"
 terminal = guess_terminal()
@@ -57,7 +56,8 @@ keys = [
         Key([], "r", lazy.spawn("systemctl reboot")),
         Key([], "l",
             lazy.spawn("i3lock -i ~/Pictures/wallpapers/current.png"))],
-        mode="System"
+        mode=True,
+        name="System"
     ),
 
     # Others
@@ -73,7 +73,7 @@ keys = [
 # Groups
 groups = [
     Group("1"),
-    Group("2", matches=[Match(wm_class=["Firefox", "Nightly", "Navigator"])]),
+    Group("2", matches=[Match(wm_class=["Firefox", "Nightly", "Navigator", "Devtools"])]),
     Group("3", matches=[Match(wm_class=["Thunderbird", "Daily", "Mail"])]),
     Group("4", matches=[Match(wm_class=["discord"])]),
     Group("5"),
@@ -101,35 +101,41 @@ layouts = [
         ratio=1.5
     ),
     layout.Floating(
-        border_focus="#15539e",
+        border_focus="#357bcf",
         border_normal="#353535",
         border_width=2
     )
 ]
 
 # Screen
-screens = [
-        Screen()
-        ]
-"""
+topbar = bar.Bar(
+    [
+        widget.GroupBox(
+            hide_unused=True,
+            highlight_method="text",
+            this_current_screen_border="357bcf"
+        ),
+        widget.Spacer(length=bar.STRETCH),
+        widget.Clock(
+          format="%a %d %b %H:%M"
+        ),
+        widget.Spacer(length=bar.STRETCH),
+        widget.Battery(format="B: {percent:2.0%}"),
+        widget.PulseVolume(fmt="V: {}"),
+        widget.Wlan(
+            disconnected_message="Off",
+            format="W: {percent:2.0%}",
+            interface="wlp170s0"
+        ),
+        widget.Systray(icon_size=32)
+    ],
+    48,
+)
 screens = [
   Screen(
-      top=bar.Bar(
-          [
-              widget.GroupBox(),
-              widget.Spacer(length=bar.STRETCH),
-              widget.Clock(
-                format="%a %d %b %H:%M"
-              ),
-              widget.Spacer(length=bar.STRETCH),
-              #              widget.BatteryIcon,
-              widget.Clock()
-          ],
-          48,
-      ),
-  ),
+      top=topbar
+  )
 ]
-"""
 
 widget_defaults = dict(
     font="Canterell Bold",

@@ -7,7 +7,7 @@
 declare -A apps
 
 apps=(
-  [polybar]="polybar -r top"
+  #[polybar]="polybar -r top"
 )
 
 # Detect if applications are already running. If not, start them.

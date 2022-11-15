@@ -66,5 +66,13 @@ mkcd () {
   cd -P -- "$1"
 }
 
-# Temporary PS1
-PS1=" \w \$ "
+# Rust env
+. "$HOME/.cargo/env"
+
+# Bash prompt
+#prompt() {
+#  PS1="$(/path/to/prompt/exec)"
+#}
+#PROMPT_COMMAND="prompt; $PROMPT_COMMAND"
+
+PS1="\w \$ "

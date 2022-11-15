@@ -8,8 +8,8 @@ interval = 5.0
 format-connected = <ramp-signal> <label-connected>
 format-disconnected = <label-disconnected>
 
-label-connected = %signal%%
-label-disconnected = ${theme/icons.wireless-offline}
+label-connected = W: %signal%%
+label-disconnected = W: Off ${theme/icons.wireless-offline}
 
 ramp-signal-font = 1
 
