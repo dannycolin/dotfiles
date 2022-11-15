@@ -1,9 +1,0 @@
-[module/brightness] 
-
-type = internal/backlight
-
-card = intel_backlight
-
-format = <label>
-
-label = L: %percentage%%
