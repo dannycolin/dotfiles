@@ -81,7 +81,7 @@ groups = [
     Group("7"),
     Group("8"),
     Group("9"),
-    Group("0")
+    Group("0", label="10")
 ]
 
 for i in groups:
