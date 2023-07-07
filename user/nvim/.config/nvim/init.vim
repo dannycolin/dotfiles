@@ -87,16 +87,13 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-buftabline'
-Plug 'cohama/lexima.vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
-Plug 'kjssad/quantum.vim'
+"Plug 'cohama/lexima.vim'
 Plug 'Mofiqul/adwaita.nvim'
 Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'markdown'] }
-Plug 'https://github.com/chikamichi/mediawiki.vim'
-Plug 'mhinz/vim-signify'
-Plug 'RRethy/vim-hexokinase', { 'for': ['css'] }
+"Plug 'mhinz/vim-signify'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 

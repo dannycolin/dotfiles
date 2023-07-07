@@ -12,15 +12,23 @@ HISTFILESIZE=1000
 HISTIGNORE="clear:rm*"
 HISTSIZE=1000
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
+# Enable programmable completion features
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+# Set SSH socket
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+fi
+
+# Set dbus session
+if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+  export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
 fi
 
 # Load aliases
@@ -37,42 +45,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
-# Set SSH socket
-if [ -z "$SSH_AUTH_SOCK" ]; then
-  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-fi
-
-if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
-  export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
-fi
-
-# File renaming with `mv`
-#
-# if there isn't a second parameter you'll be prompted to edit the filename on
-# command line.
-function mv() {
-  if [ "$#" -ne 1 ] || [ ! -e "$1" ]; then
-    command mv "$@"
-    return
-  fi
-
-  read -ei "$1" newfilename
-  command mv -v -- "$1" "$newfilename"
-}
-
-# Create a folder and cd into it
-mkcd () {
-  mkdir -p -- "$1" &&
-  cd -P -- "$1"
-}
-
-# Rust env
+# Load Rust
 . "$HOME/.cargo/env"
 
-# Bash prompt
-#prompt() {
-#  PS1="$(/path/to/prompt/exec)"
-#}
-#PROMPT_COMMAND="prompt; $PROMPT_COMMAND"
+# Load Perl
+PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
-PS1="\w \$ "
+# Set prompt
+prompt() {
+  PS1="\w \$ "
+}
+PROMPT_COMMAND="prompt; $PROMPT_COMMAND"
+

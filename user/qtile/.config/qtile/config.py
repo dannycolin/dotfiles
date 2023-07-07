@@ -37,15 +37,9 @@ keys = [
 
 
     # Volume
-    Key([], 'XF86AudioMute',
-        lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
-    Key([], 'XF86AudioMicMute',
-        lazy.spawn("pactl set-source-mute @DEFAULT_SOURCE toggle")),
-    Key([], 'XF86AudioRaiseVolume',
-        lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")),
-    Key([], 'XF86AudioLowerVolume',
-        lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")),
-
+    Key([], "XF86AudioMute", lazy.widget["pulsevolume"].mute()),
+    Key([], "XF86AudioRaiseVolume", lazy.widget["pulsevolume"].increase_vol()),
+    Key([], "XF86AudioLowerVolume", lazy.widget["pulsevolume"].decrease_vol()),
     # Brightness
     Key([], 'XF86MonBrightnessDown', lazy.spawn("brightnessctl s 10%-")),
     Key([], 'XF86MonBrightnessUp', lazy.spawn("brightnessctl s +10%")),
@@ -111,6 +105,7 @@ layouts = [
 topbar = bar.Bar(
     [
         widget.GroupBox(
+            disable_drag=True,
             hide_unused=True,
             highlight_method="text",
             this_current_screen_border="357bcf"
@@ -121,15 +116,24 @@ topbar = bar.Bar(
         ),
         widget.Spacer(length=bar.STRETCH),
         widget.Battery(format="B: {percent:2.0%}"),
-        widget.PulseVolume(fmt="V: {}"),
+        widget.PulseVolume(
+            fmt="V: {}",
+            limit_max_volume=True,
+            step=5
+        ),
         widget.Wlan(
             disconnected_message="Off",
             format="W: {percent:2.0%}",
             interface="wlp170s0"
         ),
-        widget.Systray(icon_size=32)
+        widget.Systray(icon_size=32),
+        widget.Wallpaper(
+            directory="~/Pictures/wallpapers/",
+            label="",
+            wallpaper="fedora12-wallpaper.png"
+        )
     ],
-    48,
+    64,
 )
 screens = [
   Screen(
@@ -176,3 +180,7 @@ wmname = "LG3D"
 def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart')
     subprocess.call([home])
+
+#@hook.subscribe.screen_change
+#def onScreenChange(_):
+#    lazy.restart() # qtile is not defined...
