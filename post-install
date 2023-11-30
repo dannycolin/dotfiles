@@ -1,42 +1,32 @@
-# Install Desktop Environment
+#!/usr/bin/env bash
 
-adwaita-qt4 \
-adwaita-qt5 \
+# Theming
+dnf install adwaita-qt4 adwaita-qt5
 
-# Set keyboard
-
+# Keyboard
 localectl --no-convert set-x11-keymap us evdev altgr-intl caps:escape
 
 # Generate XDG folders
-
-dnf xdg-user-dirs
+dnf install xdg-user-dirs
 xdg-user-dirs-update
 
-# Set ssh-agent service
-cd ~/.dotfiles/user
+# Enable ssh-agent service
+cd "$HOME/.dotfiles/user"
 stow --target=$HOME services
-# Systemctl needs to be run without sudo when --user is used
 systemctl enable --user ssh-agent.service
 systemctl start --user ssh-agent.service
 
-# Jekyll: `error:/usr/lib/rpm/redhat/redhat-hardened-cc1: No such file or directory`
+# Jekyll:
+# Fix `error:/usr/lib/rpm/redhat/redhat-hardened-cc1: No such file or directory`
 dnf install redhat-rpm-config
 
 # Install Virt-Manager
 #
 # To install virtio drivers for Windows VM see:
 # https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md
-
 dnf install virt-manager
-usermod -aG libvirt <username>
+usermod -aG libvirt $WHOAMI
 
 # Add /usr/local/lib(64) to $LD_LIBRARY_PATH
-
-* Create `/etc/ld.so.conf.d/usrlocal.conf`
-* Add the following lines:
-
-  ```
-  /usr/local/lib
-  /usr/local/lib64
-  ```
-* Run `[sudo] ldconfig -v`
+echo -e "/usr/local/lib\n/usr/local/lib64" >> /etc/ld.so.conf.d/usrlocal.conf
+ldconfig -v

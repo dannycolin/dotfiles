@@ -9,7 +9,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile.log_utils import logger
 
-from extra import resize_left, resize_right
+from extra import resize_left, resize_right, resize_up, resize_down
 
 # Globals
 mod = "mod4"
@@ -32,9 +32,8 @@ keys = [
     # Resize windows
     Key([mod, "control"], "h", lazy.function(resize_left)),
     Key([mod, "control"], "l", lazy.function(resize_right)),
-    Key([mod, "control"], "j", lazy.layout.grow_down()),
-    Key([mod, "control"], "k", lazy.layout.grow_up()),
-
+    Key([mod, "control"], "j", lazy.function(resize_down)),
+    Key([mod, "control"], "k", lazy.function(resize_up)),
 
     # Volume
     Key([], "XF86AudioMute", lazy.widget["pulsevolume"].mute()),
@@ -67,9 +66,20 @@ keys = [
 # Groups
 groups = [
     Group("1"),
-    Group("2", matches=[Match(wm_class=["Firefox", "Nightly", "Navigator", "Devtools"])]),
-    Group("3", matches=[Match(wm_class=["Thunderbird", "Daily", "Mail"])]),
-    Group("4", matches=[Match(wm_class=["discord"])]),
+    Group("2", matches=[
+        Match(wm_class="Firefox"),
+        Match(wm_class="Nightly"),
+        Match(wm_class="Navigator"),
+        Match(wm_class="Devtools"),
+    ]),
+    Group("3", matches=[
+        Match(wm_class="Thunderbird"),
+        Match(wm_class="Daily"),
+        Match(wm_class="Mail"),
+    ]),
+    Group("4", matches=[
+        Match(wm_class="discord"),
+    ]),
     Group("5"),
     Group("6"),
     Group("7"),
@@ -179,8 +189,5 @@ wmname = "LG3D"
 @hook.subscribe.startup_once
 def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart')
-    subprocess.call([home])
+    subprocess.run([home])
 
-#@hook.subscribe.screen_change
-#def onScreenChange(_):
-#    lazy.restart() # qtile is not defined...

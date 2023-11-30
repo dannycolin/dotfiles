@@ -87,13 +87,12 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-buftabline'
-"Plug 'cohama/lexima.vim'
 Plug 'Mofiqul/adwaita.nvim'
 Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'markdown'] }
-"Plug 'mhinz/vim-signify'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -112,19 +111,6 @@ let g:user_emmet_expandabbr_key = '<C-e>'
 let g:user_emmet_install_global = 0
 autocmd FileType html,markdown EmmetInstall
 
-""""""""""""""""""
-" Hexokinase.vim "
-""""""""""""""""""
-
-let g:Hexokinase_highlighters = ['virtual']
-
-"""""""""""""""""""""""""
-" Markdown-Preview.nvim "
-"""""""""""""""""""""""""
-
-let g:mkdp_browser = 'firefox'
-let g:mkdp_port = '9000'
-
 """"""""""""""""
 " Nerdtree.vim "
 """"""""""""""""
@@ -135,20 +121,17 @@ let NERDTreeDirArrows = 1
 let NERDTreeShowLineNumbers=1
 autocmd FileType nerdtree setlocal relativenumber
 
+"""""""
+" ALE "
+"""""""
+let g:ale_java_javac_classpath = expand('~/.local/bin/Clavier.jar')
+
 """"""""""""""""""
 " 2. Key mapping "
 """"""""""""""""""
 
-" Don't took an arrow in the knee
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-
 " Show netrw
 nnoremap <C-\> :NERDTreeToggle<CR>
-" Go to previous buffer and close the last one
-nnoremap <C-w>c :bp\|bd #<CR>
 
 " Switch buffers
 "   Prevent opening the file in NerdTree by moving the cursor to the next
@@ -156,21 +139,37 @@ nnoremap <C-w>c :bp\|bd #<CR>
 nnoremap <silent> <expr> <C-n> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":bn\<CR>"
 nnoremap <silent> <expr> <C-p> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":bp\<CR>"
 
-" remap shift+: to space
-nnoremap <space> :
+" Close buffer
+nnoremap <C-w>c :bp\|bd #<CR>
+
+function CycleBuffers()
+
+endfunction
+
+" auto-close brackets
+" TODO:
+" - How can I automagically don't auto-close for comments?
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+
+" Auto expand bracket blocks
+inoremap <expr> <CR> AutoExpandBlock()
+
+function AutoExpandBlock()
+  if search('{\%#}') || search('\[\%#\]')
+    return "\<CR>\<CR>\<Up>\<C-f>"
+  else
+    return "\<CR>"
+endfunction
 
 """""""""""""""""
 " 3. Statusline "
 """""""""""""""""
 
-set statusline=%f                               "tail of the filename
-set statusline+=%h                              "help file flag
-set statusline+=%m                              "modified flag
-set statusline+=%r                              "read only flag
-set statusline+=%=                              "left/right separator
-set statusline+=%y                              "filetype
-set statusline+=[%c:                            "cursor column
-set statusline+=%l/%L]                          "cursor line/total lines
+set statusline=%f%h%m%r%=%y[%c:%l/%L]
 
 """"""""""""""""""""""""""
 " 4. Syntax highlighting "

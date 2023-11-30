@@ -57,7 +57,14 @@ PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
 # Set prompt
 prompt() {
-  PS1="\w \$ "
+  local git_branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
+  PS1="\w"
+
+  if [[ -n "$git_branch" ]]; then
+    PS1="$PS1 git:$git_branch"
+  fi
+
+  PS1="$PS1 \$ "
 }
 PROMPT_COMMAND="prompt; $PROMPT_COMMAND"
 

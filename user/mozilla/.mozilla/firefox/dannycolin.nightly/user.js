@@ -102,7 +102,7 @@ user_pref("privacy.globalprivacycontrol.functionality.enabled", true);
 //
 // Temporarily disable the half implemented new OffCanvas2D API in Firefox to
 // fix the broken embedded images in Element Web
-// See:
+//
 // - https://bugzilla.mozilla.org/show_bug.cgi?id=801176
 // - https://github.com/matrix-org/matrix-react-sdk/pull/7440
 user_pref("gfx.offscreencanvas.enabled", false);
@@ -110,3 +110,7 @@ user_pref("gfx.offscreencanvas.enabled", false);
 // Use the refactored Screenshot tool
 user_pref("screenshots.browser.component.enabled", true);
 
+// Firefox View: Next
+//
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1827393
+user_oref("browser.tabs.firefox-view-next", true);
