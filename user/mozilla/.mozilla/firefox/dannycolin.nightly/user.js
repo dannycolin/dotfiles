@@ -1,72 +1,56 @@
-// -----------------------------------------------------------------------------
 // user.js
 //
 // This file overrides preferences in prefs.js
-// -----------------------------------------------------------------------------
 
-// -----------------------------------------------------------------------------
-// General settings
-// -----------------------------------------------------------------------------
-
+// Hide about:config warning
 user_pref("browser.aboutConfig.showWarning", false);
 
+// ???
 user_pref("browser.discovery.enabled", false);
 
-// Remove widgets on the newtab page
+// Hide widgets about:newtab
 user_pref("browser.newtabpage.activity-stream.default.sites", "");
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 
+// Keep Firefox open when closing the last tab
 user_pref("browser.tabs.closeWindowWithLastTab", false);
+
+// Do not merge tabbar and titlebar
 user_pref("browser.tabs.drawInTitlebar", false);
 
+// Always hide bookmarks toolbar
 user_pref("browser.toolbars.bookmarks.visibility", "never");
 
-// Enable compact mode
-//
-// browser.uidensity
-//
-//  0 - default
-//  1 - compact (deprecated with bug 1693028)
-//  2 - touch
-user_pref("browser.compactmode.show", true);
-user_pref("browser.uidensity", 1);
-
-// Show bookmarks first
+// Show bookmarks at the top in awesomebar
 user_pref("browser.urlbar.showSearchSuggestionsFirst", false);
 
-// Don't show history or topsites
+// Hide history and topsites in awesomebar
 user_pref("browser.urlbar.suggest.history", false);
 user_pref("browser.urlbar.suggest.topsites", false);
 
-// Disable the larger "search with" banner
+// Hide "search with" banner in awesomebar
 user_pref("browser.urlbar.tabToSearch.onboard.interactionsLeft", 0);
 
-// Enable arthimetic expressions and unit conversions
+// Enable calculator and unit conversions in awesomebar
 user_pref("browser.urlbar.suggest.calculator", true);
 user_pref("browser.urlbar.unitConversion.enabled", true);
 
-// Disable middle mouse click paste
+// Disable middle mouse click pasting
 user_pref("middlemouse.paste", false);
 
 // Load userChrome.css
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
-// DoH
-user_pref("network.trr.mode", 3);
-//user_pref("network.trr.uri", "https://doh.mullvad.net/dns-query");
-
-// -----------------------------------------------------------------------------
-// Devtools
-// -----------------------------------------------------------------------------
+// Disable cache in devtools
 user_pref("devtools.cache.disabled", true);
+
+// Enable Browser Toolbox
 user_pref("devtools.chrome.enabled", true);
 user_pref("devtools.debugger.remote-enabled", true);
-user_pref("layout.css.color-mix.enabled", true);
 
-// -----------------------------------------------------------------------------
-// Nightly Settings
-// -----------------------------------------------------------------------------
+// Enable  color-mix in devtools
+user_pref("layout.css.color-mix.enabled", true);
 
 // Fission
 user_pref("fission.autostart", true);

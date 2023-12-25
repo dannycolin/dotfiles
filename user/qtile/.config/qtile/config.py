@@ -188,6 +188,7 @@ wmname = "LG3D"
 # Autostart
 @hook.subscribe.startup_once
 def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart')
-    subprocess.run([home])
+    #home = os.path.expanduser('~/.config/qtile/autostart')
+    #subprocess.run([home])
+    subprocess.run("xrandr", "--output", "eDP-1", "--scale", "1.33")
 
