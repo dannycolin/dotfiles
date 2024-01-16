@@ -3,7 +3,7 @@ import subprocess
 
 from typing import List
 
-from libqtile import bar, hook, layout, widget
+from libqtile import bar, hook, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
@@ -43,12 +43,18 @@ keys = [
     Key([], 'XF86MonBrightnessDown', lazy.spawn("brightnessctl s 10%-")),
     Key([], 'XF86MonBrightnessUp', lazy.spawn("brightnessctl s +10%")),
 
+    # Wayland VT
+    Key(["control", "mod1"], "F1", lazy.core.change_vt(1)),
+    Key(["control", "mod1"], "F2", lazy.core.change_vt(2)),
+    Key(["control", "mod1"], "F3", lazy.core.change_vt(3)),
+    Key(["control", "mod1"], "F4", lazy.core.change_vt(4)),
+
     # System Mode
-    KeyChord([mod, "shift"], "s", [
-        Key([], "p", lazy.spawn("systemctl poweroff")),
-        Key([], "r", lazy.spawn("systemctl reboot")),
-        Key([], "l",
-            lazy.spawn("i3lock -i ~/Pictures/wallpapers/current.png"))],
+    KeyChord(
+        [mod, "shift"], "s", [
+            Key([], "p", lazy.spawn("systemctl poweroff")),
+            Key([], "r", lazy.spawn("systemctl reboot")),
+        ],
         mode=True,
         name="System"
     ),
@@ -57,7 +63,6 @@ keys = [
     Key([mod], "a", lazy.spawn("rofi -show drun")),
     Key([mod], "f", lazy.window.toggle_floating()),
     Key([mod], "Return", lazy.spawn(terminal)),
-    # reload_config hasn't been released yet. It'll be needed on Wayland.
     # Key([mod, "shift"], "r", lazy.reload_config()),
     Key([mod, "shift"], "r", lazy.restart()),
     Key([mod, "shift"], "q", lazy.window.kill()),
@@ -188,5 +193,6 @@ wmname = "LG3D"
 # Autostart
 @hook.subscribe.startup_once
 def autostart():
-    subprocess.run("xrandr", "--output", "eDP-1", "--scale", "1.33")
+    if qtile.core.name == "x11":
+        subprocess.run("xrandr", "--output", "eDP-1", "--scale", "1.33")
 
