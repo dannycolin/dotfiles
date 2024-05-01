@@ -120,10 +120,15 @@ layouts = [
 topbar = bar.Bar(
     [
         widget.GroupBox(
+            inactive="ffffff",
             disable_drag=True,
             hide_unused=True,
-            highlight_method="text",
-            this_current_screen_border="357bcf"
+            highlight_method='block',
+            margin=0,
+            padding=16,
+            rounded=False,
+            this_current_screen_border="357bcf",
+            toggle=False
         ),
         widget.Spacer(length=bar.STRETCH),
         widget.Clock(
@@ -173,7 +178,10 @@ floating_layout = layout.Floating(float_rules=[
     *layout.Floating.default_float_rules,
     Match(wm_instance_class="Browser", wm_class="Nightly"),
     Match(wm_instance_class="Browser", wm_class="firefox-nightly"),
-    Match(wm_instance_class="Browser", wm_class="Firefox")
+    Match(wm_instance_class="Browser", wm_class="Firefox"),
+    Match(wm_instance_class="Toolkit", wm_class="Nightly"),
+    Match(wm_instance_class="Toolkit", wm_class="firefox-nightly"),
+    Match(wm_instance_class="Toolkit", wm_class="Firefox"),
 ])
 
 # Other
