@@ -55,11 +55,25 @@ PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
 PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
+# Reopen in last dir
+#[ -f "/tmp/bash_dir" ] && cd "$(cat "/tmp/bash_dir")"
+
+# Set Koha environment
+export PROJECTS_DIR="$HOME/Projects"
+export SYNC_REPO="$PROJECTS_DIR/koha"
+export KTD_HOME="$PROJECTS_DIR/koha-testing-docker"
+export PATH="$PATH:$KTD_HOME/bin"
+export LOCAL_USER_ID="$(id -u)"
+
 # Set prompt
 prompt() {
   local git_branch;
   git_branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)";
   PS1="\w";
+
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    PS1="$PS1 [venv]";
+  fi
 
   if [[ -n "$git_branch" ]]; then
     PS1="$PS1 git:$git_branch";

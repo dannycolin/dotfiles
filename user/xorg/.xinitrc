@@ -11,4 +11,4 @@ xrandr --output eDP-1-1 --set "scaling mode" "Full aspect"
 xsetroot -cursor_name left_ptr
 
 # Start WM
-exec qtile start
+exec /usr/bin/qtile start

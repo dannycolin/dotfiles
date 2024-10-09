@@ -2,7 +2,7 @@
 //
 // This file overrides preferences in prefs.js
 
-// Hide about:config warning
+// Show/Hide about:config warning
 user_pref("browser.aboutConfig.showWarning", false);
 
 // Load userChrome.css
@@ -20,6 +20,9 @@ user_pref("browser.tabs.closeWindowWithLastTab", false);
 
 // Do not merge tabbar and titlebar
 user_pref("browser.tabs.drawInTitlebar", false);
+
+// Disable tab preview
+userpref("browser.tabs.hoverPreview.enabled", false);
 
 // Always hide bookmarks toolbar
 user_pref("browser.toolbars.bookmarks.visibility", "never");
@@ -40,21 +43,27 @@ user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", 
 // Hide addons suggestions
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 
+// Hide weather
+user_pref("browser.newtabpage.activity-stream.showWeather", false);
+
 // ------------------------------
 // Firefox Awesomebar
 // ------------------------------
+
 user_pref("browser.urlbar.showSearchSuggestionsFirst", false);
-// Hide history
+
+// Hide suggestions for the following elements
 user_pref("browser.urlbar.suggest.history", false);
-// Hide topsites
 user_pref("browser.urlbar.suggest.topsites", false);
-// Do not suggest searching for the current URL in clipboard
+user_pref("browser.urlbar.suggest.searches", false);
+user_pref("browser.urlbar.suggest.recentsearches", false);
 user_pref("browser.urlbar.suggest.clipboard", false);
+
 // Hide "search with" banner in awesomebar
 user_pref("browser.urlbar.tabToSearch.onboard.interactionsLeft", 0);
-// Enable calculator
+
+// Enable calculator and unit conversion
 user_pref("browser.urlbar.suggest.calculator", true);
-// Enable unit conversions
 user_pref("browser.urlbar.unitConversion.enabled", true);
 
 // --------------------------------------------------------
@@ -110,17 +119,6 @@ user_pref("privacy.globalprivacycontrol.enabled", true);
 user_pref("privacy.globalprivacycontrol.functionality.enabled", true);
 
 // --------------------------------------------------------
-// OffCanvas2D
-//
-// Temporarily disable the half implemented new OffCanvas2D API in Firefox to
-// fix the broken embedded images in Element Web
-//
-// - https://bugzilla.mozilla.org/show_bug.cgi?id=801176
-// - https://github.com/matrix-org/matrix-react-sdk/pull/7440
-// --------------------------------------------------------
-user_pref("gfx.offscreencanvas.enabled", false);
-
-// --------------------------------------------------------
 // Screenshot: Builtin instead of extension
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1789727
 //
@@ -143,3 +141,15 @@ user_pref("browser.profiles.enabled", true);
 // Firefox Translations: Translate selected text only
 // --------------------------------------------------------
 user_pref("browser.translations.select.enable", true);
+
+// --------------------------------------------------------
+// Firefox Sidebar Revamp Project
+// --------------------------------------------------------
+user_pref("sidebar.revamp", false);
+user_pref("sidebar.verticalTabs", false);
+
+// --------------------------------------------------------
+// Reader Mode: Improved Text Menu
+// https://blog.nightly.mozilla.org/2024/06/03/in-a-nutshell-these-weeks-in-firefox-issue-162/
+// --------------------------------------------------------
+user_pref("reader.improved_text_menu.enabled", true);

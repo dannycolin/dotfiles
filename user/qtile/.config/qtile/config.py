@@ -37,17 +37,14 @@ keys = [
 
     # Volume
     Key([], "XF86AudioMute", lazy.widget["pulsevolume"].mute()),
-    Key([], "XF86AudioRaiseVolume", lazy.widget["pulsevolume"].increase_vol()),
-    Key([], "XF86AudioLowerVolume", lazy.widget["pulsevolume"].decrease_vol()),
+    Key([], "XF86AudioRaiseVolume",
+        lazy.widget["pulsevolume"].increase_vol()),
+    Key([], "XF86AudioLowerVolume",
+        lazy.widget["pulsevolume"].decrease_vol()),
     # Brightness
-    Key([], 'XF86MonBrightnessDown', lazy.spawn("brightnessctl s 10%-")),
+    Key([], 'XF86MonBrightnessDown',
+        lazy.spawn("brightnessctl s 10%-")),
     Key([], 'XF86MonBrightnessUp', lazy.spawn("brightnessctl s +10%")),
-
-    # Wayland VT
-    Key(["control", "mod1"], "F1", lazy.core.change_vt(1)),
-    Key(["control", "mod1"], "F2", lazy.core.change_vt(2)),
-    Key(["control", "mod1"], "F3", lazy.core.change_vt(3)),
-    Key(["control", "mod1"], "F4", lazy.core.change_vt(4)),
 
     # System Mode
     KeyChord(
@@ -63,10 +60,25 @@ keys = [
     Key([mod], "a", lazy.spawn("rofi -show drun")),
     Key([mod], "f", lazy.window.toggle_floating()),
     Key([mod], "Return", lazy.spawn(terminal)),
-    # Key([mod, "shift"], "r", lazy.reload_config()),
+    Key([mod, "control"], "r", lazy.reload_config()),
     Key([mod, "shift"], "r", lazy.restart()),
     Key([mod, "shift"], "q", lazy.window.kill()),
 ]
+
+# Switch VTs in Wayland.
+# We can't check qtile.core.name in default config as it is loaded before qtile
+# is started. We therefore defer the check until the key binding is run by
+# using .when(func=...)
+for vt in range(1, 8):
+    keys.append(
+        Key(
+            ["control", "mod1"],
+            f"f{vt}",
+            lazy.core.change_vt(vt).when(
+                func=lambda: qtile.core.name == "wayland"),
+            desc=f"Switch to VT{vt}",
+        )
+    )
 
 # Groups
 groups = [
@@ -96,13 +108,14 @@ groups = [
 for i in groups:
     keys.extend([
         Key([mod], i.name, lazy.group[i.name].toscreen()),
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=False)),
+        Key([mod, "shift"], i.name, lazy.window.togroup(
+            i.name, switch_group=False)),
     ])
 
 # Layouts
 layouts = [
     layout.Bsp(
-        border_focus="#15539e",
+        border_focus="#357bcf",
         border_normal="#353535",
         border_width=2,
         fair=False,
@@ -120,19 +133,23 @@ layouts = [
 topbar = bar.Bar(
     [
         widget.GroupBox(
-            inactive="ffffff",
+            inactive="#ffffff",
             disable_drag=True,
             hide_unused=True,
             highlight_method='block',
             margin=0,
             padding=16,
             rounded=False,
-            this_current_screen_border="357bcf",
+            this_current_screen_border="#357bcf",
+            this_screen_border="#353535",
+            other_current_screen_border="#357bcf",
+            other_screen_border="#353535",
             toggle=False
         ),
         widget.Spacer(length=bar.STRETCH),
         widget.Clock(
-          format="%a %d %b %H:%M"
+          format="%a %d %b %H:%M",
+          timezone="America/Montreal"
         ),
         widget.Spacer(length=bar.STRETCH),
         widget.Battery(format="B: {percent:2.0%}"),
@@ -194,6 +211,14 @@ auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
 auto_minimize = True
+
+# When using the Wayland backend, this can be used to configure input
+# devices.
+wl_input_rules = None
+
+# xcursor theme (string or None) and size (integer) for Wayland backend
+wl_xcursor_theme = None
+wl_xcursor_size = 24
 
 # Play nice with Java applications
 wmname = "LG3D"
