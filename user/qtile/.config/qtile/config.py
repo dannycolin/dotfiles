@@ -161,7 +161,7 @@ topbar = bar.Bar(
         widget.Wlan(
             disconnected_message="Off",
             format="W: {percent:2.0%}",
-            interface="wlp170s0"
+            interface="wlp1s0"
         ),
         widget.Systray(icon_size=32),
         widget.Wallpaper(

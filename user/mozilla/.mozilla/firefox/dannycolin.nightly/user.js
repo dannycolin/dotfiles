@@ -153,3 +153,8 @@ user_pref("sidebar.verticalTabs", false);
 // https://blog.nightly.mozilla.org/2024/06/03/in-a-nutshell-these-weeks-in-firefox-issue-162/
 // --------------------------------------------------------
 user_pref("reader.improved_text_menu.enabled", true);
+
+// --------------------------------------------------------
+// ScotchBonnet button / This time search with menu in addressbar
+// --------------------------------------------------------
+user_pref("browser.urlbar.scotchBonnet.enableOverride", false);
