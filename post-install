@@ -3,9 +3,6 @@
 # Theming
 dnf install adwaita-qt4 adwaita-qt5
 
-# Keyboard
-localectl --no-convert set-x11-keymap us evdev altgr-intl caps:escape
-
 # Generate XDG folders
 dnf install xdg-user-dirs
 xdg-user-dirs-update
