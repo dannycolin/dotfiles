@@ -91,8 +91,6 @@ Plug 'Mofiqul/adwaita.nvim'
 Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'markdown'] }
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -119,12 +117,8 @@ let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowLineNumbers=1
+let NERDTreeShowHidden=1
 autocmd FileType nerdtree setlocal relativenumber
-
-"""""""
-" ALE "
-"""""""
-let g:ale_java_javac_classpath = expand('~/.local/bin/Clavier.jar')
 
 """"""""""""""""""
 " 2. Key mapping "

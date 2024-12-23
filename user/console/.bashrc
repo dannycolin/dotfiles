@@ -1,6 +1,4 @@
-# ----------------------------------------
-# ~/.bashrc
-# ----------------------------------------
+# .bashrc
 
 # Shell options
 shopt -s checkwinsize
@@ -9,8 +7,13 @@ shopt -s histappend
 # Set history preferences
 HISTCONTROL=ignoreboth
 HISTFILESIZE=1000
-HISTIGNORE="clear:rm*"
+HISTIGNORE="clear:ls:rm*"
 HISTSIZE=1000
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
 
 # Enable programmable completion features
 if ! shopt -oq posix; then
@@ -21,14 +24,17 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Set SSH socket
-if [ -z "$SSH_AUTH_SOCK" ]; then
-  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+# Load user-specific bash completion
+[ -s "$HOME/share/bash_completion" ] && . "$HOME/share/bash_completion"
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 
-# Set dbus session
-if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
-  export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
+# Add Go to path
+if ! [[ "$PATH" =~ "/opt/go/bin:" ]]; then
+    PATH="/opt/go/bin:$PATH"
 fi
 
 # Load aliases
@@ -37,33 +43,32 @@ fi
 # Load functions
 [ -f ~/.config/bash/functions ] && . "$HOME/.config/bash/functions"
 
-# Load user-specific bash completion
-[ -s "$HOME/share/bash_completion" ] && . "$HOME/share/bash_completion"
+# Set SSH socket
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+fi
+
+# Set dbus session
+# TODO: Start Qtile with dbus-run-session
+# if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+#   export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
+# fi
 
 # Load NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+export NVM_DIR="$HOME/.local/share/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# Load Rust
-. "$HOME/.cargo/env"
-
-# Load Perl
-PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
-
-# Reopen in last dir
-#[ -f "/tmp/bash_dir" ] && cd "$(cat "/tmp/bash_dir")"
-
-# Set Koha environment
-export PROJECTS_DIR="$HOME/Projects"
-export SYNC_REPO="$PROJECTS_DIR/koha"
-export KTD_HOME="$PROJECTS_DIR/koha-testing-docker"
-export PATH="$PATH:$KTD_HOME/bin"
-export LOCAL_USER_ID="$(id -u)"
+cd() {
+  command cd "$@"
+  if [[ -f ".nvmrc" ]]; then
+    nvmrc_version="$(<".nvmrc")"
+    nvm_version="$(nvm current)"
+    if [[ "$nvmrc_version" != "$nvm_version" ]]; then
+      nvm use
+    fi
+  fi
+}
 
 # Set prompt
 prompt() {
@@ -82,4 +87,3 @@ prompt() {
   PS1="$PS1 \$ ";
 }
 PROMPT_COMMAND="prompt; $PROMPT_COMMAND";
-
